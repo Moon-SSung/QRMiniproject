@@ -20,12 +20,16 @@ namespace QRMiniproject
 
         private void ClientForm_Load(object sender, EventArgs e)
         {
-
+            UpdateData();  
         }
 
-        private void GrdClientTbl_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void UpdateData()
         {
-
+            throw new NotImplementedException();
         }
+
+        
+
+       
     }
 }

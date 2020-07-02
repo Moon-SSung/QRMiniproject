@@ -150,7 +150,6 @@
             this.GrdClientTbl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GrdClientTbl.Size = new System.Drawing.Size(772, 469);
             this.GrdClientTbl.TabIndex = 0;
-            this.GrdClientTbl.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdClientTbl_CellContentClick);
             // 
             // BtnNew
             // 
