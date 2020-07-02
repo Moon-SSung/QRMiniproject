@@ -31,12 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.CboQRCode = new System.Windows.Forms.ComboBox();
-            this.DtpQRCode = new System.Windows.Forms.DateTimePicker();
             this.LblQR6 = new System.Windows.Forms.Label();
             this.LblQR5 = new System.Windows.Forms.Label();
             this.LblQR4 = new System.Windows.Forms.Label();
-            this.TxtQRCode6 = new System.Windows.Forms.TextBox();
             this.TxtQRCode4 = new System.Windows.Forms.TextBox();
             this.LblQR3 = new System.Windows.Forms.Label();
             this.LblQR2 = new System.Windows.Forms.Label();
@@ -47,32 +44,17 @@
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnGenerate = new System.Windows.Forms.Button();
             this.MtrGetQRGrid = new MetroFramework.Controls.MetroGrid();
+            this.TxtQRCode2 = new System.Windows.Forms.TextBox();
+            this.DtpQRCode = new System.Windows.Forms.DateTimePicker();
+            this.CboQRCode = new System.Windows.Forms.ComboBox();
+            this.BtnDataInput = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbxQRCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MtrGetQRGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // CboQRCode
-            // 
-            this.CboQRCode.FormattingEnabled = true;
-            this.CboQRCode.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-            this.CboQRCode.Location = new System.Drawing.Point(1094, 221);
-            this.CboQRCode.Name = "CboQRCode";
-            this.CboQRCode.Size = new System.Drawing.Size(288, 23);
-            this.CboQRCode.TabIndex = 27;
-            // 
-            // DtpQRCode
-            // 
-            this.DtpQRCode.Location = new System.Drawing.Point(1092, 87);
-            this.DtpQRCode.Name = "DtpQRCode";
-            this.DtpQRCode.Size = new System.Drawing.Size(290, 25);
-            this.DtpQRCode.TabIndex = 26;
-            // 
             // LblQR6
             // 
-            this.LblQR6.Location = new System.Drawing.Point(1002, 265);
+            this.LblQR6.Location = new System.Drawing.Point(1005, 91);
             this.LblQR6.Name = "LblQR6";
             this.LblQR6.Size = new System.Drawing.Size(85, 15);
             this.LblQR6.TabIndex = 23;
@@ -81,7 +63,7 @@
             // 
             // LblQR5
             // 
-            this.LblQR5.Location = new System.Drawing.Point(987, 221);
+            this.LblQR5.Location = new System.Drawing.Point(990, 269);
             this.LblQR5.Name = "LblQR5";
             this.LblQR5.Size = new System.Drawing.Size(100, 15);
             this.LblQR5.TabIndex = 24;
@@ -90,24 +72,16 @@
             // 
             // LblQR4
             // 
-            this.LblQR4.Location = new System.Drawing.Point(1005, 178);
+            this.LblQR4.Location = new System.Drawing.Point(1008, 224);
             this.LblQR4.Name = "LblQR4";
             this.LblQR4.Size = new System.Drawing.Size(82, 15);
             this.LblQR4.TabIndex = 25;
             this.LblQR4.Text = "수량";
             this.LblQR4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TxtQRCode6
-            // 
-            this.TxtQRCode6.Location = new System.Drawing.Point(1093, 263);
-            this.TxtQRCode6.Multiline = true;
-            this.TxtQRCode6.Name = "TxtQRCode6";
-            this.TxtQRCode6.Size = new System.Drawing.Size(289, 27);
-            this.TxtQRCode6.TabIndex = 22;
-            // 
             // TxtQRCode4
             // 
-            this.TxtQRCode4.Location = new System.Drawing.Point(1093, 175);
+            this.TxtQRCode4.Location = new System.Drawing.Point(1096, 221);
             this.TxtQRCode4.Multiline = true;
             this.TxtQRCode4.Name = "TxtQRCode4";
             this.TxtQRCode4.Size = new System.Drawing.Size(289, 27);
@@ -115,7 +89,7 @@
             // 
             // LblQR3
             // 
-            this.LblQR3.Location = new System.Drawing.Point(1002, 134);
+            this.LblQR3.Location = new System.Drawing.Point(1005, 136);
             this.LblQR3.Name = "LblQR3";
             this.LblQR3.Size = new System.Drawing.Size(85, 15);
             this.LblQR3.TabIndex = 18;
@@ -124,16 +98,16 @@
             // 
             // LblQR2
             // 
-            this.LblQR2.Location = new System.Drawing.Point(987, 90);
+            this.LblQR2.Location = new System.Drawing.Point(1025, 185);
             this.LblQR2.Name = "LblQR2";
-            this.LblQR2.Size = new System.Drawing.Size(100, 15);
+            this.LblQR2.Size = new System.Drawing.Size(65, 15);
             this.LblQR2.TabIndex = 19;
             this.LblQR2.Text = "일자";
             this.LblQR2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LblQR1
             // 
-            this.LblQR1.Location = new System.Drawing.Point(1032, 46);
+            this.LblQR1.Location = new System.Drawing.Point(1036, 46);
             this.LblQR1.Name = "LblQR1";
             this.LblQR1.Size = new System.Drawing.Size(54, 15);
             this.LblQR1.TabIndex = 20;
@@ -142,7 +116,7 @@
             // 
             // TxtQRCode3
             // 
-            this.TxtQRCode3.Location = new System.Drawing.Point(1092, 131);
+            this.TxtQRCode3.Location = new System.Drawing.Point(1096, 133);
             this.TxtQRCode3.Multiline = true;
             this.TxtQRCode3.Name = "TxtQRCode3";
             this.TxtQRCode3.Size = new System.Drawing.Size(289, 27);
@@ -150,7 +124,7 @@
             // 
             // TxtQRCode1
             // 
-            this.TxtQRCode1.Location = new System.Drawing.Point(1092, 43);
+            this.TxtQRCode1.Location = new System.Drawing.Point(1096, 43);
             this.TxtQRCode1.Multiline = true;
             this.TxtQRCode1.Name = "TxtQRCode1";
             this.TxtQRCode1.Size = new System.Drawing.Size(289, 27);
@@ -231,18 +205,56 @@
             this.MtrGetQRGrid.Size = new System.Drawing.Size(984, 504);
             this.MtrGetQRGrid.TabIndex = 28;
             // 
+            // TxtQRCode2
+            // 
+            this.TxtQRCode2.Location = new System.Drawing.Point(1096, 88);
+            this.TxtQRCode2.Multiline = true;
+            this.TxtQRCode2.Name = "TxtQRCode2";
+            this.TxtQRCode2.Size = new System.Drawing.Size(289, 27);
+            this.TxtQRCode2.TabIndex = 22;
+            // 
+            // DtpQRCode
+            // 
+            this.DtpQRCode.Location = new System.Drawing.Point(1096, 178);
+            this.DtpQRCode.Name = "DtpQRCode";
+            this.DtpQRCode.Size = new System.Drawing.Size(289, 25);
+            this.DtpQRCode.TabIndex = 26;
+            // 
+            // CboQRCode
+            // 
+            this.CboQRCode.FormattingEnabled = true;
+            this.CboQRCode.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.CboQRCode.Location = new System.Drawing.Point(1096, 266);
+            this.CboQRCode.Name = "CboQRCode";
+            this.CboQRCode.Size = new System.Drawing.Size(289, 23);
+            this.CboQRCode.TabIndex = 27;
+            // 
+            // BtnDataInput
+            // 
+            this.BtnDataInput.Location = new System.Drawing.Point(1015, 393);
+            this.BtnDataInput.Name = "BtnDataInput";
+            this.BtnDataInput.Size = new System.Drawing.Size(75, 62);
+            this.BtnDataInput.TabIndex = 29;
+            this.BtnDataInput.Text = "test";
+            this.BtnDataInput.UseVisualStyleBackColor = true;
+            this.BtnDataInput.Click += new System.EventHandler(this.BtnDataInput_Click);
+            // 
             // GetQRForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1416, 552);
+            this.Controls.Add(this.BtnDataInput);
             this.Controls.Add(this.MtrGetQRGrid);
             this.Controls.Add(this.CboQRCode);
             this.Controls.Add(this.DtpQRCode);
             this.Controls.Add(this.LblQR6);
             this.Controls.Add(this.LblQR5);
             this.Controls.Add(this.LblQR4);
-            this.Controls.Add(this.TxtQRCode6);
+            this.Controls.Add(this.TxtQRCode2);
             this.Controls.Add(this.TxtQRCode4);
             this.Controls.Add(this.LblQR3);
             this.Controls.Add(this.LblQR2);
@@ -263,13 +275,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox CboQRCode;
-        private System.Windows.Forms.DateTimePicker DtpQRCode;
         private System.Windows.Forms.Label LblQR6;
         private System.Windows.Forms.Label LblQR5;
         private System.Windows.Forms.Label LblQR4;
-        private System.Windows.Forms.TextBox TxtQRCode6;
         private System.Windows.Forms.TextBox TxtQRCode4;
         private System.Windows.Forms.Label LblQR3;
         private System.Windows.Forms.Label LblQR2;
@@ -280,5 +288,9 @@
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnGenerate;
         private MetroFramework.Controls.MetroGrid MtrGetQRGrid;
+        private System.Windows.Forms.TextBox TxtQRCode2;
+        private System.Windows.Forms.DateTimePicker DtpQRCode;
+        private System.Windows.Forms.ComboBox CboQRCode;
+        private System.Windows.Forms.Button BtnDataInput;
     }
 }
