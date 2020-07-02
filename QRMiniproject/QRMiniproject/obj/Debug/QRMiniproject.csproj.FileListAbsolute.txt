@@ -1,0 +1,17 @@
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\QRMiniproject.exe.config
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\QRMiniproject.exe
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\QRMiniproject.pdb
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.Design.dll
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.dll
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.Fonts.dll
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csprojAssemblyReference.cache
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.LoginForm.resources
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.MainForm.resources
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.Properties.Resources.resources
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csproj.GenerateResource.cache
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csproj.CoreCompileInputs.cache
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csproj.CopyComplete
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.exe
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.pdb
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.ClientForm.resources
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.EmployeeForm.resources
