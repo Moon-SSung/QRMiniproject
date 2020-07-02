@@ -72,6 +72,7 @@
             this.BtnOutPut.TabIndex = 4;
             this.BtnOutPut.Text = "출고관리";
             this.BtnOutPut.UseVisualStyleBackColor = true;
+            this.BtnOutPut.Click += new System.EventHandler(this.BtnOutPut_Click);
             // 
             // ClientManaged
             // 
