@@ -60,5 +60,11 @@ namespace QRMiniproject
             ClientForm form = new ClientForm();
             InItChildForm(form, "거래처관리");
         }
+
+        private void BtnInPut_Click(object sender, EventArgs e)
+        {
+            InPutForm form = new InPutForm();
+            InItChildForm(form, "입고관리");
+        }
     }
 }

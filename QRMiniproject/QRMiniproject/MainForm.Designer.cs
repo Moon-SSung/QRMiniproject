@@ -91,6 +91,7 @@
             this.BtnInPut.TabIndex = 6;
             this.BtnInPut.Text = "입고관리";
             this.BtnInPut.UseVisualStyleBackColor = true;
+            this.BtnInPut.Click += new System.EventHandler(this.BtnInPut_Click);
             // 
             // EmployeeManaged
             // 
