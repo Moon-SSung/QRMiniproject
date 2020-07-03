@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.ProductManaged = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.ClientManaged = new System.Windows.Forms.Button();
             this.BtnInOutPut = new System.Windows.Forms.Button();
@@ -55,14 +55,15 @@
             this.button6.Text = "QR코드관리";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // ProductManaged
             // 
-            this.button5.Location = new System.Drawing.Point(136, 364);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 49);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "품목관리";
-            this.button5.UseVisualStyleBackColor = true;
+            this.ProductManaged.Location = new System.Drawing.Point(136, 364);
+            this.ProductManaged.Name = "ProductManaged";
+            this.ProductManaged.Size = new System.Drawing.Size(100, 49);
+            this.ProductManaged.TabIndex = 3;
+            this.ProductManaged.Text = "품목관리";
+            this.ProductManaged.UseVisualStyleBackColor = true;
+            this.ProductManaged.Click += new System.EventHandler(this.ProductManaged_Click);
             // 
             // button4
             // 
@@ -109,7 +110,7 @@
             this.ClientSize = new System.Drawing.Size(531, 499);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.ProductManaged);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.ClientManaged);
             this.Controls.Add(this.BtnInOutPut);
@@ -127,7 +128,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button ProductManaged;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button ClientManaged;
         private System.Windows.Forms.Button BtnInOutPut;
