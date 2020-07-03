@@ -54,6 +54,7 @@
             this.BtnInOut.TabIndex = 2;
             this.BtnInOut.Text = "입.출고 현황";
             this.BtnInOut.UseVisualStyleBackColor = true;
+            this.BtnInOut.Click += new System.EventHandler(this.BtnInOut_Click);
             // 
             // button5
             // 
