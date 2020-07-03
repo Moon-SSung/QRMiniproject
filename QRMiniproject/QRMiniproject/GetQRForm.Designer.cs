@@ -34,20 +34,21 @@
             this.LblQR6 = new System.Windows.Forms.Label();
             this.LblQR5 = new System.Windows.Forms.Label();
             this.LblQR4 = new System.Windows.Forms.Label();
-            this.TxtQRCode4 = new System.Windows.Forms.TextBox();
+            this.TxtQRCode2 = new System.Windows.Forms.TextBox();
             this.LblQR3 = new System.Windows.Forms.Label();
             this.LblQR2 = new System.Windows.Forms.Label();
             this.LblQR1 = new System.Windows.Forms.Label();
-            this.TxtQRCode3 = new System.Windows.Forms.TextBox();
             this.TxtQRCode1 = new System.Windows.Forms.TextBox();
             this.PbxQRCode = new System.Windows.Forms.PictureBox();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnGenerate = new System.Windows.Forms.Button();
             this.MtrGetQRGrid = new MetroFramework.Controls.MetroGrid();
-            this.TxtQRCode2 = new System.Windows.Forms.TextBox();
             this.DtpQRCode = new System.Windows.Forms.DateTimePicker();
-            this.CboQRCode = new System.Windows.Forms.ComboBox();
+            this.CboQRCode3 = new System.Windows.Forms.ComboBox();
             this.BtnDataInput = new System.Windows.Forms.Button();
+            this.CboQRCode1 = new System.Windows.Forms.ComboBox();
+            this.CboQRCode2 = new System.Windows.Forms.ComboBox();
+            this.BtnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbxQRCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MtrGetQRGrid)).BeginInit();
             this.SuspendLayout();
@@ -63,9 +64,9 @@
             // 
             // LblQR5
             // 
-            this.LblQR5.Location = new System.Drawing.Point(990, 269);
+            this.LblQR5.Location = new System.Drawing.Point(1008, 269);
             this.LblQR5.Name = "LblQR5";
-            this.LblQR5.Size = new System.Drawing.Size(100, 15);
+            this.LblQR5.Size = new System.Drawing.Size(82, 15);
             this.LblQR5.TabIndex = 24;
             this.LblQR5.Text = "창고";
             this.LblQR5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -79,48 +80,40 @@
             this.LblQR4.Text = "수량";
             this.LblQR4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TxtQRCode4
+            // TxtQRCode2
             // 
-            this.TxtQRCode4.Location = new System.Drawing.Point(1096, 221);
-            this.TxtQRCode4.Multiline = true;
-            this.TxtQRCode4.Name = "TxtQRCode4";
-            this.TxtQRCode4.Size = new System.Drawing.Size(289, 27);
-            this.TxtQRCode4.TabIndex = 21;
+            this.TxtQRCode2.Location = new System.Drawing.Point(1096, 221);
+            this.TxtQRCode2.Multiline = true;
+            this.TxtQRCode2.Name = "TxtQRCode2";
+            this.TxtQRCode2.Size = new System.Drawing.Size(289, 27);
+            this.TxtQRCode2.TabIndex = 21;
             // 
             // LblQR3
             // 
-            this.LblQR3.Location = new System.Drawing.Point(1005, 136);
+            this.LblQR3.Location = new System.Drawing.Point(1008, 136);
             this.LblQR3.Name = "LblQR3";
-            this.LblQR3.Size = new System.Drawing.Size(85, 15);
+            this.LblQR3.Size = new System.Drawing.Size(82, 15);
             this.LblQR3.TabIndex = 18;
             this.LblQR3.Text = "품목코드";
             this.LblQR3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LblQR2
             // 
-            this.LblQR2.Location = new System.Drawing.Point(1025, 185);
+            this.LblQR2.Location = new System.Drawing.Point(1008, 185);
             this.LblQR2.Name = "LblQR2";
-            this.LblQR2.Size = new System.Drawing.Size(65, 15);
+            this.LblQR2.Size = new System.Drawing.Size(82, 15);
             this.LblQR2.TabIndex = 19;
-            this.LblQR2.Text = "일자";
+            this.LblQR2.Text = "출고일자";
             this.LblQR2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LblQR1
             // 
-            this.LblQR1.Location = new System.Drawing.Point(1036, 46);
+            this.LblQR1.Location = new System.Drawing.Point(1008, 46);
             this.LblQR1.Name = "LblQR1";
-            this.LblQR1.Size = new System.Drawing.Size(54, 15);
+            this.LblQR1.Size = new System.Drawing.Size(82, 15);
             this.LblQR1.TabIndex = 20;
-            this.LblQR1.Text = "번호";
+            this.LblQR1.Text = "출고번호";
             this.LblQR1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TxtQRCode3
-            // 
-            this.TxtQRCode3.Location = new System.Drawing.Point(1096, 133);
-            this.TxtQRCode3.Multiline = true;
-            this.TxtQRCode3.Name = "TxtQRCode3";
-            this.TxtQRCode3.Size = new System.Drawing.Size(289, 27);
-            this.TxtQRCode3.TabIndex = 17;
             // 
             // TxtQRCode1
             // 
@@ -162,6 +155,8 @@
             // 
             // MtrGetQRGrid
             // 
+            this.MtrGetQRGrid.AllowUserToAddRows = false;
+            this.MtrGetQRGrid.AllowUserToDeleteRows = false;
             this.MtrGetQRGrid.AllowUserToResizeRows = false;
             this.MtrGetQRGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.MtrGetQRGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -189,6 +184,7 @@
             this.MtrGetQRGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.MtrGetQRGrid.Location = new System.Drawing.Point(12, 12);
             this.MtrGetQRGrid.Name = "MtrGetQRGrid";
+            this.MtrGetQRGrid.ReadOnly = true;
             this.MtrGetQRGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -204,14 +200,7 @@
             this.MtrGetQRGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MtrGetQRGrid.Size = new System.Drawing.Size(984, 504);
             this.MtrGetQRGrid.TabIndex = 28;
-            // 
-            // TxtQRCode2
-            // 
-            this.TxtQRCode2.Location = new System.Drawing.Point(1096, 88);
-            this.TxtQRCode2.Multiline = true;
-            this.TxtQRCode2.Name = "TxtQRCode2";
-            this.TxtQRCode2.Size = new System.Drawing.Size(289, 27);
-            this.TxtQRCode2.TabIndex = 22;
+            this.MtrGetQRGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtrGetQRGrid_CellClick);
             // 
             // DtpQRCode
             // 
@@ -220,46 +209,80 @@
             this.DtpQRCode.Size = new System.Drawing.Size(289, 25);
             this.DtpQRCode.TabIndex = 26;
             // 
-            // CboQRCode
+            // CboQRCode3
             // 
-            this.CboQRCode.FormattingEnabled = true;
-            this.CboQRCode.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-            this.CboQRCode.Location = new System.Drawing.Point(1096, 266);
-            this.CboQRCode.Name = "CboQRCode";
-            this.CboQRCode.Size = new System.Drawing.Size(289, 23);
-            this.CboQRCode.TabIndex = 27;
+            this.CboQRCode3.FormattingEnabled = true;
+            this.CboQRCode3.Items.AddRange(new object[] {
+            "M창고",
+            "N창고"});
+            this.CboQRCode3.Location = new System.Drawing.Point(1096, 266);
+            this.CboQRCode3.Name = "CboQRCode3";
+            this.CboQRCode3.Size = new System.Drawing.Size(289, 23);
+            this.CboQRCode3.TabIndex = 27;
             // 
             // BtnDataInput
             // 
-            this.BtnDataInput.Location = new System.Drawing.Point(1015, 393);
+            this.BtnDataInput.Location = new System.Drawing.Point(1015, 366);
             this.BtnDataInput.Name = "BtnDataInput";
             this.BtnDataInput.Size = new System.Drawing.Size(75, 62);
             this.BtnDataInput.TabIndex = 29;
-            this.BtnDataInput.Text = "test";
+            this.BtnDataInput.Text = "Reset";
             this.BtnDataInput.UseVisualStyleBackColor = true;
             this.BtnDataInput.Click += new System.EventHandler(this.BtnDataInput_Click);
+            // 
+            // CboQRCode1
+            // 
+            this.CboQRCode1.FormattingEnabled = true;
+            this.CboQRCode1.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.CboQRCode1.Location = new System.Drawing.Point(1096, 88);
+            this.CboQRCode1.Name = "CboQRCode1";
+            this.CboQRCode1.Size = new System.Drawing.Size(289, 23);
+            this.CboQRCode1.TabIndex = 30;
+            // 
+            // CboQRCode2
+            // 
+            this.CboQRCode2.FormattingEnabled = true;
+            this.CboQRCode2.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.CboQRCode2.Location = new System.Drawing.Point(1096, 133);
+            this.CboQRCode2.Name = "CboQRCode2";
+            this.CboQRCode2.Size = new System.Drawing.Size(289, 23);
+            this.CboQRCode2.TabIndex = 31;
+            // 
+            // BtnPrint
+            // 
+            this.BtnPrint.Location = new System.Drawing.Point(1015, 434);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(75, 62);
+            this.BtnPrint.TabIndex = 29;
+            this.BtnPrint.Text = "Print";
+            this.BtnPrint.UseVisualStyleBackColor = true;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
             // GetQRForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1416, 552);
+            this.Controls.Add(this.CboQRCode2);
+            this.Controls.Add(this.CboQRCode1);
+            this.Controls.Add(this.BtnPrint);
             this.Controls.Add(this.BtnDataInput);
             this.Controls.Add(this.MtrGetQRGrid);
-            this.Controls.Add(this.CboQRCode);
+            this.Controls.Add(this.CboQRCode3);
             this.Controls.Add(this.DtpQRCode);
             this.Controls.Add(this.LblQR6);
             this.Controls.Add(this.LblQR5);
             this.Controls.Add(this.LblQR4);
             this.Controls.Add(this.TxtQRCode2);
-            this.Controls.Add(this.TxtQRCode4);
             this.Controls.Add(this.LblQR3);
             this.Controls.Add(this.LblQR2);
             this.Controls.Add(this.LblQR1);
-            this.Controls.Add(this.TxtQRCode3);
             this.Controls.Add(this.TxtQRCode1);
             this.Controls.Add(this.PbxQRCode);
             this.Controls.Add(this.BtnSave);
@@ -278,19 +301,20 @@
         private System.Windows.Forms.Label LblQR6;
         private System.Windows.Forms.Label LblQR5;
         private System.Windows.Forms.Label LblQR4;
-        private System.Windows.Forms.TextBox TxtQRCode4;
+        private System.Windows.Forms.TextBox TxtQRCode2;
         private System.Windows.Forms.Label LblQR3;
         private System.Windows.Forms.Label LblQR2;
         private System.Windows.Forms.Label LblQR1;
-        private System.Windows.Forms.TextBox TxtQRCode3;
         private System.Windows.Forms.TextBox TxtQRCode1;
         private System.Windows.Forms.PictureBox PbxQRCode;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnGenerate;
         private MetroFramework.Controls.MetroGrid MtrGetQRGrid;
-        private System.Windows.Forms.TextBox TxtQRCode2;
         private System.Windows.Forms.DateTimePicker DtpQRCode;
-        private System.Windows.Forms.ComboBox CboQRCode;
+        private System.Windows.Forms.ComboBox CboQRCode3;
         private System.Windows.Forms.Button BtnDataInput;
+        private System.Windows.Forms.ComboBox CboQRCode1;
+        private System.Windows.Forms.ComboBox CboQRCode2;
+        private System.Windows.Forms.Button BtnPrint;
     }
 }
