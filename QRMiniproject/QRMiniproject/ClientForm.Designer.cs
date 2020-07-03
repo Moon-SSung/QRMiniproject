@@ -151,6 +151,7 @@
             this.GrdClientTbl.Size = new System.Drawing.Size(772, 469);
             this.GrdClientTbl.TabIndex = 0;
             this.GrdClientTbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdClientTbl_CellClick);
+            this.GrdClientTbl.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdClientTbl_CellContentClick);
             // 
             // BtnNew
             // 

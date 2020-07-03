@@ -35,7 +35,7 @@ namespace QRMiniproject
                 DataSet data = new DataSet();
                 dataAdapter.Fill(data, "ClientTbl");
                 GrdClientTbl.DataSource = data;
-                GrdClientTbl.DataSource = "ClientTbl";
+                GrdClientTbl.DataMember = "ClientTbl";
             }
 
         }
@@ -186,6 +186,9 @@ namespace QRMiniproject
             mode = "INSERT"; //신규는 INSERT
         }
 
-       
+        private void GrdClientTbl_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
