@@ -4,7 +4,6 @@ C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\QRMiniproject.pdb
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.Design.dll
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.dll
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.Fonts.dll
-C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csprojAssemblyReference.cache
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.LoginForm.resources
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.MainForm.resources
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.Properties.Resources.resources
@@ -32,6 +31,10 @@ C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\OpenCvSharp.Extension
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\OpenCvSharp.UserInterface.pdb
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\OpenCvSharp.UserInterface.xml
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.InPutForm.resources
+<<<<<<< HEAD
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.InOutPutVisualForm.resources
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csprojAssemblyReference.cache
+=======
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\AForge.dll
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\AForge.Video.DirectShow.dll
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\AForge.Video.dll
@@ -44,3 +47,4 @@ C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\zxing.pdb
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\zxing.xml
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\zxing.presentation.pdb
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\zxing.presentation.xml
+>>>>>>> af992c95f21f3a72211c1ee2f31dc038996331a2

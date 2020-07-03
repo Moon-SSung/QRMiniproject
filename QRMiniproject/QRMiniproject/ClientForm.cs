@@ -25,19 +25,19 @@ namespace QRMiniproject
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
                 conn.Open();
-                string strQuery = "SELECT C_Idx "+
-                                    "  , Number, Personnal, Name, Owner "+
-                                    "  , Address, PhoneNumber, Sort, Part "+
-                                    "  , Situation "+
-                                    "    FROM dbo.ClientTbl ";
+                string strQuery = "SELECT C_Idx,Number,Personnal,Name,Owner,Address,PhoneNumber,Sort,Part,Situation " +
+                                  "  FROM dbo.ClientTbl ";
                 SqlCommand cmd = new SqlCommand(strQuery, conn);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(strQuery, conn);
+
                 DataSet data = new DataSet();
                 dataAdapter.Fill(data, "ClientTbl");
                 GrdClientTbl.DataSource = data;
                 GrdClientTbl.DataMember = "ClientTbl";
             }
 
+            //DataGridViewColumn column = GrdClientTbl.Columns[2];
+            //column.Visible = false;
         }
 
         private void ClientForm_Load(object sender, EventArgs e)
@@ -133,8 +133,10 @@ namespace QRMiniproject
                     strQuery = "INSERT INTO dbo.ClientTbl "+
                                " (Number, Personnal, Name, Owner, Address, PhoneNumber, Sort, Part, Situation) "+
                                " VALUES (@Number, @Personnal, @Name, @Owner, @Address, @PhoneNumber, @Sort, @Part, @Situation) ";
-                    cmd.CommandText = strQuery;
+                   
+
                 }
+                cmd.CommandText = strQuery;
                 ////////////////////////////////////////////////////////////////names
                 SqlParameter parmClientOwner = new SqlParameter("@Owner", SqlDbType.NVarChar, 50);                                              //CommandText 를  파라미터
                 parmClientOwner.Value = TxtClientOwner.Text;

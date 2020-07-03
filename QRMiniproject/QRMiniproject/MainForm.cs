@@ -66,5 +66,11 @@ namespace QRMiniproject
             InPutForm form = new InPutForm();
             InItChildForm(form, "입고관리");
         }
+
+        private void BtnInOut_Click(object sender, EventArgs e)
+        {
+            InOutPutVisualForm form = new InOutPutVisualForm();
+            InItChildForm(form, "입출고현황");
+        }
     }
 }
