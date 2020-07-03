@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label2 = new System.Windows.Forms.Label();
             this.GrdEmployeeTbl = new MetroFramework.Controls.MetroGrid();
             this.BtnNew = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
@@ -41,7 +40,7 @@
             this.TxtDepart = new System.Windows.Forms.TextBox();
             this.TxtIdentityNumber = new System.Windows.Forms.TextBox();
             this.TxtName = new System.Windows.Forms.TextBox();
-            this.Txtmemberidx = new System.Windows.Forms.TextBox();
+            this.TxtcodeNumber = new System.Windows.Forms.TextBox();
             this.lblphoneNumber = new System.Windows.Forms.Label();
             this.lbllevel = new System.Windows.Forms.Label();
             this.lblcodeNumber = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.GrdEmployeeTbl);
             // 
             // splitContainer1.Panel2
@@ -76,7 +74,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.TxtDepart);
             this.splitContainer1.Panel2.Controls.Add(this.TxtIdentityNumber);
             this.splitContainer1.Panel2.Controls.Add(this.TxtName);
-            this.splitContainer1.Panel2.Controls.Add(this.Txtmemberidx);
+            this.splitContainer1.Panel2.Controls.Add(this.TxtcodeNumber);
             this.splitContainer1.Panel2.Controls.Add(this.lblphoneNumber);
             this.splitContainer1.Panel2.Controls.Add(this.lbllevel);
             this.splitContainer1.Panel2.Controls.Add(this.lblcodeNumber);
@@ -88,15 +86,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(812, 399);
             this.splitContainer1.SplitterDistance = 545;
             this.splitContainer1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "사원리스트";
             // 
             // GrdEmployeeTbl
             // 
@@ -124,10 +113,11 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GrdEmployeeTbl.DefaultCellStyle = dataGridViewCellStyle5;
+            this.GrdEmployeeTbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GrdEmployeeTbl.EnableHeadersVisualStyles = false;
             this.GrdEmployeeTbl.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GrdEmployeeTbl.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GrdEmployeeTbl.Location = new System.Drawing.Point(20, 39);
+            this.GrdEmployeeTbl.Location = new System.Drawing.Point(0, 0);
             this.GrdEmployeeTbl.Name = "GrdEmployeeTbl";
             this.GrdEmployeeTbl.ReadOnly = true;
             this.GrdEmployeeTbl.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -143,8 +133,9 @@
             this.GrdEmployeeTbl.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GrdEmployeeTbl.RowTemplate.Height = 27;
             this.GrdEmployeeTbl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrdEmployeeTbl.Size = new System.Drawing.Size(477, 298);
+            this.GrdEmployeeTbl.Size = new System.Drawing.Size(545, 399);
             this.GrdEmployeeTbl.TabIndex = 0;
+            this.GrdEmployeeTbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdEmployeeTbl_CellClick);
             // 
             // BtnNew
             // 
@@ -154,6 +145,7 @@
             this.BtnNew.TabIndex = 7;
             this.BtnNew.Text = "신규";
             this.BtnNew.UseVisualStyleBackColor = true;
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // BtnSave
             // 
@@ -163,6 +155,7 @@
             this.BtnSave.TabIndex = 7;
             this.BtnSave.Text = "등록";
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // TxtPhoneNumber
             // 
@@ -199,12 +192,12 @@
             this.TxtName.Size = new System.Drawing.Size(156, 25);
             this.TxtName.TabIndex = 2;
             // 
-            // Txtmemberidx
+            // TxtcodeNumber
             // 
-            this.Txtmemberidx.Location = new System.Drawing.Point(79, 63);
-            this.Txtmemberidx.Name = "Txtmemberidx";
-            this.Txtmemberidx.Size = new System.Drawing.Size(156, 25);
-            this.Txtmemberidx.TabIndex = 1;
+            this.TxtcodeNumber.Location = new System.Drawing.Point(79, 63);
+            this.TxtcodeNumber.Name = "TxtcodeNumber";
+            this.TxtcodeNumber.Size = new System.Drawing.Size(156, 25);
+            this.TxtcodeNumber.TabIndex = 1;
             // 
             // lblphoneNumber
             // 
@@ -279,7 +272,6 @@
             this.Text = "EmployeeForm";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -292,7 +284,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroGrid GrdEmployeeTbl;
         private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.Button BtnSave;
@@ -301,7 +292,7 @@
         private System.Windows.Forms.TextBox TxtDepart;
         private System.Windows.Forms.TextBox TxtIdentityNumber;
         private System.Windows.Forms.TextBox TxtName;
-        private System.Windows.Forms.TextBox Txtmemberidx;
+        private System.Windows.Forms.TextBox TxtcodeNumber;
         private System.Windows.Forms.Label lblphoneNumber;
         private System.Windows.Forms.Label lbllevel;
         private System.Windows.Forms.Label lblcodeNumber;

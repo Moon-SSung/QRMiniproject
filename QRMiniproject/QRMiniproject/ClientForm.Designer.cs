@@ -150,6 +150,7 @@
             this.GrdClientTbl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GrdClientTbl.Size = new System.Drawing.Size(772, 469);
             this.GrdClientTbl.TabIndex = 0;
+            this.GrdClientTbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdClientTbl_CellClick);
             this.GrdClientTbl.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdClientTbl_CellContentClick);
             // 
             // BtnNew
@@ -160,6 +161,7 @@
             this.BtnNew.TabIndex = 11;
             this.BtnNew.Text = "신규";
             this.BtnNew.UseVisualStyleBackColor = true;
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // BtnSave
             // 
@@ -169,6 +171,7 @@
             this.BtnSave.TabIndex = 11;
             this.BtnSave.Text = "등록";
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // TxtClientsituation
             // 
