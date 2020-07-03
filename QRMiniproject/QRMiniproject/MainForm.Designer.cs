@@ -54,6 +54,7 @@
             this.BtnInOut.TabIndex = 2;
             this.BtnInOut.Text = "입.출고 현황";
             this.BtnInOut.UseVisualStyleBackColor = true;
+            this.BtnInOut.Click += new System.EventHandler(this.BtnInOut_Click);
             // 
             // button5
             // 
@@ -92,6 +93,7 @@
             this.BtnInPut.TabIndex = 6;
             this.BtnInPut.Text = "입고관리";
             this.BtnInPut.UseVisualStyleBackColor = true;
+            this.BtnInPut.Click += new System.EventHandler(this.BtnInPut_Click);
             // 
             // EmployeeManaged
             // 
