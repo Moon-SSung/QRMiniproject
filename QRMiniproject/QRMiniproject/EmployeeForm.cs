@@ -163,6 +163,15 @@ namespace QRMiniproject
                 SqlParameter parmcodeNumber = new SqlParameter("@CodeNumber", SqlDbType.Int);                                                  //CommandText 를  파라미터
                 parmcodeNumber.Value = TxtcodeNumber.Text;
                 cmd.Parameters.Add(parmcodeNumber);
+
+                SqlParameter paramUserID = new SqlParameter("@UserID", SqlDbType.NVarChar,50);                                                  //CommandText 를  파라미터
+                paramUserID.Value = TxtcodeNumber.Text;
+                cmd.Parameters.Add(paramUserID);
+
+                SqlParameter paramUserPW = new SqlParameter("@Password", SqlDbType.NVarChar,50);                                                  //CommandText 를  파라미터
+                paramUserPW.Value = TxtcodeNumber.Text;
+                cmd.Parameters.Add(paramUserPW);
+
                 cmd.ExecuteNonQuery();
             }
         }

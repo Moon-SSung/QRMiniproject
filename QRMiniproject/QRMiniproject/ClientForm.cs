@@ -29,9 +29,10 @@ namespace QRMiniproject
                                   "  FROM dbo.ClientTbl ";
                 SqlCommand cmd = new SqlCommand(strQuery, conn);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(strQuery, conn);
-                DataSet ds = new DataSet();
-                dataAdapter.Fill(ds, "ClientTbl");
-                GrdClientTbl.DataSource = ds;
+
+                DataSet data = new DataSet();
+                dataAdapter.Fill(data, "ClientTbl");
+                GrdClientTbl.DataSource = data;
                 GrdClientTbl.DataMember = "ClientTbl";
             }
 
@@ -187,6 +188,9 @@ namespace QRMiniproject
             mode = "INSERT"; //신규는 INSERT
         }
 
-       
+        private void GrdClientTbl_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
