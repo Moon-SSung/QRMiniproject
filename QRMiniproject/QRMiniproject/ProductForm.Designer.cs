@@ -92,7 +92,6 @@
             this.PrdGridBox.AllowUserToDeleteRows = false;
             this.PrdGridBox.AllowUserToResizeRows = false;
             this.PrdGridBox.AutoGenerateColumns = false;
-            this.PrdGridBox.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.PrdGridBox.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.PrdGridBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PrdGridBox.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -440,6 +439,7 @@
             this.pictureDataGridViewImageColumn.MinimumWidth = 6;
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
             this.pictureDataGridViewImageColumn.ReadOnly = true;
+            this.pictureDataGridViewImageColumn.Visible = false;
             this.pictureDataGridViewImageColumn.Width = 114;
             // 
             // ProductForm

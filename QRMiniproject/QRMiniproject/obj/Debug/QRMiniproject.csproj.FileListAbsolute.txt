@@ -21,7 +21,6 @@ D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\QRMiniproject.pdb
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.Design.dll
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.dll
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\MetroFramework.Fonts.dll
-D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csprojAssemblyReference.cache
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.ClientForm.resources
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.EmployeeForm.resources
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.ProductForm.resources
@@ -33,3 +32,4 @@ D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csp
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csproj.CopyComplete
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.exe
 D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.pdb
+D:\Project\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csprojAssemblyReference.cache

@@ -5,6 +5,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace QRMiniproject
@@ -13,6 +14,7 @@ namespace QRMiniproject
     {
         string mode = "";
         string sqlQuery = "";
+
         SqlConnection conn = new SqlConnection(Commons.ConnString); // MS_SQL 연결
 
 
@@ -30,8 +32,6 @@ namespace QRMiniproject
         {
             // TODO: 이 코드는 데이터를 'qR_ProjectDBDataSet.ProductTbl' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
             this.productTblTableAdapter.Fill(this.qR_ProjectDBDataSet.ProductTbl);
-            DataGridViewColumn column = PrdGridBox.Columns[0];
-            column.Width = 200;
         }
         /// <summary>
         /// 버튼클릭 이벤트
@@ -56,6 +56,7 @@ namespace QRMiniproject
                 MetroMessageBox.Show(this, "빈값은 저장할 수 없습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            ClearTextControls();
             SaveProcess();
         }
         /// <summary>
@@ -96,8 +97,16 @@ namespace QRMiniproject
                 TxtpdtStandard.Text = data.Cells[3].Value.ToString();
                 TxtpdtUnit.Text = data.Cells[4].Value.ToString();
                 TxtpdtPrice.Text = data.Cells[5].Value.ToString();
+                if (!string.IsNullOrEmpty(data.Cells[6].Value.ToString()))
+                {
 
-                //mode = "UPDATE";
+                    byte[] bytes = (byte[])data.Cells[6].Value;;
+                    MemoryStream ms = new MemoryStream(bytes);
+                    PrdpictureBox.Image = Image.FromStream(ms);
+                }
+                else {
+                    PrdpictureBox.Image = null;
+                }
             }
         }
         /// <summary>
@@ -148,9 +157,12 @@ namespace QRMiniproject
             }
             conn.Close();
         }
-        private void SetFormatting()
+        /// <summary>
+        /// 텍스트박스 클리어 메소드
+        /// </summary>
+        private void ClearTextControls()
         {
-
+            TxtpdtID.Text = TxtpdtName.Text = TxtpdtPrice.Text = TxtpdtStandard.Text = TxtpdtUnit.Text = "";
         }
     }
 }
