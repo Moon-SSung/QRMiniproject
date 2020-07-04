@@ -25,7 +25,16 @@ namespace QRMiniproject
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
                 conn.Open();
-                string strQuery = "SELECT C_Idx,Number,Personnal,Name,Owner,Address,PhoneNumber,Sort,Part,Situation " +
+                string strQuery = "SELECT C_Idx AS 거래처번호 " +
+                    " ,Number AS 등록번호 " +
+                    " ,Personnal AS 사업자구분 " +
+                    " ,Name AS 거래처명" +
+                    " ,Owner AS 대표자 " +
+                    " ,Address AS 주소 " +
+                    " ,PhoneNumber AS 전화번호 " +
+                    " ,Sort AS 업종 " +
+                    " ,Part AS 종목 " +
+                    " ,Situation AS 거래상태 " +
                                   "  FROM dbo.ClientTbl ";
                 SqlCommand cmd = new SqlCommand(strQuery, conn);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(strQuery, conn);
@@ -52,8 +61,9 @@ namespace QRMiniproject
                 DataGridViewRow data = GrdClientTbl.Rows[e.RowIndex];
                 TxtClientidx.Text = data.Cells[0].Value.ToString();
                 TxtClientidx.ReadOnly = true;
-                TxtClientpersonnal.Text = data.Cells[1].Value.ToString();
-                TxtClientNumber.Text = data.Cells[2].Value.ToString();
+                TxtClientidx.BackColor = Color.AntiqueWhite;
+                TxtClientpersonnal.Text = data.Cells[2].Value.ToString();
+                TxtClientNumber.Text = data.Cells[1].Value.ToString();
                 TxtClientName.Text = data.Cells[3].Value.ToString();
                 TxtClientOwner.Text = data.Cells[4].Value.ToString();
                 TxtClientAddress.Text = data.Cells[5].Value.ToString();
@@ -93,7 +103,7 @@ namespace QRMiniproject
             TxtClientpersonnal.Text = TxtClientNumber.Text = TxtClientOwner.Text =
             TxtClientName.Text = TxtClientAddress.Text = TxtClientsituation.Text = TxtClientphoneNum.Text =
             TxtClientSort.Text = TxtClientpart.Text = TxtClientidx.Text = "";
-            TxtClientidx.ReadOnly = false;
+            TxtClientidx.ReadOnly = true;
             TxtClientidx.BackColor = Color.White;
             TxtClientidx.Focus();
         }
@@ -130,10 +140,10 @@ namespace QRMiniproject
                 }
                 else if (mode == "INSERT")
                 {
-                    strQuery = "INSERT INTO dbo.ClientTbl "+
-                               " (Number, Personnal, Name, Owner, Address, PhoneNumber, Sort, Part, Situation) "+
+                    strQuery = "INSERT INTO dbo.ClientTbl " +
+                               " (Number, Personnal, Name, Owner, Address, PhoneNumber, Sort, Part, Situation) " +
                                " VALUES (@Number, @Personnal, @Name, @Owner, @Address, @PhoneNumber, @Sort, @Part, @Situation) ";
-                   
+
 
                 }
                 cmd.CommandText = strQuery;
@@ -188,9 +198,15 @@ namespace QRMiniproject
             mode = "INSERT"; //신규는 INSERT
         }
 
-        private void GrdClientTbl_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TxtClientNumber_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (char.IsLetter((char)e.KeyCode) || char.IsWhiteSpace((char)e.KeyCode))
+            {
+                MetroMessageBox.Show(this, "숫자만 입력이가능합니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtClientNumber.Text = TxtClientNumber.Text.Substring(0, TxtClientNumber.Text.Length - 1);
+                TxtClientNumber.Focus();
+                return;
+            }
         }
     }
 }

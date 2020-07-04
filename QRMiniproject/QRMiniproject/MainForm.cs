@@ -14,8 +14,10 @@ namespace QRMiniproject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
+            //LoginForm loginForm = new LoginForm();
+            //loginForm.ShowDialog();
+            InPutForm inPutForm = new InPutForm();
+            inPutForm.Show();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -54,6 +56,11 @@ namespace QRMiniproject
             InItChildForm(form, "거래처관리");
         }
 
+        private void ProductManaged_Click(object sender, EventArgs e)
+        {
+            ProductForm form = new ProductForm();
+            InItChildForm(form, "품목관리");
+        }
         private void BtnOutPut_Click(object sender, EventArgs e)
         {
             GetQRForm form = new GetQRForm();
