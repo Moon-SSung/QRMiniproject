@@ -156,7 +156,7 @@ namespace QRMiniproject
                 cmd.Parameters.Add(parmIdentityNumber);
                 ////////////////////////////////////////////////////////////////// Idex
                 SqlParameter parmcodeNumber = new SqlParameter("@CodeNumber", SqlDbType.Int);                                                  //CommandText 를  파라미터
-                parmcodeNumber.Value = TxtcodeNumber.Text;
+                parmcodeNumber.Value = int.Parse(TxtcodeNumber.Text);
                 cmd.Parameters.Add(parmcodeNumber);
 
                 SqlParameter paramUserID = new SqlParameter("@UserID", SqlDbType.NVarChar,50);                                                  //CommandText 를  파라미터
