@@ -137,8 +137,9 @@ namespace QRMiniproject
                                " (CodeNumber, Name, IdentityNumber, Part, Rank, PhoneNumber, UserID, Password) "+
                                " VALUES "+
                                " (@CodeNumber, @Name, @IdentityNumber, @Part, @Rank, @PhoneNumber, @UserID, @Password) ";
-                    cmd.CommandText = strQuery;
+                   
                 }
+                cmd.CommandText = strQuery;
                 ////////////////////////////////////////////////////////////////이름
                 SqlParameter parmName = new SqlParameter("@Name", SqlDbType.NChar, 10);                                              //CommandText 를  파라미터
                 parmName.Value = TxtName.Text;

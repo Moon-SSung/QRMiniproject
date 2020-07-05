@@ -35,12 +35,16 @@
             this.GrdEmployeeTbl = new MetroFramework.Controls.MetroGrid();
             this.BtnNew = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.TxtPhoneNumber = new System.Windows.Forms.TextBox();
             this.TxtRank = new System.Windows.Forms.TextBox();
             this.TxtDepart = new System.Windows.Forms.TextBox();
             this.TxtIdentityNumber = new System.Windows.Forms.TextBox();
             this.TxtName = new System.Windows.Forms.TextBox();
+            this.TxtPW = new System.Windows.Forms.Label();
             this.TxtcodeNumber = new System.Windows.Forms.TextBox();
+            this.TxtID = new System.Windows.Forms.Label();
             this.lblphoneNumber = new System.Windows.Forms.Label();
             this.lbllevel = new System.Windows.Forms.Label();
             this.lblcodeNumber = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblmemberNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtID = new System.Windows.Forms.Label();
-            this.TxtPW = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -147,7 +147,7 @@
             // 
             // BtnNew
             // 
-            this.BtnNew.Location = new System.Drawing.Point(75, 366);
+            this.BtnNew.Location = new System.Drawing.Point(77, 352);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(77, 30);
             this.BtnNew.TabIndex = 9;
@@ -157,7 +157,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(158, 366);
+            this.BtnSave.Location = new System.Drawing.Point(160, 352);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(77, 30);
             this.BtnSave.TabIndex = 10;
@@ -165,52 +165,84 @@
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(81, 321);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(156, 25);
+            this.textBox2.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(81, 282);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(156, 25);
+            this.textBox1.TabIndex = 7;
+            // 
             // TxtPhoneNumber
             // 
-            this.TxtPhoneNumber.Location = new System.Drawing.Point(79, 255);
+            this.TxtPhoneNumber.Location = new System.Drawing.Point(81, 241);
             this.TxtPhoneNumber.Name = "TxtPhoneNumber";
             this.TxtPhoneNumber.Size = new System.Drawing.Size(156, 25);
             this.TxtPhoneNumber.TabIndex = 6;
             // 
             // TxtRank
             // 
-            this.TxtRank.Location = new System.Drawing.Point(79, 216);
+            this.TxtRank.Location = new System.Drawing.Point(81, 202);
             this.TxtRank.Name = "TxtRank";
             this.TxtRank.Size = new System.Drawing.Size(156, 25);
             this.TxtRank.TabIndex = 5;
             // 
             // TxtDepart
             // 
-            this.TxtDepart.Location = new System.Drawing.Point(79, 177);
+            this.TxtDepart.Location = new System.Drawing.Point(81, 163);
             this.TxtDepart.Name = "TxtDepart";
             this.TxtDepart.Size = new System.Drawing.Size(156, 25);
             this.TxtDepart.TabIndex = 4;
             // 
             // TxtIdentityNumber
             // 
-            this.TxtIdentityNumber.Location = new System.Drawing.Point(79, 138);
+            this.TxtIdentityNumber.Location = new System.Drawing.Point(81, 124);
             this.TxtIdentityNumber.Name = "TxtIdentityNumber";
             this.TxtIdentityNumber.Size = new System.Drawing.Size(156, 25);
             this.TxtIdentityNumber.TabIndex = 3;
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(79, 99);
+            this.TxtName.Location = new System.Drawing.Point(81, 85);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(156, 25);
             this.TxtName.TabIndex = 2;
             // 
+            // TxtPW
+            // 
+            this.TxtPW.AutoSize = true;
+            this.TxtPW.Location = new System.Drawing.Point(23, 324);
+            this.TxtPW.Name = "TxtPW";
+            this.TxtPW.Size = new System.Drawing.Size(67, 15);
+            this.TxtPW.TabIndex = 0;
+            this.TxtPW.Text = "패스워드";
+            // 
             // TxtcodeNumber
             // 
-            this.TxtcodeNumber.Location = new System.Drawing.Point(79, 63);
+            this.TxtcodeNumber.Location = new System.Drawing.Point(81, 49);
             this.TxtcodeNumber.Name = "TxtcodeNumber";
             this.TxtcodeNumber.Size = new System.Drawing.Size(156, 25);
             this.TxtcodeNumber.TabIndex = 1;
             // 
+            // TxtID
+            // 
+            this.TxtID.AutoSize = true;
+            this.TxtID.Location = new System.Drawing.Point(23, 285);
+            this.TxtID.Name = "TxtID";
+            this.TxtID.Size = new System.Drawing.Size(52, 15);
+            this.TxtID.TabIndex = 0;
+            this.TxtID.Text = "아이디";
+            // 
             // lblphoneNumber
             // 
             this.lblphoneNumber.AutoSize = true;
-            this.lblphoneNumber.Location = new System.Drawing.Point(21, 258);
+            this.lblphoneNumber.Location = new System.Drawing.Point(23, 244);
             this.lblphoneNumber.Name = "lblphoneNumber";
             this.lblphoneNumber.Size = new System.Drawing.Size(52, 15);
             this.lblphoneNumber.TabIndex = 0;
@@ -219,7 +251,7 @@
             // lbllevel
             // 
             this.lbllevel.AutoSize = true;
-            this.lbllevel.Location = new System.Drawing.Point(32, 219);
+            this.lbllevel.Location = new System.Drawing.Point(34, 205);
             this.lbllevel.Name = "lbllevel";
             this.lbllevel.Size = new System.Drawing.Size(37, 15);
             this.lbllevel.TabIndex = 0;
@@ -228,7 +260,7 @@
             // lblcodeNumber
             // 
             this.lblcodeNumber.AutoSize = true;
-            this.lblcodeNumber.Location = new System.Drawing.Point(6, 141);
+            this.lblcodeNumber.Location = new System.Drawing.Point(8, 127);
             this.lblcodeNumber.Name = "lblcodeNumber";
             this.lblcodeNumber.Size = new System.Drawing.Size(67, 15);
             this.lblcodeNumber.TabIndex = 0;
@@ -237,7 +269,7 @@
             // lblPart
             // 
             this.lblPart.AutoSize = true;
-            this.lblPart.Location = new System.Drawing.Point(32, 177);
+            this.lblPart.Location = new System.Drawing.Point(34, 163);
             this.lblPart.Name = "lblPart";
             this.lblPart.Size = new System.Drawing.Size(37, 15);
             this.lblPart.TabIndex = 0;
@@ -246,7 +278,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(32, 102);
+            this.lblName.Location = new System.Drawing.Point(34, 88);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(37, 15);
             this.lblName.TabIndex = 0;
@@ -255,7 +287,7 @@
             // lblmemberNumber
             // 
             this.lblmemberNumber.AutoSize = true;
-            this.lblmemberNumber.Location = new System.Drawing.Point(6, 66);
+            this.lblmemberNumber.Location = new System.Drawing.Point(8, 52);
             this.lblmemberNumber.Name = "lblmemberNumber";
             this.lblmemberNumber.Size = new System.Drawing.Size(67, 15);
             this.lblmemberNumber.TabIndex = 0;
@@ -270,38 +302,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "사원등록";
             // 
-            // TxtID
-            // 
-            this.TxtID.AutoSize = true;
-            this.TxtID.Location = new System.Drawing.Point(21, 299);
-            this.TxtID.Name = "TxtID";
-            this.TxtID.Size = new System.Drawing.Size(52, 15);
-            this.TxtID.TabIndex = 0;
-            this.TxtID.Text = "아이디";
-            // 
-            // TxtPW
-            // 
-            this.TxtPW.AutoSize = true;
-            this.TxtPW.Location = new System.Drawing.Point(21, 338);
-            this.TxtPW.Name = "TxtPW";
-            this.TxtPW.Size = new System.Drawing.Size(67, 15);
-            this.TxtPW.TabIndex = 0;
-            this.TxtPW.Text = "패스워드";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(79, 296);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 25);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(79, 335);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 25);
-            this.textBox2.TabIndex = 8;
-            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -309,7 +309,7 @@
             this.ClientSize = new System.Drawing.Size(852, 479);
             this.Controls.Add(this.splitContainer1);
             this.Name = "EmployeeForm";
-            this.Text = "7";
+            this.Text = "EmployeeForm";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
