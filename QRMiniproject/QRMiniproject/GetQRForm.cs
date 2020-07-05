@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,15 +17,19 @@ namespace QRMiniproject
 {
     public partial class GetQRForm : Form
     {
-        //디비연결 string
+        //쿼리문 실행 string
         string mode = "";
-        private Bitmap bitmap;
+       
+        //private Bitmap bitmap;
 
         public GetQRForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Date형식 초기화
+        /// </summary>
         public void initializeDateTimePicker()
         {
             DtpQRCode.CustomFormat = "yyyy-MM-dd";
@@ -34,6 +39,11 @@ namespace QRMiniproject
             //DtpQRCode.Format = DateTimePickerFormat.Custom;
         }
 
+        /// <summary>
+        /// QR코드 생성
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
             QRCodeGenerator qr = new QRCodeGenerator();
@@ -48,26 +58,37 @@ namespace QRMiniproject
             PbxQRCode.Image = code.GetGraphic(3);         
         }
 
+        /// <summary>
+        /// 생성된 QR Code 원하는 폴더에 저장
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnSave_Click(object sender, EventArgs e)
         {
-           
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Title = "다른 이름으로 저장";
-            dlg.DefaultExt = "png";
-            dlg.Filter = "JPEG (*.jpg) | *.jpg | Bitmap (*.bmp)|*.bmp | GIF (*.gif)|*.gif | Png (*.png)|*.png";
-            dlg.FilterIndex = 0;
+            dlg.DefaultExt = ".png";
+            dlg.Filter = "JPEG (*.jpg)|*.jpg |Bitmap (*.bmp)|*.bmp|GIF (*.gif)|*.gif|Png (*.png)|*.png";
+            dlg.FilterIndex = 4;
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                
                 PbxQRCode.Image.Save(dlg.FileName);
                 mode = "INSERT";
-            }          
+            }
+            else //if (dlg.ShowDialog() == DialogResult.Cancel)
+            {
+                Dispose();
+            }
+
+
             GridInputData();
             ViewGridData();
-
         }
 
+        /// <summary>
+        /// SQL 쿼리문을 사용하여 UPDATE, INSERT를 할 수 있는 메소드.
+        /// <summary>
         private void GridInputData()
         {
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
@@ -122,27 +143,20 @@ namespace QRMiniproject
 
                 cmd.ExecuteNonQuery();
             }
-
-        }
-
-        private void BtnDataInput_Click(object sender, EventArgs e)
-        {
-            
-            ClearTextControls();
-            //mode = "UPDATE";
         }
 
         private void GetQRForm_Load(object sender, EventArgs e)
         {
-            //ClearTextControls();
+            ClearTextControls();
             initializeDateTimePicker();            
             ViewGridData();
             UpdateCboQRCode1();
             UpdateCboQRCode2();
-            //UpdateCboQRCode3();
-
         }
 
+        /// <summary>
+        /// ClientTBl에서 거래처번호만 ComboBox에 뿌려준다.
+        /// </summary>
         private void UpdateCboQRCode1()  // 거래처번호 ClientTBL
         {        
                 using (SqlConnection conn = new SqlConnection(Commons.ConnString))
@@ -163,7 +177,10 @@ namespace QRMiniproject
                     CboQRCode1.SelectedIndex = -1;                
                 }
         }
-        
+
+        /// <summary>
+        /// ProductTBL에서 제품코드만 ComboBox에 뿌려준다.
+        /// </summary>
         private void UpdateCboQRCode2()  // 제품코드 ProductTBL
         {        
                 using (SqlConnection conn = new SqlConnection(Commons.ConnString))
@@ -185,36 +202,23 @@ namespace QRMiniproject
                 }
         }
 
-        //private void UpdateCboQRCode3()  // 자재위치 OutputTBL
-        //{
-        //    using (SqlConnection conn = new SqlConnection(Commons.ConnString))
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.Connection = conn;
-        //        cmd.CommandText = "SELECT O_Idx, Storage FROM OutputTbl";
-        //        SqlDataReader reader = cmd.ExecuteReader();
-        //        Dictionary<string, string> temps = new Dictionary<string, string>();
-        //        while (reader.Read())
-        //        {
-        //            temps.Add(reader[0].ToString(), reader[1].ToString());
-        //        }
-        //        CboQRCode3.DataSource = new BindingSource(temps, null);
-        //        CboQRCode3.DisplayMember = "Value";
-        //        CboQRCode3.ValueMember = "Key";
-        //        CboQRCode3.SelectedIndex = -1;
-        //    }
-        //}
-
+        /// <summary>
+        /// GridView에 연결된 DB를 불러오는 코드
+        /// </summary>
         private void ViewGridData()
         {
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
                 conn.Open();
-                string strQuery = "     SELECT O.O_Idx,C.Number,P.ID ,O.Outdate, O.Count, O.Storage" +
+                string strQuery = "     SELECT O.O_Idx AS '출고번호', " +
+                                  "            C.Number AS '거래처번호', " + 
+                                  "            P.ID AS '품목코드', " + 
+                                  "            O.Outdate AS '출고일자', " + 
+                                  "            O.Count AS '수량', " + 
+                                  "            O.Storage AS '창고' " +
                                   "       FROM OutputTbl AS O " +
                                   " INNER JOIN  ClientTbl AS C " +
-                                  "         ON o.ClientIdx = c.C_Idx " +
+                                  "         ON O.ClientIdx = C.C_Idx " +
                                   " INNER JOIN ProductTbl as P " +
                                   "         ON O.ProductIdx = P.P_Idx ";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(strQuery, conn);
@@ -226,19 +230,16 @@ namespace QRMiniproject
             }
         }
 
-        private void ClearTextControls()
-        {
-            TxtQRCode1.Text = CboQRCode1.Text = CboQRCode2.Text  = DtpQRCode.Text = TxtQRCode2.Text = CboQRCode3.Text = "";
-            CboQRCode3.SelectedIndex = -1;
 
-            TxtQRCode1.ReadOnly = true; //txtIdx는 자동 증가
-            TxtQRCode1.BackColor = Color.Beige;
-        }
-
+        /// <summary>
+        /// GridView의 data를 선택했을 때, 각각의 Box에 값이 들어간다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MtrGetQRGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > -1)
-            {                
+            if (e.RowIndex > -1)
+            {
                 DataGridViewRow data = MtrGetQRGrid.Rows[e.RowIndex];
                 TxtQRCode1.Text = data.Cells[0].Value.ToString();
                 TxtQRCode1.ReadOnly = true;
@@ -247,12 +248,18 @@ namespace QRMiniproject
                 CboQRCode2.SelectedIndex = CboQRCode2.FindString(data.Cells[2].Value.ToString());
                 DtpQRCode.Value = DateTime.Parse(data.Cells[3].Value.ToString());
                 TxtQRCode2.Text = data.Cells[4].Value.ToString();
-                CboQRCode3.SelectedIndex = CboQRCode3.FindString(data.Cells[5].Value.ToString());          
+                CboQRCode3.SelectedIndex = CboQRCode3.FindString(data.Cells[5].Value.ToString());
 
                 mode = "UPDATE"; // 수정은 UPDATE
             }
         }
 
+
+        /// <summary>
+        /// QR Code 프린트 기능
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPrint_Click(object sender, EventArgs e)
         {
             if (PbxQRCode.Image == null)
@@ -273,11 +280,32 @@ namespace QRMiniproject
                 pd.Show();
             }
         }
-
-
         private void docToPrint_PrintPage(object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(PbxQRCode.Image, 0, 0, 400, 400);
+        }
+
+        /// <summary>
+        /// 데이터 초기화
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDataReset_Click(object sender, EventArgs e)
+        {
+            ClearTextControls();
+        }
+        private void ClearTextControls()
+        {
+            TxtQRCode1.Text = CboQRCode1.Text = CboQRCode2.Text = DtpQRCode.Text = TxtQRCode2.Text = CboQRCode3.Text = "";
+            CboQRCode3.SelectedIndex = -1;
+
+            TxtQRCode1.ReadOnly = true; //txtIdx는 자동 증가
+            TxtQRCode1.BackColor = Color.Beige;
+
+            if (PbxQRCode.Image != null) //picturebox에 값이 있을 때 초기화
+            {
+                PbxQRCode.Image = null;
+            }
         }
     }
 }

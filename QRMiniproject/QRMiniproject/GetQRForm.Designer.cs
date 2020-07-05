@@ -45,7 +45,7 @@
             this.MtrGetQRGrid = new MetroFramework.Controls.MetroGrid();
             this.DtpQRCode = new System.Windows.Forms.DateTimePicker();
             this.CboQRCode3 = new System.Windows.Forms.ComboBox();
-            this.BtnDataInput = new System.Windows.Forms.Button();
+            this.BtnDataReset = new System.Windows.Forms.Button();
             this.CboQRCode1 = new System.Windows.Forms.ComboBox();
             this.CboQRCode2 = new System.Windows.Forms.ComboBox();
             this.BtnPrint = new System.Windows.Forms.Button();
@@ -220,15 +220,15 @@
             this.CboQRCode3.Size = new System.Drawing.Size(289, 23);
             this.CboQRCode3.TabIndex = 27;
             // 
-            // BtnDataInput
+            // BtnDataReset
             // 
-            this.BtnDataInput.Location = new System.Drawing.Point(1015, 366);
-            this.BtnDataInput.Name = "BtnDataInput";
-            this.BtnDataInput.Size = new System.Drawing.Size(75, 62);
-            this.BtnDataInput.TabIndex = 29;
-            this.BtnDataInput.Text = "Reset";
-            this.BtnDataInput.UseVisualStyleBackColor = true;
-            this.BtnDataInput.Click += new System.EventHandler(this.BtnDataInput_Click);
+            this.BtnDataReset.Location = new System.Drawing.Point(1015, 366);
+            this.BtnDataReset.Name = "BtnDataReset";
+            this.BtnDataReset.Size = new System.Drawing.Size(75, 62);
+            this.BtnDataReset.TabIndex = 29;
+            this.BtnDataReset.Text = "Reset";
+            this.BtnDataReset.UseVisualStyleBackColor = true;
+            this.BtnDataReset.Click += new System.EventHandler(this.BtnDataReset_Click);
             // 
             // CboQRCode1
             // 
@@ -272,7 +272,7 @@
             this.Controls.Add(this.CboQRCode2);
             this.Controls.Add(this.CboQRCode1);
             this.Controls.Add(this.BtnPrint);
-            this.Controls.Add(this.BtnDataInput);
+            this.Controls.Add(this.BtnDataReset);
             this.Controls.Add(this.MtrGetQRGrid);
             this.Controls.Add(this.CboQRCode3);
             this.Controls.Add(this.DtpQRCode);
@@ -312,7 +312,7 @@
         private MetroFramework.Controls.MetroGrid MtrGetQRGrid;
         private System.Windows.Forms.DateTimePicker DtpQRCode;
         private System.Windows.Forms.ComboBox CboQRCode3;
-        private System.Windows.Forms.Button BtnDataInput;
+        private System.Windows.Forms.Button BtnDataReset;
         private System.Windows.Forms.ComboBox CboQRCode1;
         private System.Windows.Forms.ComboBox CboQRCode2;
         private System.Windows.Forms.Button BtnPrint;
