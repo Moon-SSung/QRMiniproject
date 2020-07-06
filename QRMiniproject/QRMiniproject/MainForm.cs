@@ -14,10 +14,10 @@ namespace QRMiniproject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //LoginForm loginForm = new LoginForm();
-            //loginForm.ShowDialog();
-            InPutForm inPutForm = new InPutForm();
-            inPutForm.Show();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            //InPutForm inPutForm = new InPutForm();
+            //inPutForm.Show();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
