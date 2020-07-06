@@ -29,75 +29,85 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.ProductManaged = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BtnInOut = new System.Windows.Forms.Button();
+            this.BtnOutPut = new System.Windows.Forms.Button();
             this.ClientManaged = new System.Windows.Forms.Button();
-            this.BtnInOutPut = new System.Windows.Forms.Button();
+            this.BtnInPut = new System.Windows.Forms.Button();
             this.EmployeeManaged = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(148, 120);
+            this.label1.Location = new System.Drawing.Point(185, 144);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 15);
+            this.label1.Size = new System.Drawing.Size(302, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "QR코드를 이용한 입출고 관리시스템";
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(302, 364);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 49);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "QR코드관리";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // ProductManaged
             // 
-            this.ProductManaged.Location = new System.Drawing.Point(136, 364);
+            this.ProductManaged.Location = new System.Drawing.Point(170, 437);
+            this.ProductManaged.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProductManaged.Name = "ProductManaged";
-            this.ProductManaged.Size = new System.Drawing.Size(100, 49);
+            this.ProductManaged.Size = new System.Drawing.Size(125, 59);
             this.ProductManaged.TabIndex = 3;
             this.ProductManaged.Text = "품목관리";
             this.ProductManaged.UseVisualStyleBackColor = true;
             this.ProductManaged.Click += new System.EventHandler(this.ProductManaged_Click);
             // 
-            // button4
+            // BtnInOut
             // 
-            this.button4.Location = new System.Drawing.Point(302, 271);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 50);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "출고현황";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnInOut.Location = new System.Drawing.Point(378, 437);
+            this.BtnInOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnInOut.Name = "BtnInOut";
+            this.BtnInOut.Size = new System.Drawing.Size(125, 59);
+            this.BtnInOut.TabIndex = 2;
+            this.BtnInOut.Text = "입.출고 현황";
+            this.BtnInOut.UseVisualStyleBackColor = true;
+            this.BtnInOut.Click += new System.EventHandler(this.BtnInOut_Click);
+            // 
+            // BtnOutPut
+            // 
+            this.BtnOutPut.Location = new System.Drawing.Point(378, 325);
+            this.BtnOutPut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnOutPut.Name = "BtnOutPut";
+            this.BtnOutPut.Size = new System.Drawing.Size(125, 60);
+            this.BtnOutPut.TabIndex = 4;
+            this.BtnOutPut.Text = "출고관리";
+            this.BtnOutPut.UseVisualStyleBackColor = true;
+            this.BtnOutPut.Click += new System.EventHandler(this.BtnOutPut_Click);
             // 
             // ClientManaged
             // 
-            this.ClientManaged.Location = new System.Drawing.Point(136, 271);
+            this.ClientManaged.Location = new System.Drawing.Point(170, 325);
+            this.ClientManaged.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientManaged.Name = "ClientManaged";
-            this.ClientManaged.Size = new System.Drawing.Size(100, 50);
+            this.ClientManaged.Size = new System.Drawing.Size(125, 60);
             this.ClientManaged.TabIndex = 5;
             this.ClientManaged.Text = "거래처관리";
             this.ClientManaged.UseVisualStyleBackColor = true;
             this.ClientManaged.Click += new System.EventHandler(this.ClientManaged_Click);
             // 
-            // BtnInOutPut
+            // BtnInPut
             // 
-            this.BtnInOutPut.Location = new System.Drawing.Point(302, 191);
-            this.BtnInOutPut.Name = "BtnInOutPut";
-            this.BtnInOutPut.Size = new System.Drawing.Size(100, 50);
-            this.BtnInOutPut.TabIndex = 6;
-            this.BtnInOutPut.Text = "입.출관리";
-            this.BtnInOutPut.UseVisualStyleBackColor = true;
+            this.BtnInPut.Location = new System.Drawing.Point(378, 229);
+            this.BtnInPut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnInPut.Name = "BtnInPut";
+            this.BtnInPut.Size = new System.Drawing.Size(125, 60);
+            this.BtnInPut.TabIndex = 6;
+            this.BtnInPut.Text = "입고관리";
+            this.BtnInPut.UseVisualStyleBackColor = true;
+            this.BtnInPut.Click += new System.EventHandler(this.BtnInPut_Click);
             // 
             // EmployeeManaged
             // 
-            this.EmployeeManaged.Location = new System.Drawing.Point(136, 191);
+            this.EmployeeManaged.Location = new System.Drawing.Point(170, 229);
+            this.EmployeeManaged.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmployeeManaged.Name = "EmployeeManaged";
-            this.EmployeeManaged.Size = new System.Drawing.Size(100, 50);
+            this.EmployeeManaged.Size = new System.Drawing.Size(125, 60);
             this.EmployeeManaged.TabIndex = 7;
             this.EmployeeManaged.Text = "사원관리";
             this.EmployeeManaged.UseVisualStyleBackColor = true;
@@ -105,17 +115,19 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 499);
+            this.ClientSize = new System.Drawing.Size(664, 599);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.ProductManaged);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.BtnInOut);
+            this.Controls.Add(this.BtnOutPut);
             this.Controls.Add(this.ClientManaged);
-            this.Controls.Add(this.BtnInOutPut);
+            this.Controls.Add(this.BtnInPut);
             this.Controls.Add(this.EmployeeManaged);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
+            this.Padding = new System.Windows.Forms.Padding(25, 72, 25, 24);
             this.Text = "QR";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -127,11 +139,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button ProductManaged;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BtnInOut;
+        private System.Windows.Forms.Button BtnOutPut;
         private System.Windows.Forms.Button ClientManaged;
-        private System.Windows.Forms.Button BtnInOutPut;
+        private System.Windows.Forms.Button BtnInPut;
         private System.Windows.Forms.Button EmployeeManaged;
     }
 }
