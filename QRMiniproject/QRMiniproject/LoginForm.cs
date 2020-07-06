@@ -45,22 +45,22 @@ namespace QRMiniproject
                     conn.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "SELECT USERID FROM EmployeeTbl  " +
-                                      "  WHERE USERID = @USERID    " +
-                                      "  AND PASSWORD = @PASSWORD  ";
+                    cmd.CommandText = "SELECT UserID FROM EmployeeTbl  " +
+                                      "  WHERE UserID = @UserID    " +
+                                      "  AND Password = @Password  ";
                     //id
-                    SqlParameter parameterid = new SqlParameter("@USERID", SqlDbType.VarChar, 10);
+                    SqlParameter parameterid = new SqlParameter("@UserID", SqlDbType.VarChar, 10);
                     parameterid.Value = TxtUserId.Text;
                     cmd.Parameters.Add(parameterid);
                     //password
-                    SqlParameter parameterpw = new SqlParameter("@PASSWORD", SqlDbType.VarChar, 10);
+                    SqlParameter parameterpw = new SqlParameter("@Password", SqlDbType.VarChar, 10);
                     parameterpw.Value = TxtPassword.Text;
                     cmd.Parameters.Add(parameterpw);
 
                     //여기구문 존재 여부 잘 모르겠음
                     SqlDataReader reader = cmd.ExecuteReader();
                     reader.Read();
-                    strUserid = reader["USERID"] != null ? reader["USERID"].ToString() : "";
+                    strUserid = reader["UserID"] != null ? reader["UserID"].ToString() : "";
 
                     if (strUserid != "")
                     {
