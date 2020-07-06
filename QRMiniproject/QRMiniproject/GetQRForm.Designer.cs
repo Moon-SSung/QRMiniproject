@@ -181,7 +181,7 @@
             this.MtrGetQRGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.MtrGetQRGrid.EnableHeadersVisualStyles = false;
             this.MtrGetQRGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.MtrGetQRGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MtrGetQRGrid.GridColor = System.Drawing.Color.White;
             this.MtrGetQRGrid.Location = new System.Drawing.Point(12, 12);
             this.MtrGetQRGrid.Name = "MtrGetQRGrid";
             this.MtrGetQRGrid.ReadOnly = true;

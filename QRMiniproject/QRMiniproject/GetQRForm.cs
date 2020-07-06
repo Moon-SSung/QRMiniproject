@@ -65,23 +65,27 @@ namespace QRMiniproject
         /// <param name="e"></param>
         private void BtnSave_Click(object sender, EventArgs e)
         {
+
+            //GetQRForm temp = new GetQRForm();
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Title = "다른 이름으로 저장";
             dlg.DefaultExt = ".png";
             dlg.Filter = "JPEG (*.jpg)|*.jpg |Bitmap (*.bmp)|*.bmp|GIF (*.gif)|*.gif|Png (*.png)|*.png";
             dlg.FilterIndex = 4;
+            //dlg.ShowDialog();
 
-            if (dlg.ShowDialog() == DialogResult.OK)
+            DialogResult result = dlg.ShowDialog();
+
+            if (result == DialogResult.OK)
             {
                 PbxQRCode.Image.Save(dlg.FileName);
                 mode = "INSERT";
             }
-            else //if (dlg.ShowDialog() == DialogResult.Cancel)
+            else if (result == DialogResult.Cancel)
             {
-                Dispose();
+                dlg.Dispose();
+                return;
             }
-
-
             GridInputData();
             ViewGridData();
         }
@@ -91,12 +95,15 @@ namespace QRMiniproject
         /// <summary>
         private void GridInputData()
         {
+            string strQuery = "";
+
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                string strQuery = "";
+                //string strQuery = "";
+
 
                 if (mode == "UPDATE")
                 {
@@ -297,7 +304,7 @@ namespace QRMiniproject
         private void ClearTextControls()
         {
             TxtQRCode1.Text = CboQRCode1.Text = CboQRCode2.Text = DtpQRCode.Text = TxtQRCode2.Text = CboQRCode3.Text = "";
-            CboQRCode3.SelectedIndex = -1;
+            CboQRCode1.SelectedIndex=CboQRCode2.SelectedIndex=CboQRCode3.SelectedIndex = -1;
 
             TxtQRCode1.ReadOnly = true; //txtIdx는 자동 증가
             TxtQRCode1.BackColor = Color.Beige;
