@@ -123,6 +123,7 @@
             // 
             // OutChart
             // 
+
             chartArea3.Name = "ChartArea1";
             this.OutChart.ChartAreas.Add(chartArea3);
             this.OutChart.Dock = System.Windows.Forms.DockStyle.Fill;

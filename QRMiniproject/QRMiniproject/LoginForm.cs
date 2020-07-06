@@ -103,7 +103,8 @@ namespace QRMiniproject
             if (e.KeyChar == 13)
             {
                 LoginProcess();
-            }
+         
         }
+   }
     }
 }

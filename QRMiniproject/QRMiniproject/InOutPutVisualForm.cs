@@ -72,7 +72,8 @@ namespace QRMiniproject
                 reader.Close();
                 cmd.CommandText = @"select p.Name, o.count * p.price as '판매총액'
                                         from OutputTbl as o
-                                        INNER JOIN ProductTbl as p
+                                        INNER JOIN ProductTbl
+as p
                                         on o.productIdx = p.p_idx
                                       ORDER BY '판매총액' ";
                 reader = cmd.ExecuteReader();
@@ -111,59 +112,6 @@ namespace QRMiniproject
                 OutPriceChart.Series["Series1"].IsValueShownAsLabel = true;
 
             }
-        }
-
-
-        private void BtnInput_Click(object sender, EventArgs e)
-        {
-            // 이 변수 값만 연결하면 되잖아 !
-            List<int> amount = new List<int>();
-            List<string> products = new List<string>();
-            //string[] products = { "보드마카 뚜껑", "보드마카 몸체", "보드마카 하단", "보드마카 심", "보드마카 잉크" };  
-            //int[] amount = { 100, 200, 300, 400, 500 };
-
-
-
-
-            InputChart.Series[0].Points.Clear();
-            InputChart.Series[0].Points.DataBindXY(products, amount);
-            InputChart.Series[0].IsValueShownAsLabel = true;
-
-            for (int i = 0; i < 5; i++)
-            {
-                //InputChart.Series[0].Points.AddXY(products[i], amount[i]);
-
-                InputChart.Series[0].Points[i].LegendText = products[i];
-
-            }
-            //InputChart.Series[0].Points.Clear();
-
-            //InputChart.Series[0].Points[0].SetValueY();
-            //InputChart.Invalidate();
-
-
-        }
-
-        private void BtnOutput_Click(object sender, EventArgs e)
-        {
-            List<int> amount = new List<int>();
-            List<string> products = new List<string>();
-            //string[] products = { "보드마카(파)","보드마카(빨)","보드마카(검)","화이트보드(소)","화이트보드(중)","화이트보드(대)" };
-            //int[] amount = { 50,60,40,50,20,30 };
-
-
-            InputChart.Series[0].Points.Clear();
-            InputChart.Series[0].Points.DataBindXY(products, amount);
-            InputChart.Series[0].IsValueShownAsLabel = true;
-
-            for (int i = 0; i < 6; i++)
-            {
-                //InputChart.Series[0].Points.AddXY(products[i], amount[i]);
-
-                InputChart.Series[0].Points[i].LegendText = products[i];
-
-            }
-
         }
 
         private void InOutPutVisualForm_Activated(object sender, EventArgs e)
