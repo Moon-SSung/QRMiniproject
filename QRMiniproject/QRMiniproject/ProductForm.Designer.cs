@@ -83,7 +83,7 @@
             // 
             this.ProductSprtContainer1.Panel1.BackColor = System.Drawing.Color.White;
             this.ProductSprtContainer1.Panel1.Controls.Add(this.PrdGridBox);
-            this.ProductSprtContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ProductSprtContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // ProductSprtContainer1.Panel2
             // 
