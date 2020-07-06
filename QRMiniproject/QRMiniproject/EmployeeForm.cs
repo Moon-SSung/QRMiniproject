@@ -26,15 +26,15 @@ namespace QRMiniproject
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
                 conn.Open();
-                string strQuery = "SELECT E_Idx " +
-                                  " , CodeNumber " +
-                                  " , Name " +
-                                  " , IdentityNumber " +
-                                  " , Part " +
-                                  " , Rank " +
-                                  " , PhoneNumber " +
-                                  " , UserID " +
-                                  " , Password "+
+                string strQuery = "SELECT E_Idx AS 사원코드 " +
+                                  " , CodeNumber AS 사번 " +
+                                  " , Name AS 이름" +
+                                  " , IdentityNumber AS 주민번호 " +
+                                  " , Part AS 부서" +
+                                  " , Rank AS 직위" +
+                                  " , PhoneNumber AS 전화번호 " +
+                                  " , UserID AS 아이디" +
+                                  " , Password AS 비밀번호"+
                                   " FROM dbo.EmployeeTbl ";  // 퀴리문 입력해야함
                 SqlCommand cmd = new SqlCommand(strQuery, conn);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(strQuery, conn);
@@ -88,7 +88,15 @@ namespace QRMiniproject
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(TxtName.Text) || String.IsNullOrEmpty(TxtIdentityNumber.Text) || String.IsNullOrEmpty(TxtDepart.Text) || String.IsNullOrEmpty(TxtRank.Text) || String.IsNullOrEmpty(TxtPhoneNumber.Text))
+            if (String.IsNullOrEmpty(TxtName.Text) || 
+                String.IsNullOrEmpty(TxtIdentityNumber.Text) ||
+                String.IsNullOrEmpty(TxtDepart.Text) || 
+                String.IsNullOrEmpty(TxtRank.Text) || 
+                String.IsNullOrEmpty(TxtPhoneNumber.Text) ||
+                string.IsNullOrEmpty(TxtcodeNumber.Text) ||
+                string.IsNullOrEmpty(TxtID.Text) ||
+                string.IsNullOrEmpty(TxtPW.Text) 
+                )
             {
                 MetroMessageBox.Show(this, "빈값은 저장할 수 없습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -105,6 +113,8 @@ namespace QRMiniproject
                 MetroMessageBox.Show(this, "신규버튼을 누르고 데이터를 저장하십시오", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            
 
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
@@ -160,14 +170,24 @@ namespace QRMiniproject
                 cmd.Parameters.Add(parmcodeNumber);
 
                 SqlParameter paramUserID = new SqlParameter("@UserID", SqlDbType.NVarChar,50);                                                  //CommandText 를  파라미터
-                paramUserID.Value = TxtcodeNumber.Text;
+                paramUserID.Value = TxtID.Text;
                 cmd.Parameters.Add(paramUserID);
 
                 SqlParameter paramUserPW = new SqlParameter("@Password", SqlDbType.NVarChar,50);                                                  //CommandText 를  파라미터
-                paramUserPW.Value = TxtcodeNumber.Text;
+                paramUserPW.Value = TxtPW.Text;
                 cmd.Parameters.Add(paramUserPW);
 
                 cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void TxtcodeNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsLetter((char)e.KeyCode) || char.IsWhiteSpace((char)e.KeyCode)) {
+                MetroMessageBox.Show(this, "숫자만 입력이가능합니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtcodeNumber.Text = TxtcodeNumber.Text.Substring(0, TxtcodeNumber.Text.Length - 1);
+                TxtcodeNumber.Focus();
+                return;
             }
         }
     }

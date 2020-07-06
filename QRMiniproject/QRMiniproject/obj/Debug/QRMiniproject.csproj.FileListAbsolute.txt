@@ -36,6 +36,7 @@ C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\bin\Debug\zxing.presentation.xm
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csprojAssemblyReference.cache
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.ClientForm.resources
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.EmployeeForm.resources
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.ProductForm.resources
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.GetQRForm.resources
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.InOutPutVisualForm.resources
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.InPutForm.resources
