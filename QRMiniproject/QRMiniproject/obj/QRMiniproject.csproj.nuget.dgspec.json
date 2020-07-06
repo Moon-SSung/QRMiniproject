@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\SRC\\Project\\QRMiniproject\\QRMiniproject\\QRMiniproject\\QRMiniproject.csproj": {}
+  },
+  "projects": {
+    "C:\\SRC\\Project\\QRMiniproject\\QRMiniproject\\QRMiniproject\\QRMiniproject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\SRC\\Project\\QRMiniproject\\QRMiniproject\\QRMiniproject\\QRMiniproject.csproj",
+        "projectName": "QRMiniproject",
+        "projectPath": "C:\\SRC\\Project\\QRMiniproject\\QRMiniproject\\QRMiniproject\\QRMiniproject.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\SRC\\Project\\QRMiniproject\\QRMiniproject\\QRMiniproject\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "AForge": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Video": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Video.DirectShow": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "MetroModernUI": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "OpenCvSharp3-AnyCPU": {
+              "target": "Package",
+              "version": "[4.0.0.20181129, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.3.9, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.16.5, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
