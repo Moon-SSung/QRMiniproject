@@ -91,6 +91,7 @@
             // 
             this.TxtPassword.Location = new System.Drawing.Point(197, 214);
             this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.PasswordChar = '●';
             this.TxtPassword.Size = new System.Drawing.Size(249, 25);
             this.TxtPassword.TabIndex = 8;
             this.TxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPassword_KeyPress);

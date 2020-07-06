@@ -1,14 +1,8 @@
 ﻿using MetroFramework;
 using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QRMiniproject
@@ -40,7 +34,7 @@ namespace QRMiniproject
             string strUserid = string.Empty;//이부분도
             try
             {
-                using (SqlConnection conn =new SqlConnection(Commons.ConnString))
+                using (SqlConnection conn = new SqlConnection(Commons.ConnString))
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -103,8 +97,8 @@ namespace QRMiniproject
             if (e.KeyChar == 13)
             {
                 LoginProcess();
-         
+
+            }
         }
-   }
     }
 }

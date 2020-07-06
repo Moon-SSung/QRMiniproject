@@ -162,7 +162,7 @@ namespace QRMiniproject
             // 
             // BtnLogOut
             // 
-            this.BtnLogOut.Location = new System.Drawing.Point(248, 513);
+            this.BtnLogOut.Location = new System.Drawing.Point(259, 513);
             this.BtnLogOut.Name = "BtnLogOut";
             this.BtnLogOut.Size = new System.Drawing.Size(140, 48);
             this.BtnLogOut.TabIndex = 11;

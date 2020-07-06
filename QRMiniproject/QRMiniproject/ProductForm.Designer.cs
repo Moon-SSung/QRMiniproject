@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ProductSprtContainer1 = new System.Windows.Forms.SplitContainer();
             this.PrdGridBox = new MetroFramework.Controls.MetroGrid();
             this.pIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +45,11 @@
             this.qR_ProjectDBDataSet = new QRMiniproject.QR_ProjectDBDataSet();
             this.ProductSprtContainer2 = new System.Windows.Forms.SplitContainer();
             this.PrdpictureBox = new System.Windows.Forms.PictureBox();
+            this.lblPrice = new MetroFramework.Controls.MetroLabel();
+            this.lblUnit = new MetroFramework.Controls.MetroLabel();
+            this.lblStandard = new MetroFramework.Controls.MetroLabel();
+            this.lblName = new MetroFramework.Controls.MetroLabel();
+            this.lblID = new MetroFramework.Controls.MetroLabel();
             this.TxtpdtPrice = new MetroFramework.Controls.MetroTextBox();
             this.TxtpdtUnit = new MetroFramework.Controls.MetroTextBox();
             this.TxtpdtStandard = new MetroFramework.Controls.MetroTextBox();
@@ -54,11 +59,6 @@
             this.BtnNew = new MetroFramework.Controls.MetroButton();
             this.productTblTableAdapter = new QRMiniproject.QR_ProjectDBDataSetTableAdapters.ProductTblTableAdapter();
             this.MlblPicture = new MetroFramework.Controls.MetroLabel();
-            this.lblID = new MetroFramework.Controls.MetroLabel();
-            this.lblName = new MetroFramework.Controls.MetroLabel();
-            this.lblStandard = new MetroFramework.Controls.MetroLabel();
-            this.lblUnit = new MetroFramework.Controls.MetroLabel();
-            this.lblPrice = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductSprtContainer1)).BeginInit();
             this.ProductSprtContainer1.Panel1.SuspendLayout();
             this.ProductSprtContainer1.Panel2.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             this.ProductSprtContainer1.Panel2.Controls.Add(this.ProductSprtContainer2);
             this.ProductSprtContainer1.Size = new System.Drawing.Size(1031, 546);
-            this.ProductSprtContainer1.SplitterDistance = 734;
+            this.ProductSprtContainer1.SplitterDistance = 708;
             this.ProductSprtContainer1.TabIndex = 0;
             // 
             // PrdGridBox
@@ -101,14 +101,14 @@
             this.PrdGridBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PrdGridBox.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.PrdGridBox.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PrdGridBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PrdGridBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.PrdGridBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PrdGridBox.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pIdxDataGridViewTextBoxColumn,
@@ -119,14 +119,14 @@
             this.priceDataGridViewTextBoxColumn,
             this.pictureDataGridViewImageColumn});
             this.PrdGridBox.DataSource = this.productTblBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PrdGridBox.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PrdGridBox.DefaultCellStyle = dataGridViewCellStyle8;
             this.PrdGridBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrdGridBox.EnableHeadersVisualStyles = false;
             this.PrdGridBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -136,19 +136,19 @@
             this.PrdGridBox.Name = "PrdGridBox";
             this.PrdGridBox.ReadOnly = true;
             this.PrdGridBox.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PrdGridBox.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PrdGridBox.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.PrdGridBox.RowHeadersWidth = 50;
             this.PrdGridBox.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.PrdGridBox.RowTemplate.Height = 27;
             this.PrdGridBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PrdGridBox.Size = new System.Drawing.Size(734, 546);
+            this.PrdGridBox.Size = new System.Drawing.Size(708, 546);
             this.PrdGridBox.TabIndex = 0;
             this.PrdGridBox.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrdGridBox_CellClick);
             // 
@@ -253,7 +253,7 @@
             this.ProductSprtContainer2.Panel2.Controls.Add(this.TxtpdtID);
             this.ProductSprtContainer2.Panel2.Controls.Add(this.BtnSave);
             this.ProductSprtContainer2.Panel2.Controls.Add(this.BtnNew);
-            this.ProductSprtContainer2.Size = new System.Drawing.Size(293, 546);
+            this.ProductSprtContainer2.Size = new System.Drawing.Size(319, 546);
             this.ProductSprtContainer2.SplitterDistance = 242;
             this.ProductSprtContainer2.TabIndex = 0;
             // 
@@ -263,11 +263,56 @@
             this.PrdpictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrdpictureBox.Location = new System.Drawing.Point(0, 0);
             this.PrdpictureBox.Name = "PrdpictureBox";
-            this.PrdpictureBox.Size = new System.Drawing.Size(293, 242);
+            this.PrdpictureBox.Size = new System.Drawing.Size(319, 242);
             this.PrdpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PrdpictureBox.TabIndex = 0;
             this.PrdpictureBox.TabStop = false;
             this.PrdpictureBox.Click += new System.EventHandler(this.PrdpictureBox_Click);
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.Location = new System.Drawing.Point(11, 158);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(81, 26);
+            this.lblPrice.TabIndex = 12;
+            this.lblPrice.Text = "가격";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblUnit
+            // 
+            this.lblUnit.Location = new System.Drawing.Point(11, 124);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(81, 26);
+            this.lblUnit.TabIndex = 11;
+            this.lblUnit.Text = "단위";
+            this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStandard
+            // 
+            this.lblStandard.Location = new System.Drawing.Point(11, 90);
+            this.lblStandard.Name = "lblStandard";
+            this.lblStandard.Size = new System.Drawing.Size(81, 26);
+            this.lblStandard.TabIndex = 10;
+            this.lblStandard.Text = "규격";
+            this.lblStandard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblName
+            // 
+            this.lblName.Location = new System.Drawing.Point(11, 56);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(81, 26);
+            this.lblName.TabIndex = 9;
+            this.lblName.Text = "제품이름";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblID
+            // 
+            this.lblID.Location = new System.Drawing.Point(11, 22);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(81, 26);
+            this.lblID.TabIndex = 8;
+            this.lblID.Text = "제품코드";
+            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TxtpdtPrice
             // 
@@ -284,7 +329,7 @@
             this.TxtpdtPrice.CustomButton.UseSelectable = true;
             this.TxtpdtPrice.CustomButton.Visible = false;
             this.TxtpdtPrice.Lines = new string[0];
-            this.TxtpdtPrice.Location = new System.Drawing.Point(86, 158);
+            this.TxtpdtPrice.Location = new System.Drawing.Point(98, 158);
             this.TxtpdtPrice.MaxLength = 32767;
             this.TxtpdtPrice.Name = "TxtpdtPrice";
             this.TxtpdtPrice.PasswordChar = '\0';
@@ -314,7 +359,7 @@
             this.TxtpdtUnit.CustomButton.UseSelectable = true;
             this.TxtpdtUnit.CustomButton.Visible = false;
             this.TxtpdtUnit.Lines = new string[0];
-            this.TxtpdtUnit.Location = new System.Drawing.Point(86, 124);
+            this.TxtpdtUnit.Location = new System.Drawing.Point(98, 124);
             this.TxtpdtUnit.MaxLength = 32767;
             this.TxtpdtUnit.Name = "TxtpdtUnit";
             this.TxtpdtUnit.PasswordChar = '\0';
@@ -344,7 +389,7 @@
             this.TxtpdtStandard.CustomButton.UseSelectable = true;
             this.TxtpdtStandard.CustomButton.Visible = false;
             this.TxtpdtStandard.Lines = new string[0];
-            this.TxtpdtStandard.Location = new System.Drawing.Point(86, 90);
+            this.TxtpdtStandard.Location = new System.Drawing.Point(98, 90);
             this.TxtpdtStandard.MaxLength = 32767;
             this.TxtpdtStandard.Name = "TxtpdtStandard";
             this.TxtpdtStandard.PasswordChar = '\0';
@@ -374,7 +419,7 @@
             this.TxtpdtName.CustomButton.UseSelectable = true;
             this.TxtpdtName.CustomButton.Visible = false;
             this.TxtpdtName.Lines = new string[0];
-            this.TxtpdtName.Location = new System.Drawing.Point(86, 56);
+            this.TxtpdtName.Location = new System.Drawing.Point(98, 56);
             this.TxtpdtName.MaxLength = 32767;
             this.TxtpdtName.Name = "TxtpdtName";
             this.TxtpdtName.PasswordChar = '\0';
@@ -404,7 +449,7 @@
             this.TxtpdtID.CustomButton.UseSelectable = true;
             this.TxtpdtID.CustomButton.Visible = false;
             this.TxtpdtID.Lines = new string[0];
-            this.TxtpdtID.Location = new System.Drawing.Point(86, 22);
+            this.TxtpdtID.Location = new System.Drawing.Point(98, 22);
             this.TxtpdtID.MaxLength = 32767;
             this.TxtpdtID.Name = "TxtpdtID";
             this.TxtpdtID.PasswordChar = '\0';
@@ -451,51 +496,6 @@
             this.MlblPicture.Size = new System.Drawing.Size(39, 20);
             this.MlblPicture.TabIndex = 1;
             this.MlblPicture.Text = "사진";
-            // 
-            // lblID
-            // 
-            this.lblID.Location = new System.Drawing.Point(11, 22);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(69, 26);
-            this.lblID.TabIndex = 8;
-            this.lblID.Text = "제품코드";
-            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblName
-            // 
-            this.lblName.Location = new System.Drawing.Point(11, 56);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(69, 26);
-            this.lblName.TabIndex = 9;
-            this.lblName.Text = "제품이름";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStandard
-            // 
-            this.lblStandard.Location = new System.Drawing.Point(11, 90);
-            this.lblStandard.Name = "lblStandard";
-            this.lblStandard.Size = new System.Drawing.Size(69, 26);
-            this.lblStandard.TabIndex = 10;
-            this.lblStandard.Text = "규격";
-            this.lblStandard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblUnit
-            // 
-            this.lblUnit.Location = new System.Drawing.Point(11, 124);
-            this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(69, 26);
-            this.lblUnit.TabIndex = 11;
-            this.lblUnit.Text = "단위";
-            this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.Location = new System.Drawing.Point(11, 158);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(69, 26);
-            this.lblPrice.TabIndex = 12;
-            this.lblPrice.Text = "가격";
-            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ProductForm
             // 
