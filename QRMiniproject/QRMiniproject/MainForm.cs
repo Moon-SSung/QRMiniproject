@@ -2,7 +2,6 @@
 using MetroFramework.Forms;
 using System;
 using System.Windows.Forms;
-using QRCoder;
 namespace QRMiniproject
 {
     public partial class MainForm : MetroForm
@@ -14,10 +13,9 @@ namespace QRMiniproject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //LoginForm loginForm = new LoginForm();
-            //loginForm.ShowDialog();
-            InPutForm inPutForm = new InPutForm();
-            inPutForm.Show();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+         
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

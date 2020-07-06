@@ -148,6 +148,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QR_ProjectDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QR_ProjectDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QR_ProjectDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +206,17 @@
     </None>
     <None Include="QR_ProjectDBDataSet.xss">
       <DependentUpon>QR_ProjectDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QR_ProjectDBDataSet1.xsc">
+      <DependentUpon>QR_ProjectDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QR_ProjectDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QR_ProjectDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QR_ProjectDBDataSet1.xss">
+      <DependentUpon>QR_ProjectDBDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
