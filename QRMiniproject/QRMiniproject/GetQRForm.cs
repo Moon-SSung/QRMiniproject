@@ -24,6 +24,7 @@ namespace QRMiniproject
 
         public GetQRForm()
         {
+            
             InitializeComponent();
         }
 
@@ -154,11 +155,13 @@ namespace QRMiniproject
 
         private void GetQRForm_Load(object sender, EventArgs e)
         {
+            MtrGetQRGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ClearTextControls();
             initializeDateTimePicker();            
             ViewGridData();
             UpdateCboQRCode1();
             UpdateCboQRCode2();
+
         }
 
         /// <summary>
