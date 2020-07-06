@@ -23,6 +23,7 @@ namespace QRMiniproject
         {
             InitializeComponent();
             //그리드 column을 데이터에 맞게 자동으로 설정해줌.
+            //저장
             GrdInput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
