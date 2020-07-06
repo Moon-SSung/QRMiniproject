@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.GrdClientTbl = new MetroFramework.Controls.MetroGrid();
+            this.CboSort = new System.Windows.Forms.ComboBox();
+            this.CboSituation = new System.Windows.Forms.ComboBox();
+            this.CboPersonnal = new System.Windows.Forms.ComboBox();
             this.BtnNew = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
-            this.TxtClientsituation = new System.Windows.Forms.TextBox();
             this.TxtClientpart = new System.Windows.Forms.TextBox();
             this.TxtClientOwner = new System.Windows.Forms.TextBox();
-            this.TxtClientSort = new System.Windows.Forms.TextBox();
             this.TxtClientName = new System.Windows.Forms.TextBox();
             this.TxtClientphoneNum = new System.Windows.Forms.TextBox();
             this.TxtClientNumber = new System.Windows.Forms.TextBox();
             this.TxtClientAddress = new System.Windows.Forms.TextBox();
-            this.TxtClientpersonnal = new System.Windows.Forms.TextBox();
             this.TxtClientidx = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -75,17 +76,17 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.CboSort);
+            this.splitContainer1.Panel2.Controls.Add(this.CboSituation);
+            this.splitContainer1.Panel2.Controls.Add(this.CboPersonnal);
             this.splitContainer1.Panel2.Controls.Add(this.BtnNew);
             this.splitContainer1.Panel2.Controls.Add(this.BtnSave);
-            this.splitContainer1.Panel2.Controls.Add(this.TxtClientsituation);
             this.splitContainer1.Panel2.Controls.Add(this.TxtClientpart);
             this.splitContainer1.Panel2.Controls.Add(this.TxtClientOwner);
-            this.splitContainer1.Panel2.Controls.Add(this.TxtClientSort);
             this.splitContainer1.Panel2.Controls.Add(this.TxtClientName);
             this.splitContainer1.Panel2.Controls.Add(this.TxtClientphoneNum);
             this.splitContainer1.Panel2.Controls.Add(this.TxtClientNumber);
             this.splitContainer1.Panel2.Controls.Add(this.TxtClientAddress);
-            this.splitContainer1.Panel2.Controls.Add(this.TxtClientpersonnal);
             this.splitContainer1.Panel2.Controls.Add(this.TxtClientidx);
             this.splitContainer1.Panel2.Controls.Add(this.label7);
             this.splitContainer1.Panel2.Controls.Add(this.label11);
@@ -98,8 +99,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.lblClienIndex);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(1124, 469);
-            this.splitContainer1.SplitterDistance = 772;
+            this.splitContainer1.Size = new System.Drawing.Size(1224, 511);
+            this.splitContainer1.SplitterDistance = 840;
             this.splitContainer1.TabIndex = 1;
             // 
             // GrdClientTbl
@@ -111,23 +112,23 @@
             this.GrdClientTbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GrdClientTbl.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GrdClientTbl.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GrdClientTbl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrdClientTbl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GrdClientTbl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GrdClientTbl.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GrdClientTbl.DefaultCellStyle = dataGridViewCellStyle8;
             this.GrdClientTbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GrdClientTbl.EnableHeadersVisualStyles = false;
             this.GrdClientTbl.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -136,28 +137,73 @@
             this.GrdClientTbl.Name = "GrdClientTbl";
             this.GrdClientTbl.ReadOnly = true;
             this.GrdClientTbl.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GrdClientTbl.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrdClientTbl.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GrdClientTbl.RowHeadersWidth = 51;
             this.GrdClientTbl.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GrdClientTbl.RowTemplate.Height = 27;
             this.GrdClientTbl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrdClientTbl.Size = new System.Drawing.Size(772, 469);
+            this.GrdClientTbl.Size = new System.Drawing.Size(840, 511);
             this.GrdClientTbl.TabIndex = 0;
             this.GrdClientTbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdClientTbl_CellClick);
             this.GrdClientTbl.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdClientTbl_CellContentClick);
             // 
+            // CboSort
+            // 
+            this.CboSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CboSort.FormattingEnabled = true;
+            this.CboSort.Items.AddRange(new object[] {
+            "제조업",
+            "서비스업",
+            "건설업",
+            "무역업",
+            "유통업"});
+            this.CboSort.Location = new System.Drawing.Point(124, 282);
+            this.CboSort.Name = "CboSort";
+            this.CboSort.Size = new System.Drawing.Size(217, 23);
+            this.CboSort.TabIndex = 13;
+            // 
+            // CboSituation
+            // 
+            this.CboSituation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CboSituation.FormattingEnabled = true;
+            this.CboSituation.Items.AddRange(new object[] {
+            "블랙기업",
+            "거래 중",
+            "거래중",
+            "거래 중지",
+            "파산/부도",
+            "거래중지"});
+            this.CboSituation.Location = new System.Drawing.Point(124, 344);
+            this.CboSituation.Name = "CboSituation";
+            this.CboSituation.Size = new System.Drawing.Size(218, 23);
+            this.CboSituation.TabIndex = 12;
+            this.CboSituation.SelectedIndexChanged += new System.EventHandler(this.CboSituation_SelectedIndexChanged);
+            // 
+            // CboPersonnal
+            // 
+            this.CboPersonnal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CboPersonnal.FormattingEnabled = true;
+            this.CboPersonnal.Items.AddRange(new object[] {
+            "개인",
+            "법인"});
+            this.CboPersonnal.Location = new System.Drawing.Point(124, 91);
+            this.CboPersonnal.Name = "CboPersonnal";
+            this.CboPersonnal.Size = new System.Drawing.Size(218, 23);
+            this.CboPersonnal.TabIndex = 12;
+            // 
             // BtnNew
             // 
-            this.BtnNew.Location = new System.Drawing.Point(124, 407);
+            this.BtnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnNew.Location = new System.Drawing.Point(71, 407);
             this.BtnNew.Name = "BtnNew";
-            this.BtnNew.Size = new System.Drawing.Size(83, 35);
+            this.BtnNew.Size = new System.Drawing.Size(119, 63);
             this.BtnNew.TabIndex = 11;
             this.BtnNew.Text = "신규";
             this.BtnNew.UseVisualStyleBackColor = true;
@@ -165,86 +211,76 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(229, 407);
+            this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSave.Location = new System.Drawing.Point(244, 407);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(83, 35);
+            this.BtnSave.Size = new System.Drawing.Size(119, 63);
             this.BtnSave.TabIndex = 11;
             this.BtnSave.Text = "등록";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // TxtClientsituation
-            // 
-            this.TxtClientsituation.Location = new System.Drawing.Point(124, 344);
-            this.TxtClientsituation.Name = "TxtClientsituation";
-            this.TxtClientsituation.Size = new System.Drawing.Size(188, 25);
-            this.TxtClientsituation.TabIndex = 10;
-            // 
             // TxtClientpart
             // 
+            this.TxtClientpart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtClientpart.Location = new System.Drawing.Point(124, 313);
             this.TxtClientpart.Name = "TxtClientpart";
-            this.TxtClientpart.Size = new System.Drawing.Size(188, 25);
+            this.TxtClientpart.Size = new System.Drawing.Size(218, 25);
             this.TxtClientpart.TabIndex = 9;
             // 
             // TxtClientOwner
             // 
+            this.TxtClientOwner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtClientOwner.Location = new System.Drawing.Point(124, 182);
             this.TxtClientOwner.Name = "TxtClientOwner";
-            this.TxtClientOwner.Size = new System.Drawing.Size(188, 25);
+            this.TxtClientOwner.Size = new System.Drawing.Size(218, 25);
             this.TxtClientOwner.TabIndex = 5;
-            // 
-            // TxtClientSort
-            // 
-            this.TxtClientSort.Location = new System.Drawing.Point(124, 282);
-            this.TxtClientSort.Name = "TxtClientSort";
-            this.TxtClientSort.Size = new System.Drawing.Size(188, 25);
-            this.TxtClientSort.TabIndex = 8;
             // 
             // TxtClientName
             // 
+            this.TxtClientName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtClientName.Location = new System.Drawing.Point(124, 151);
             this.TxtClientName.Name = "TxtClientName";
-            this.TxtClientName.Size = new System.Drawing.Size(188, 25);
+            this.TxtClientName.Size = new System.Drawing.Size(218, 25);
             this.TxtClientName.TabIndex = 4;
             // 
             // TxtClientphoneNum
             // 
+            this.TxtClientphoneNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtClientphoneNum.Location = new System.Drawing.Point(124, 251);
             this.TxtClientphoneNum.Name = "TxtClientphoneNum";
-            this.TxtClientphoneNum.Size = new System.Drawing.Size(188, 25);
+            this.TxtClientphoneNum.Size = new System.Drawing.Size(218, 25);
             this.TxtClientphoneNum.TabIndex = 7;
             // 
             // TxtClientNumber
             // 
+            this.TxtClientNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtClientNumber.Location = new System.Drawing.Point(124, 120);
             this.TxtClientNumber.Name = "TxtClientNumber";
-            this.TxtClientNumber.Size = new System.Drawing.Size(188, 25);
+            this.TxtClientNumber.Size = new System.Drawing.Size(218, 25);
             this.TxtClientNumber.TabIndex = 3;
+            this.TxtClientNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtClientNumber_KeyDown);
             // 
             // TxtClientAddress
             // 
+            this.TxtClientAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtClientAddress.Location = new System.Drawing.Point(124, 216);
             this.TxtClientAddress.Name = "TxtClientAddress";
-            this.TxtClientAddress.Size = new System.Drawing.Size(188, 25);
+            this.TxtClientAddress.Size = new System.Drawing.Size(218, 25);
             this.TxtClientAddress.TabIndex = 6;
-            // 
-            // TxtClientpersonnal
-            // 
-            this.TxtClientpersonnal.Location = new System.Drawing.Point(124, 89);
-            this.TxtClientpersonnal.Name = "TxtClientpersonnal";
-            this.TxtClientpersonnal.Size = new System.Drawing.Size(188, 25);
-            this.TxtClientpersonnal.TabIndex = 2;
             // 
             // TxtClientidx
             // 
+            this.TxtClientidx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtClientidx.Location = new System.Drawing.Point(124, 58);
             this.TxtClientidx.Name = "TxtClientidx";
-            this.TxtClientidx.Size = new System.Drawing.Size(188, 25);
+            this.TxtClientidx.ReadOnly = true;
+            this.TxtClientidx.Size = new System.Drawing.Size(218, 25);
             this.TxtClientidx.TabIndex = 1;
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(81, 219);
             this.label7.Name = "label7";
@@ -254,6 +290,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(79, 318);
             this.label11.Name = "label11";
@@ -263,6 +300,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(54, 189);
             this.label6.Name = "label6";
@@ -272,6 +310,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(41, 348);
             this.label10.Name = "label10";
@@ -281,6 +320,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(57, 126);
             this.label4.Name = "label4";
@@ -290,6 +330,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(81, 286);
             this.label9.Name = "label9";
@@ -299,6 +340,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(54, 157);
             this.label5.Name = "label5";
@@ -308,6 +350,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(51, 255);
             this.label8.Name = "label8";
@@ -317,6 +360,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(44, 92);
             this.label3.Name = "label3";
@@ -326,6 +370,7 @@
             // 
             // lblClienIndex
             // 
+            this.lblClienIndex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblClienIndex.AutoSize = true;
             this.lblClienIndex.Location = new System.Drawing.Point(43, 61);
             this.lblClienIndex.Name = "lblClienIndex";
@@ -335,22 +380,33 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "거래처등록";
+
+            // 
+            // clientTblBindingSource
+            // 
+            // 
+            // clientTblTableAdapter
+            // 
             // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 549);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1264, 591);
             this.Controls.Add(this.splitContainer1);
             this.Name = "ClientForm";
-            this.Text = "ClientForm";
+            this.Resizable = false;
+            this.Text = "거래처 관리 시스템";
             this.Load += new System.EventHandler(this.ClientForm_Load);
+            this.Resize += new System.EventHandler(this.ClientForm_Resize);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -367,15 +423,12 @@
         private MetroFramework.Controls.MetroGrid GrdClientTbl;
         private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.Button BtnSave;
-        private System.Windows.Forms.TextBox TxtClientsituation;
         private System.Windows.Forms.TextBox TxtClientpart;
         private System.Windows.Forms.TextBox TxtClientOwner;
-        private System.Windows.Forms.TextBox TxtClientSort;
         private System.Windows.Forms.TextBox TxtClientName;
         private System.Windows.Forms.TextBox TxtClientphoneNum;
         private System.Windows.Forms.TextBox TxtClientNumber;
         private System.Windows.Forms.TextBox TxtClientAddress;
-        private System.Windows.Forms.TextBox TxtClientpersonnal;
         private System.Windows.Forms.TextBox TxtClientidx;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
@@ -388,5 +441,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblClienIndex;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CboPersonnal;
+        private System.Windows.Forms.ComboBox CboSituation;
+        private System.Windows.Forms.ComboBox CboSort;
     }
 }
