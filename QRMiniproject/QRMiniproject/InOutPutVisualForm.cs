@@ -10,7 +10,7 @@ namespace QRMiniproject
 {
     public partial class InOutPutVisualForm : MetroForm
     {
-        
+
         public InOutPutVisualForm()
         {
             InitializeComponent();
@@ -18,9 +18,9 @@ namespace QRMiniproject
 
         private void InOutPutVisual_Load(object sender, EventArgs e)
         {
-           
+
             InputChart.Legends[0].Docking = Docking.Bottom;
-            InputChart.DataManipulator.Sort(PointSortOrder.Descending,InputChart.Series[0]);
+            InputChart.DataManipulator.Sort(PointSortOrder.Descending, InputChart.Series[0]);
             InputChart.Legends[0].Alignment = StringAlignment.Center;
             InputChart.Series[0]["PieLabelStyle"] = "OutSide";
             InputChart.Series[0].BorderWidth = 1;
@@ -39,6 +39,11 @@ namespace QRMiniproject
             OutChart.Series[0].Label = "#VALY ";
             OutChart.Text = "판매 총액";
 
+            OutPriceChart.DataManipulator.Sort(PointSortOrder.Descending, InputChart.Series[0]);
+            OutPriceChart.Legends[0].Alignment = StringAlignment.Center;
+            OutPriceChart.Series[0].BorderWidth = 1;
+            OutPriceChart.Series[0].BorderColor = Color.Black;
+            OutPriceChart.Text = "일별 판매액";
         }
         private void UpdateData()
         {
@@ -49,7 +54,7 @@ namespace QRMiniproject
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT sum(count) AS '수량', ID FROM InputTbl" +
-                                  " GROUP BY ID "+
+                                  " GROUP BY ID " +
                                   " ORDER BY '수량' ";
                 SqlDataReader reader = cmd.ExecuteReader();
                 InputChart.Series["Series1"].Points.Clear();
@@ -84,6 +89,27 @@ namespace QRMiniproject
                 }
                 OutChart.Series["Series1"].IsValueShownAsLabel = true;
 
+                reader.Close();
+                cmd.CommandText = @"SELECT sum(o.Count*p.Price), o.outdate from outputtbl as o
+                                     inner join ProductTbl as p
+                                        on o.ProductIdx = p.P_Idx
+                                     group by outdate ";
+                reader = cmd.ExecuteReader();
+                OutPriceChart.Series["Series1"].Points.Clear();
+                i = 0;
+                while (reader.Read())
+                {
+                    DataPoint point = new DataPoint();
+                    point.SetValueXY(reader[1], reader[0]);
+                    point.ToolTip = string.Format("{0}, {1}원", DateTime.Parse(reader[1].ToString()), reader[0]);
+                    OutPriceChart.Series["Series1"].Points.Add(point);
+                    OutPriceChart.Series["Series1"].Points[i++].LegendText = reader[1].ToString();
+
+                }
+                OutPriceChart.Series["Series1"].XValueType = ChartValueType.Date;
+                OutPriceChart.Series["Series1"].IsXValueIndexed = true;
+                OutPriceChart.Series["Series1"].IsValueShownAsLabel = true;
+
             }
         }
 
@@ -95,10 +121,10 @@ namespace QRMiniproject
             List<string> products = new List<string>();
             //string[] products = { "보드마카 뚜껑", "보드마카 몸체", "보드마카 하단", "보드마카 심", "보드마카 잉크" };  
             //int[] amount = { 100, 200, 300, 400, 500 };
-            
 
 
-            
+
+
             InputChart.Series[0].Points.Clear();
             InputChart.Series[0].Points.DataBindXY(products, amount);
             InputChart.Series[0].IsValueShownAsLabel = true;
@@ -106,8 +132,8 @@ namespace QRMiniproject
             for (int i = 0; i < 5; i++)
             {
                 //InputChart.Series[0].Points.AddXY(products[i], amount[i]);
-                
-                InputChart.Series[0].Points[i].LegendText = products[i]; 
+
+                InputChart.Series[0].Points[i].LegendText = products[i];
 
             }
             //InputChart.Series[0].Points.Clear();
@@ -115,7 +141,7 @@ namespace QRMiniproject
             //InputChart.Series[0].Points[0].SetValueY();
             //InputChart.Invalidate();
 
-         
+
         }
 
         private void BtnOutput_Click(object sender, EventArgs e)
@@ -124,7 +150,7 @@ namespace QRMiniproject
             List<string> products = new List<string>();
             //string[] products = { "보드마카(파)","보드마카(빨)","보드마카(검)","화이트보드(소)","화이트보드(중)","화이트보드(대)" };
             //int[] amount = { 50,60,40,50,20,30 };
-            
+
 
             InputChart.Series[0].Points.Clear();
             InputChart.Series[0].Points.DataBindXY(products, amount);
@@ -133,7 +159,7 @@ namespace QRMiniproject
             for (int i = 0; i < 6; i++)
             {
                 //InputChart.Series[0].Points.AddXY(products[i], amount[i]);
-             
+
                 InputChart.Series[0].Points[i].LegendText = products[i];
 
             }
