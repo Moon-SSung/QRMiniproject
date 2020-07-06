@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.GrdEmployeeTbl = new MetroFramework.Controls.MetroGrid();
             this.BtnNew = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.TxtUserId = new System.Windows.Forms.TextBox();
             this.TxtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.TxtRank = new System.Windows.Forms.TextBox();
-            this.TxtDepart = new System.Windows.Forms.TextBox();
             this.TxtIdentityNumber = new System.Windows.Forms.TextBox();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.TxtPW = new System.Windows.Forms.Label();
@@ -52,6 +50,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblmemberNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.CboDepart = new System.Windows.Forms.ComboBox();
+            this.CboRank = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,13 +71,13 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.CboRank);
+            this.splitContainer1.Panel2.Controls.Add(this.CboDepart);
             this.splitContainer1.Panel2.Controls.Add(this.BtnNew);
             this.splitContainer1.Panel2.Controls.Add(this.BtnSave);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.TxtPassword);
+            this.splitContainer1.Panel2.Controls.Add(this.TxtUserId);
             this.splitContainer1.Panel2.Controls.Add(this.TxtPhoneNumber);
-            this.splitContainer1.Panel2.Controls.Add(this.TxtRank);
-            this.splitContainer1.Panel2.Controls.Add(this.TxtDepart);
             this.splitContainer1.Panel2.Controls.Add(this.TxtIdentityNumber);
             this.splitContainer1.Panel2.Controls.Add(this.TxtName);
             this.splitContainer1.Panel2.Controls.Add(this.TxtPW);
@@ -90,9 +90,10 @@
             this.splitContainer1.Panel2.Controls.Add(this.lblName);
             this.splitContainer1.Panel2.Controls.Add(this.lblmemberNumber);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Cross;
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(812, 399);
-            this.splitContainer1.SplitterDistance = 545;
+            this.splitContainer1.Size = new System.Drawing.Size(1220, 517);
+            this.splitContainer1.SplitterDistance = 818;
             this.splitContainer1.TabIndex = 1;
             // 
             // GrdEmployeeTbl
@@ -104,23 +105,23 @@
             this.GrdEmployeeTbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GrdEmployeeTbl.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GrdEmployeeTbl.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GrdEmployeeTbl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrdEmployeeTbl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GrdEmployeeTbl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GrdEmployeeTbl.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GrdEmployeeTbl.DefaultCellStyle = dataGridViewCellStyle5;
             this.GrdEmployeeTbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GrdEmployeeTbl.EnableHeadersVisualStyles = false;
             this.GrdEmployeeTbl.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -129,27 +130,28 @@
             this.GrdEmployeeTbl.Name = "GrdEmployeeTbl";
             this.GrdEmployeeTbl.ReadOnly = true;
             this.GrdEmployeeTbl.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GrdEmployeeTbl.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrdEmployeeTbl.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GrdEmployeeTbl.RowHeadersWidth = 51;
             this.GrdEmployeeTbl.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GrdEmployeeTbl.RowTemplate.Height = 27;
             this.GrdEmployeeTbl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrdEmployeeTbl.Size = new System.Drawing.Size(545, 399);
+            this.GrdEmployeeTbl.Size = new System.Drawing.Size(818, 517);
             this.GrdEmployeeTbl.TabIndex = 0;
             this.GrdEmployeeTbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdEmployeeTbl_CellClick);
             // 
             // BtnNew
             // 
-            this.BtnNew.Location = new System.Drawing.Point(77, 352);
+            this.BtnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnNew.Location = new System.Drawing.Point(79, 418);
             this.BtnNew.Name = "BtnNew";
-            this.BtnNew.Size = new System.Drawing.Size(77, 30);
+            this.BtnNew.Size = new System.Drawing.Size(119, 63);
             this.BtnNew.TabIndex = 9;
             this.BtnNew.Text = "신규";
             this.BtnNew.UseVisualStyleBackColor = true;
@@ -157,159 +159,212 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(160, 352);
+            this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSave.Location = new System.Drawing.Point(241, 418);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(77, 30);
+            this.BtnSave.Size = new System.Drawing.Size(119, 63);
             this.BtnSave.TabIndex = 10;
             this.BtnSave.Text = "등록";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // textBox2
+            // TxtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(81, 321);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 25);
-            this.textBox2.TabIndex = 8;
+            this.TxtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtPassword.Location = new System.Drawing.Point(140, 340);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.Size = new System.Drawing.Size(220, 25);
+            this.TxtPassword.TabIndex = 8;
             // 
-            // textBox1
+            // TxtUserId
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 282);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 25);
-            this.textBox1.TabIndex = 7;
+            this.TxtUserId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtUserId.Location = new System.Drawing.Point(140, 301);
+            this.TxtUserId.Name = "TxtUserId";
+            this.TxtUserId.Size = new System.Drawing.Size(220, 25);
+            this.TxtUserId.TabIndex = 7;
             // 
             // TxtPhoneNumber
             // 
-            this.TxtPhoneNumber.Location = new System.Drawing.Point(81, 241);
+            this.TxtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtPhoneNumber.Location = new System.Drawing.Point(140, 260);
             this.TxtPhoneNumber.Name = "TxtPhoneNumber";
-            this.TxtPhoneNumber.Size = new System.Drawing.Size(156, 25);
+            this.TxtPhoneNumber.Size = new System.Drawing.Size(220, 25);
             this.TxtPhoneNumber.TabIndex = 6;
-            // 
-            // TxtRank
-            // 
-            this.TxtRank.Location = new System.Drawing.Point(81, 202);
-            this.TxtRank.Name = "TxtRank";
-            this.TxtRank.Size = new System.Drawing.Size(156, 25);
-            this.TxtRank.TabIndex = 5;
-            // 
-            // TxtDepart
-            // 
-            this.TxtDepart.Location = new System.Drawing.Point(81, 163);
-            this.TxtDepart.Name = "TxtDepart";
-            this.TxtDepart.Size = new System.Drawing.Size(156, 25);
-            this.TxtDepart.TabIndex = 4;
             // 
             // TxtIdentityNumber
             // 
-            this.TxtIdentityNumber.Location = new System.Drawing.Point(81, 124);
+            this.TxtIdentityNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtIdentityNumber.Location = new System.Drawing.Point(140, 143);
             this.TxtIdentityNumber.Name = "TxtIdentityNumber";
-            this.TxtIdentityNumber.Size = new System.Drawing.Size(156, 25);
+            this.TxtIdentityNumber.Size = new System.Drawing.Size(220, 25);
             this.TxtIdentityNumber.TabIndex = 3;
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(81, 85);
+            this.TxtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtName.Location = new System.Drawing.Point(140, 104);
             this.TxtName.Name = "TxtName";
-            this.TxtName.Size = new System.Drawing.Size(156, 25);
+            this.TxtName.Size = new System.Drawing.Size(220, 25);
             this.TxtName.TabIndex = 2;
             // 
             // TxtPW
             // 
+            this.TxtPW.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPW.AutoSize = true;
-            this.TxtPW.Location = new System.Drawing.Point(23, 324);
+            this.TxtPW.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TxtPW.Location = new System.Drawing.Point(44, 345);
             this.TxtPW.Name = "TxtPW";
-            this.TxtPW.Size = new System.Drawing.Size(67, 15);
+            this.TxtPW.Size = new System.Drawing.Size(71, 15);
             this.TxtPW.TabIndex = 0;
             this.TxtPW.Text = "패스워드";
             // 
             // TxtcodeNumber
             // 
-            this.TxtcodeNumber.Location = new System.Drawing.Point(81, 49);
+            this.TxtcodeNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtcodeNumber.Location = new System.Drawing.Point(140, 68);
             this.TxtcodeNumber.Name = "TxtcodeNumber";
-            this.TxtcodeNumber.Size = new System.Drawing.Size(156, 25);
+            this.TxtcodeNumber.Size = new System.Drawing.Size(220, 25);
             this.TxtcodeNumber.TabIndex = 1;
+            this.TxtcodeNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtcodeNumber_KeyDown);
             // 
             // TxtID
             // 
+            this.TxtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtID.AutoSize = true;
-            this.TxtID.Location = new System.Drawing.Point(23, 285);
+            this.TxtID.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TxtID.Location = new System.Drawing.Point(60, 306);
             this.TxtID.Name = "TxtID";
-            this.TxtID.Size = new System.Drawing.Size(52, 15);
+            this.TxtID.Size = new System.Drawing.Size(55, 15);
             this.TxtID.TabIndex = 0;
             this.TxtID.Text = "아이디";
             // 
             // lblphoneNumber
             // 
+            this.lblphoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblphoneNumber.AutoSize = true;
-            this.lblphoneNumber.Location = new System.Drawing.Point(23, 244);
+            this.lblphoneNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblphoneNumber.Location = new System.Drawing.Point(60, 265);
             this.lblphoneNumber.Name = "lblphoneNumber";
-            this.lblphoneNumber.Size = new System.Drawing.Size(52, 15);
+            this.lblphoneNumber.Size = new System.Drawing.Size(55, 15);
             this.lblphoneNumber.TabIndex = 0;
             this.lblphoneNumber.Text = "연락처";
             // 
             // lbllevel
             // 
+            this.lbllevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbllevel.AutoSize = true;
-            this.lbllevel.Location = new System.Drawing.Point(34, 205);
+            this.lbllevel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbllevel.Location = new System.Drawing.Point(76, 226);
             this.lbllevel.Name = "lbllevel";
-            this.lbllevel.Size = new System.Drawing.Size(37, 15);
+            this.lbllevel.Size = new System.Drawing.Size(39, 15);
             this.lbllevel.TabIndex = 0;
             this.lbllevel.Text = "직급";
             // 
             // lblcodeNumber
             // 
+            this.lblcodeNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblcodeNumber.AutoSize = true;
-            this.lblcodeNumber.Location = new System.Drawing.Point(8, 127);
+            this.lblcodeNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblcodeNumber.Location = new System.Drawing.Point(44, 148);
             this.lblcodeNumber.Name = "lblcodeNumber";
-            this.lblcodeNumber.Size = new System.Drawing.Size(67, 15);
+            this.lblcodeNumber.Size = new System.Drawing.Size(71, 15);
             this.lblcodeNumber.TabIndex = 0;
             this.lblcodeNumber.Text = "주민번호";
             // 
             // lblPart
             // 
+            this.lblPart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPart.AutoSize = true;
-            this.lblPart.Location = new System.Drawing.Point(34, 163);
+            this.lblPart.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPart.Location = new System.Drawing.Point(76, 187);
             this.lblPart.Name = "lblPart";
-            this.lblPart.Size = new System.Drawing.Size(37, 15);
+            this.lblPart.Size = new System.Drawing.Size(39, 15);
             this.lblPart.TabIndex = 0;
             this.lblPart.Text = "부서";
             // 
             // lblName
             // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(34, 88);
+            this.lblName.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblName.Location = new System.Drawing.Point(76, 107);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(37, 15);
+            this.lblName.Size = new System.Drawing.Size(39, 15);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "성명";
             // 
             // lblmemberNumber
             // 
+            this.lblmemberNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblmemberNumber.AutoSize = true;
-            this.lblmemberNumber.Location = new System.Drawing.Point(8, 52);
+            this.lblmemberNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblmemberNumber.Location = new System.Drawing.Point(44, 71);
             this.lblmemberNumber.Name = "lblmemberNumber";
-            this.lblmemberNumber.Size = new System.Drawing.Size(67, 15);
+            this.lblmemberNumber.Size = new System.Drawing.Size(71, 15);
             this.lblmemberNumber.TabIndex = 0;
             this.lblmemberNumber.Text = "사원번호";
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 10);
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(23, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(92, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "사원등록";
+            // 
+            // CboDepart
+            // 
+            this.CboDepart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CboDepart.FormattingEnabled = true;
+            this.CboDepart.Items.AddRange(new object[] {
+            "영업팀",
+            "재무팀",
+            "인사팀",
+            "생산팀",
+            "영업팀",
+            "전산팀",
+            "개발팀",
+            "경영지원팀",
+            "채권관리팀"});
+            this.CboDepart.Location = new System.Drawing.Point(140, 184);
+            this.CboDepart.Name = "CboDepart";
+            this.CboDepart.Size = new System.Drawing.Size(220, 23);
+            this.CboDepart.TabIndex = 12;
+            this.CboDepart.SelectedIndexChanged += new System.EventHandler(this.CboDepart_SelectedIndexChanged);
+            // 
+            // CboRank
+            // 
+            this.CboRank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CboRank.FormattingEnabled = true;
+            this.CboRank.Items.AddRange(new object[] {
+            "사원",
+            "대리",
+            "과장",
+            "차장",
+            "부장",
+            "전무",
+            "상무",
+            "이사",
+            "주임"});
+            this.CboRank.Location = new System.Drawing.Point(140, 223);
+            this.CboRank.Name = "CboRank";
+            this.CboRank.Size = new System.Drawing.Size(220, 23);
+            this.CboRank.TabIndex = 12;
+            this.CboRank.SelectedIndexChanged += new System.EventHandler(this.CboDepart_SelectedIndexChanged);
             // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 479);
+            this.ClientSize = new System.Drawing.Size(1260, 597);
             this.Controls.Add(this.splitContainer1);
             this.Name = "EmployeeForm";
-            this.Text = "EmployeeForm";
+            this.Resizable = false;
+            this.Text = "직원관리시스템";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -328,8 +383,6 @@
         private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.TextBox TxtPhoneNumber;
-        private System.Windows.Forms.TextBox TxtRank;
-        private System.Windows.Forms.TextBox TxtDepart;
         private System.Windows.Forms.TextBox TxtIdentityNumber;
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.TextBox TxtcodeNumber;
@@ -340,9 +393,11 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblmemberNumber;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtPassword;
+        private System.Windows.Forms.TextBox TxtUserId;
         private System.Windows.Forms.Label TxtPW;
         private System.Windows.Forms.Label TxtID;
+        private System.Windows.Forms.ComboBox CboDepart;
+        private System.Windows.Forms.ComboBox CboRank;
     }
 }

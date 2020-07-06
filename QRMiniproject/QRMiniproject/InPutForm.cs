@@ -1,23 +1,12 @@
 ﻿using MetroFramework.Forms;
-using OpenCvSharp;
-using OpenCvSharp.Extensions;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing;
-using AForge;
 using AForge.Video.DirectShow;
-using ZXing.QrCode.Internal;
 using AForge.Video;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using MetroFramework;
 
 namespace QRMiniproject
@@ -66,6 +55,7 @@ namespace QRMiniproject
             captureDevice = new VideoCaptureDevice(FilterInfoCollection[CboDevice.SelectedIndex].MonikerString);
             captureDevice.NewFrame += captureDevice_NewFrame;
             captureDevice.Start();
+            Picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
             timer1.Start();
         }
 
@@ -74,6 +64,7 @@ namespace QRMiniproject
             //throw new NotImplementedException();
             Picturebox.Image = (Bitmap)eventArgs.Frame.Clone();
 
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -194,6 +185,14 @@ namespace QRMiniproject
             if(e.KeyChar == 13)
             {
                 Saveprocess();
+            }
+        }
+
+        private void CameraOff_Click(object sender, EventArgs e)
+        {
+            if (captureDevice != null && captureDevice.IsRunning) {
+                captureDevice.Stop();
+                captureDevice = null;
             }
         }
     }

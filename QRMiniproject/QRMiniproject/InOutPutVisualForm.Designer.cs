@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.InputTab = new MetroFramework.Controls.MetroTabPage();
-            this.OutTab = new MetroFramework.Controls.MetroTabPage();
             this.InputChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.OutTab = new MetroFramework.Controls.MetroTabPage();
             this.OutChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroTabControl1.SuspendLayout();
             this.InputTab.SuspendLayout();
-            this.OutTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputChart)).BeginInit();
+            this.OutTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OutChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.metroTabControl1.Controls.Add(this.OutTab);
             this.metroTabControl1.Location = new System.Drawing.Point(24, 64);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(886, 451);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
@@ -73,6 +73,25 @@
             this.InputTab.VerticalScrollbarHighlightOnWheel = false;
             this.InputTab.VerticalScrollbarSize = 10;
             // 
+            // InputChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.InputChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.InputChart.Legends.Add(legend1);
+            this.InputChart.Location = new System.Drawing.Point(3, 3);
+            this.InputChart.Name = "InputChart";
+            this.InputChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.InputChart.Series.Add(series1);
+            this.InputChart.Size = new System.Drawing.Size(872, 417);
+            this.InputChart.TabIndex = 2;
+            this.InputChart.Text = "chart1";
+            // 
             // OutTab
             // 
             this.OutTab.Controls.Add(this.OutChart);
@@ -88,40 +107,21 @@
             this.OutTab.VerticalScrollbarHighlightOnWheel = false;
             this.OutTab.VerticalScrollbarSize = 10;
             // 
-            // InputChart
-            // 
-            chartArea5.Name = "ChartArea1";
-            this.InputChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.InputChart.Legends.Add(legend5);
-            this.InputChart.Location = new System.Drawing.Point(3, 3);
-            this.InputChart.Name = "InputChart";
-            this.InputChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.InputChart.Series.Add(series5);
-            this.InputChart.Size = new System.Drawing.Size(872, 417);
-            this.InputChart.TabIndex = 2;
-            this.InputChart.Text = "chart1";
-            // 
             // OutChart
             // 
-            chartArea6.Name = "ChartArea1";
-            this.OutChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.OutChart.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.OutChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.OutChart.Legends.Add(legend2);
             this.OutChart.Location = new System.Drawing.Point(3, 3);
             this.OutChart.Name = "OutChart";
             this.OutChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series6.IsValueShownAsLabel = true;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.OutChart.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.OutChart.Series.Add(series2);
             this.OutChart.Size = new System.Drawing.Size(872, 417);
             this.OutChart.TabIndex = 2;
             this.OutChart.Text = "chart1";
@@ -138,8 +138,8 @@
             this.Load += new System.EventHandler(this.InOutPutVisual_Load);
             this.metroTabControl1.ResumeLayout(false);
             this.InputTab.ResumeLayout(false);
-            this.OutTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.InputChart)).EndInit();
+            this.OutTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OutChart)).EndInit();
             this.ResumeLayout(false);
 
