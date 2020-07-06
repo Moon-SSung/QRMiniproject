@@ -22,8 +22,12 @@ namespace QRMiniproject
         public InPutForm()
         {
             InitializeComponent();
+            //그리드 column을 데이터에 맞게 자동으로 설정해줌.
+            GrdInput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        
+        
         private void InPutForm_Load(object sender, EventArgs e)
         {
             FilterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
