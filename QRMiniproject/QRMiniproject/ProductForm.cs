@@ -17,6 +17,7 @@ namespace QRMiniproject
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// 폼 로드
         /// </summary>
@@ -88,17 +89,16 @@ namespace QRMiniproject
                 if (!string.IsNullOrEmpty(data.Cells[6].Value.ToString()))
                 {
 
-                    byte[] bytes = (byte[])data.Cells[6].Value;;
+                    byte[] bytes = (byte[])data.Cells[6].Value; ;
                     MemoryStream ms = new MemoryStream(bytes);
                     PrdpictureBox.Image = Image.FromStream(ms);
                 }
-                else {
+                else
+                {
                     PrdpictureBox.Image = null;
                 }
             }
             mode = "UPDATE";
-            PrdGridBox.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
         }
         /// <summary>
         /// 텍스트박스 클리어 메소드

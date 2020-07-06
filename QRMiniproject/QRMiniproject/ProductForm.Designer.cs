@@ -45,11 +45,6 @@
             this.qR_ProjectDBDataSet = new QRMiniproject.QR_ProjectDBDataSet();
             this.ProductSprtContainer2 = new System.Windows.Forms.SplitContainer();
             this.PrdpictureBox = new System.Windows.Forms.PictureBox();
-            this.lblPrice = new MetroFramework.Controls.MetroLabel();
-            this.lblUnit = new MetroFramework.Controls.MetroLabel();
-            this.lblStandard = new MetroFramework.Controls.MetroLabel();
-            this.lblName = new MetroFramework.Controls.MetroLabel();
-            this.lblID = new MetroFramework.Controls.MetroLabel();
             this.TxtpdtPrice = new MetroFramework.Controls.MetroTextBox();
             this.TxtpdtUnit = new MetroFramework.Controls.MetroTextBox();
             this.TxtpdtStandard = new MetroFramework.Controls.MetroTextBox();
@@ -58,6 +53,12 @@
             this.BtnSave = new MetroFramework.Controls.MetroButton();
             this.BtnNew = new MetroFramework.Controls.MetroButton();
             this.productTblTableAdapter = new QRMiniproject.QR_ProjectDBDataSetTableAdapters.ProductTblTableAdapter();
+            this.MlblPicture = new MetroFramework.Controls.MetroLabel();
+            this.lblID = new MetroFramework.Controls.MetroLabel();
+            this.lblName = new MetroFramework.Controls.MetroLabel();
+            this.lblStandard = new MetroFramework.Controls.MetroLabel();
+            this.lblUnit = new MetroFramework.Controls.MetroLabel();
+            this.lblPrice = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductSprtContainer1)).BeginInit();
             this.ProductSprtContainer1.Panel1.SuspendLayout();
             this.ProductSprtContainer1.Panel2.SuspendLayout();
@@ -75,21 +76,19 @@
             // ProductSprtContainer1
             // 
             this.ProductSprtContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductSprtContainer1.Location = new System.Drawing.Point(18, 60);
-            this.ProductSprtContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ProductSprtContainer1.Location = new System.Drawing.Point(20, 60);
             this.ProductSprtContainer1.Name = "ProductSprtContainer1";
             // 
             // ProductSprtContainer1.Panel1
             // 
             this.ProductSprtContainer1.Panel1.BackColor = System.Drawing.Color.White;
             this.ProductSprtContainer1.Panel1.Controls.Add(this.PrdGridBox);
-            this.ProductSprtContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // ProductSprtContainer1.Panel2
             // 
             this.ProductSprtContainer1.Panel2.Controls.Add(this.ProductSprtContainer2);
-            this.ProductSprtContainer1.Size = new System.Drawing.Size(995, 477);
-            this.ProductSprtContainer1.SplitterDistance = 708;
+            this.ProductSprtContainer1.Size = new System.Drawing.Size(1031, 546);
+            this.ProductSprtContainer1.SplitterDistance = 734;
             this.ProductSprtContainer1.TabIndex = 0;
             // 
             // PrdGridBox
@@ -98,10 +97,8 @@
             this.PrdGridBox.AllowUserToDeleteRows = false;
             this.PrdGridBox.AllowUserToResizeRows = false;
             this.PrdGridBox.AutoGenerateColumns = false;
-            this.PrdGridBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.PrdGridBox.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.PrdGridBox.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.PrdGridBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PrdGridBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PrdGridBox.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.PrdGridBox.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -130,11 +127,11 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.PrdGridBox.DefaultCellStyle = dataGridViewCellStyle2;
+            this.PrdGridBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrdGridBox.EnableHeadersVisualStyles = false;
             this.PrdGridBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.PrdGridBox.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.PrdGridBox.Location = new System.Drawing.Point(0, -1);
-            this.PrdGridBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PrdGridBox.Location = new System.Drawing.Point(0, 0);
             this.PrdGridBox.MultiSelect = false;
             this.PrdGridBox.Name = "PrdGridBox";
             this.PrdGridBox.ReadOnly = true;
@@ -151,10 +148,8 @@
             this.PrdGridBox.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.PrdGridBox.RowTemplate.Height = 27;
             this.PrdGridBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PrdGridBox.Size = new System.Drawing.Size(708, 489);
-            this.PrdGridBox.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PrdGridBox.Size = new System.Drawing.Size(734, 546);
             this.PrdGridBox.TabIndex = 0;
-            this.PrdGridBox.UseStyleColors = true;
             this.PrdGridBox.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrdGridBox_CellClick);
             // 
             // pIdxDataGridViewTextBoxColumn
@@ -164,8 +159,8 @@
             this.pIdxDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.pIdxDataGridViewTextBoxColumn.Name = "pIdxDataGridViewTextBoxColumn";
             this.pIdxDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pIdxDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.pIdxDataGridViewTextBoxColumn.Visible = false;
+            this.pIdxDataGridViewTextBoxColumn.Width = 61;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -174,6 +169,7 @@
             this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 114;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -182,6 +178,7 @@
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 113;
             // 
             // standardDataGridViewTextBoxColumn
             // 
@@ -190,6 +187,7 @@
             this.standardDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.standardDataGridViewTextBoxColumn.Name = "standardDataGridViewTextBoxColumn";
             this.standardDataGridViewTextBoxColumn.ReadOnly = true;
+            this.standardDataGridViewTextBoxColumn.Width = 114;
             // 
             // unitDataGridViewTextBoxColumn
             // 
@@ -198,6 +196,7 @@
             this.unitDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
             this.unitDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitDataGridViewTextBoxColumn.Width = 114;
             // 
             // priceDataGridViewTextBoxColumn
             // 
@@ -206,6 +205,7 @@
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 113;
             // 
             // pictureDataGridViewImageColumn
             // 
@@ -216,6 +216,7 @@
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
             this.pictureDataGridViewImageColumn.ReadOnly = true;
             this.pictureDataGridViewImageColumn.Visible = false;
+            this.pictureDataGridViewImageColumn.Width = 114;
             // 
             // productTblBindingSource
             // 
@@ -231,7 +232,6 @@
             // 
             this.ProductSprtContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductSprtContainer2.Location = new System.Drawing.Point(0, 0);
-            this.ProductSprtContainer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProductSprtContainer2.Name = "ProductSprtContainer2";
             this.ProductSprtContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -253,9 +253,8 @@
             this.ProductSprtContainer2.Panel2.Controls.Add(this.TxtpdtID);
             this.ProductSprtContainer2.Panel2.Controls.Add(this.BtnSave);
             this.ProductSprtContainer2.Panel2.Controls.Add(this.BtnNew);
-            this.ProductSprtContainer2.Size = new System.Drawing.Size(283, 477);
-            this.ProductSprtContainer2.SplitterDistance = 210;
-            this.ProductSprtContainer2.SplitterWidth = 3;
+            this.ProductSprtContainer2.Size = new System.Drawing.Size(293, 546);
+            this.ProductSprtContainer2.SplitterDistance = 242;
             this.ProductSprtContainer2.TabIndex = 0;
             // 
             // PrdpictureBox
@@ -263,79 +262,29 @@
             this.PrdpictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PrdpictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrdpictureBox.Location = new System.Drawing.Point(0, 0);
-            this.PrdpictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PrdpictureBox.Name = "PrdpictureBox";
-            this.PrdpictureBox.Size = new System.Drawing.Size(283, 210);
+            this.PrdpictureBox.Size = new System.Drawing.Size(293, 242);
             this.PrdpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PrdpictureBox.TabIndex = 0;
             this.PrdpictureBox.TabStop = false;
             this.PrdpictureBox.Click += new System.EventHandler(this.PrdpictureBox_Click);
             // 
-            // lblPrice
-            // 
-            this.lblPrice.Location = new System.Drawing.Point(10, 159);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(67, 21);
-            this.lblPrice.TabIndex = 12;
-            this.lblPrice.Text = "가격";
-            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblUnit
-            // 
-            this.lblUnit.Location = new System.Drawing.Point(10, 127);
-            this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(67, 21);
-            this.lblUnit.TabIndex = 11;
-            this.lblUnit.Text = "단위";
-            this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStandard
-            // 
-            this.lblStandard.Location = new System.Drawing.Point(10, 95);
-            this.lblStandard.Name = "lblStandard";
-            this.lblStandard.Size = new System.Drawing.Size(67, 21);
-            this.lblStandard.TabIndex = 10;
-            this.lblStandard.Text = "규격";
-            this.lblStandard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblName
-            // 
-            this.lblName.Location = new System.Drawing.Point(10, 63);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(67, 21);
-            this.lblName.TabIndex = 9;
-            this.lblName.Text = "제품이름";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblID
-            // 
-            this.lblID.Location = new System.Drawing.Point(10, 32);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(67, 21);
-            this.lblID.TabIndex = 8;
-            this.lblID.Text = "제품코드";
-            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // TxtpdtPrice
             // 
-            this.TxtpdtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.TxtpdtPrice.CustomButton.Image = null;
-            this.TxtpdtPrice.CustomButton.Location = new System.Drawing.Point(152, 1);
-            this.TxtpdtPrice.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtPrice.CustomButton.Location = new System.Drawing.Point(173, 2);
             this.TxtpdtPrice.CustomButton.Name = "";
-            this.TxtpdtPrice.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.TxtpdtPrice.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TxtpdtPrice.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TxtpdtPrice.CustomButton.TabIndex = 1;
             this.TxtpdtPrice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TxtpdtPrice.CustomButton.UseSelectable = true;
             this.TxtpdtPrice.CustomButton.Visible = false;
             this.TxtpdtPrice.Lines = new string[0];
-            this.TxtpdtPrice.Location = new System.Drawing.Point(95, 159);
-            this.TxtpdtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtPrice.Location = new System.Drawing.Point(86, 158);
             this.TxtpdtPrice.MaxLength = 32767;
             this.TxtpdtPrice.Name = "TxtpdtPrice";
             this.TxtpdtPrice.PasswordChar = '\0';
@@ -344,7 +293,7 @@
             this.TxtpdtPrice.SelectionLength = 0;
             this.TxtpdtPrice.SelectionStart = 0;
             this.TxtpdtPrice.ShortcutsEnabled = true;
-            this.TxtpdtPrice.Size = new System.Drawing.Size(172, 21);
+            this.TxtpdtPrice.Size = new System.Drawing.Size(197, 26);
             this.TxtpdtPrice.TabIndex = 7;
             this.TxtpdtPrice.UseSelectable = true;
             this.TxtpdtPrice.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -352,24 +301,20 @@
             // 
             // TxtpdtUnit
             // 
-            this.TxtpdtUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.TxtpdtUnit.CustomButton.Image = null;
-            this.TxtpdtUnit.CustomButton.Location = new System.Drawing.Point(152, 1);
-            this.TxtpdtUnit.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtUnit.CustomButton.Location = new System.Drawing.Point(173, 2);
             this.TxtpdtUnit.CustomButton.Name = "";
-            this.TxtpdtUnit.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.TxtpdtUnit.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TxtpdtUnit.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TxtpdtUnit.CustomButton.TabIndex = 1;
             this.TxtpdtUnit.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TxtpdtUnit.CustomButton.UseSelectable = true;
             this.TxtpdtUnit.CustomButton.Visible = false;
             this.TxtpdtUnit.Lines = new string[0];
-            this.TxtpdtUnit.Location = new System.Drawing.Point(95, 127);
-            this.TxtpdtUnit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtUnit.Location = new System.Drawing.Point(86, 124);
             this.TxtpdtUnit.MaxLength = 32767;
             this.TxtpdtUnit.Name = "TxtpdtUnit";
             this.TxtpdtUnit.PasswordChar = '\0';
@@ -378,7 +323,7 @@
             this.TxtpdtUnit.SelectionLength = 0;
             this.TxtpdtUnit.SelectionStart = 0;
             this.TxtpdtUnit.ShortcutsEnabled = true;
-            this.TxtpdtUnit.Size = new System.Drawing.Size(172, 21);
+            this.TxtpdtUnit.Size = new System.Drawing.Size(197, 26);
             this.TxtpdtUnit.TabIndex = 6;
             this.TxtpdtUnit.UseSelectable = true;
             this.TxtpdtUnit.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -386,24 +331,20 @@
             // 
             // TxtpdtStandard
             // 
-            this.TxtpdtStandard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.TxtpdtStandard.CustomButton.Image = null;
-            this.TxtpdtStandard.CustomButton.Location = new System.Drawing.Point(152, 1);
-            this.TxtpdtStandard.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtStandard.CustomButton.Location = new System.Drawing.Point(173, 2);
             this.TxtpdtStandard.CustomButton.Name = "";
-            this.TxtpdtStandard.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.TxtpdtStandard.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TxtpdtStandard.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TxtpdtStandard.CustomButton.TabIndex = 1;
             this.TxtpdtStandard.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TxtpdtStandard.CustomButton.UseSelectable = true;
             this.TxtpdtStandard.CustomButton.Visible = false;
             this.TxtpdtStandard.Lines = new string[0];
-            this.TxtpdtStandard.Location = new System.Drawing.Point(95, 95);
-            this.TxtpdtStandard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtStandard.Location = new System.Drawing.Point(86, 90);
             this.TxtpdtStandard.MaxLength = 32767;
             this.TxtpdtStandard.Name = "TxtpdtStandard";
             this.TxtpdtStandard.PasswordChar = '\0';
@@ -412,7 +353,7 @@
             this.TxtpdtStandard.SelectionLength = 0;
             this.TxtpdtStandard.SelectionStart = 0;
             this.TxtpdtStandard.ShortcutsEnabled = true;
-            this.TxtpdtStandard.Size = new System.Drawing.Size(172, 21);
+            this.TxtpdtStandard.Size = new System.Drawing.Size(197, 26);
             this.TxtpdtStandard.TabIndex = 5;
             this.TxtpdtStandard.UseSelectable = true;
             this.TxtpdtStandard.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -420,24 +361,20 @@
             // 
             // TxtpdtName
             // 
-            this.TxtpdtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.TxtpdtName.CustomButton.Image = null;
-            this.TxtpdtName.CustomButton.Location = new System.Drawing.Point(152, 1);
-            this.TxtpdtName.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtName.CustomButton.Location = new System.Drawing.Point(173, 2);
             this.TxtpdtName.CustomButton.Name = "";
-            this.TxtpdtName.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.TxtpdtName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TxtpdtName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TxtpdtName.CustomButton.TabIndex = 1;
             this.TxtpdtName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TxtpdtName.CustomButton.UseSelectable = true;
             this.TxtpdtName.CustomButton.Visible = false;
             this.TxtpdtName.Lines = new string[0];
-            this.TxtpdtName.Location = new System.Drawing.Point(95, 63);
-            this.TxtpdtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtName.Location = new System.Drawing.Point(86, 56);
             this.TxtpdtName.MaxLength = 32767;
             this.TxtpdtName.Name = "TxtpdtName";
             this.TxtpdtName.PasswordChar = '\0';
@@ -446,7 +383,7 @@
             this.TxtpdtName.SelectionLength = 0;
             this.TxtpdtName.SelectionStart = 0;
             this.TxtpdtName.ShortcutsEnabled = true;
-            this.TxtpdtName.Size = new System.Drawing.Size(172, 21);
+            this.TxtpdtName.Size = new System.Drawing.Size(197, 26);
             this.TxtpdtName.TabIndex = 4;
             this.TxtpdtName.UseSelectable = true;
             this.TxtpdtName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -454,24 +391,20 @@
             // 
             // TxtpdtID
             // 
-            this.TxtpdtID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.TxtpdtID.CustomButton.Image = null;
-            this.TxtpdtID.CustomButton.Location = new System.Drawing.Point(152, 1);
-            this.TxtpdtID.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtID.CustomButton.Location = new System.Drawing.Point(173, 2);
             this.TxtpdtID.CustomButton.Name = "";
-            this.TxtpdtID.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.TxtpdtID.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TxtpdtID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TxtpdtID.CustomButton.TabIndex = 1;
             this.TxtpdtID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TxtpdtID.CustomButton.UseSelectable = true;
             this.TxtpdtID.CustomButton.Visible = false;
             this.TxtpdtID.Lines = new string[0];
-            this.TxtpdtID.Location = new System.Drawing.Point(95, 32);
-            this.TxtpdtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtpdtID.Location = new System.Drawing.Point(86, 22);
             this.TxtpdtID.MaxLength = 32767;
             this.TxtpdtID.Name = "TxtpdtID";
             this.TxtpdtID.PasswordChar = '\0';
@@ -480,7 +413,7 @@
             this.TxtpdtID.SelectionLength = 0;
             this.TxtpdtID.SelectionStart = 0;
             this.TxtpdtID.ShortcutsEnabled = true;
-            this.TxtpdtID.Size = new System.Drawing.Size(172, 21);
+            this.TxtpdtID.Size = new System.Drawing.Size(197, 26);
             this.TxtpdtID.TabIndex = 3;
             this.TxtpdtID.UseSelectable = true;
             this.TxtpdtID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -488,11 +421,9 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSave.Location = new System.Drawing.Point(147, 188);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnSave.Location = new System.Drawing.Point(153, 194);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(114, 24);
+            this.BtnSave.Size = new System.Drawing.Size(130, 30);
             this.BtnSave.TabIndex = 2;
             this.BtnSave.Text = "저장";
             this.BtnSave.UseSelectable = true;
@@ -500,11 +431,9 @@
             // 
             // BtnNew
             // 
-            this.BtnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnNew.Location = new System.Drawing.Point(31, 188);
-            this.BtnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnNew.Location = new System.Drawing.Point(20, 194);
             this.BtnNew.Name = "BtnNew";
-            this.BtnNew.Size = new System.Drawing.Size(114, 24);
+            this.BtnNew.Size = new System.Drawing.Size(130, 30);
             this.BtnNew.TabIndex = 1;
             this.BtnNew.Text = "신규";
             this.BtnNew.UseSelectable = true;
@@ -514,16 +443,68 @@
             // 
             this.productTblTableAdapter.ClearBeforeFill = true;
             // 
+            // MlblPicture
+            // 
+            this.MlblPicture.AutoSize = true;
+            this.MlblPicture.Location = new System.Drawing.Point(758, 37);
+            this.MlblPicture.Name = "MlblPicture";
+            this.MlblPicture.Size = new System.Drawing.Size(39, 20);
+            this.MlblPicture.TabIndex = 1;
+            this.MlblPicture.Text = "사진";
+            // 
+            // lblID
+            // 
+            this.lblID.Location = new System.Drawing.Point(11, 22);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(69, 26);
+            this.lblID.TabIndex = 8;
+            this.lblID.Text = "제품코드";
+            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblName
+            // 
+            this.lblName.Location = new System.Drawing.Point(11, 56);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(69, 26);
+            this.lblName.TabIndex = 9;
+            this.lblName.Text = "제품이름";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStandard
+            // 
+            this.lblStandard.Location = new System.Drawing.Point(11, 90);
+            this.lblStandard.Name = "lblStandard";
+            this.lblStandard.Size = new System.Drawing.Size(69, 26);
+            this.lblStandard.TabIndex = 10;
+            this.lblStandard.Text = "규격";
+            this.lblStandard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblUnit
+            // 
+            this.lblUnit.Location = new System.Drawing.Point(11, 124);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(69, 26);
+            this.lblUnit.TabIndex = 11;
+            this.lblUnit.Text = "단위";
+            this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.Location = new System.Drawing.Point(11, 158);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(69, 26);
+            this.lblPrice.TabIndex = 12;
+            this.lblPrice.Text = "가격";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 553);
+            this.ClientSize = new System.Drawing.Size(1071, 626);
+            this.Controls.Add(this.MlblPicture);
             this.Controls.Add(this.ProductSprtContainer1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProductForm";
-            this.Padding = new System.Windows.Forms.Padding(18, 60, 18, 16);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "ProductForm";
             this.Load += new System.EventHandler(this.ProductForm_Load);
             this.ProductSprtContainer1.Panel1.ResumeLayout(false);
@@ -539,6 +520,7 @@
             this.ProductSprtContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PrdpictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -553,16 +535,12 @@
         private System.Windows.Forms.PictureBox PrdpictureBox;
         private MetroFramework.Controls.MetroButton BtnSave;
         private MetroFramework.Controls.MetroButton BtnNew;
+        private MetroFramework.Controls.MetroLabel MlblPicture;
         private MetroFramework.Controls.MetroTextBox TxtpdtID;
         private MetroFramework.Controls.MetroTextBox TxtpdtPrice;
         private MetroFramework.Controls.MetroTextBox TxtpdtUnit;
         private MetroFramework.Controls.MetroTextBox TxtpdtStandard;
         private MetroFramework.Controls.MetroTextBox TxtpdtName;
-        private MetroFramework.Controls.MetroLabel lblPrice;
-        private MetroFramework.Controls.MetroLabel lblUnit;
-        private MetroFramework.Controls.MetroLabel lblStandard;
-        private MetroFramework.Controls.MetroLabel lblName;
-        private MetroFramework.Controls.MetroLabel lblID;
         private System.Windows.Forms.DataGridViewTextBoxColumn pIdxDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -570,5 +548,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
+        private MetroFramework.Controls.MetroLabel lblPrice;
+        private MetroFramework.Controls.MetroLabel lblUnit;
+        private MetroFramework.Controls.MetroLabel lblStandard;
+        private MetroFramework.Controls.MetroLabel lblName;
+        private MetroFramework.Controls.MetroLabel lblID;
     }
 }

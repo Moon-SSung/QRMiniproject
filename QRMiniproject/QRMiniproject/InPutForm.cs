@@ -8,6 +8,8 @@ using AForge.Video.DirectShow;
 using AForge.Video;
 using System.Data.SqlClient;
 using MetroFramework;
+using System.Data.Common;
+using System.Runtime.Remoting;
 
 namespace QRMiniproject
 {
@@ -20,7 +22,12 @@ namespace QRMiniproject
         public InPutForm()
         {
             InitializeComponent();
+            //그리드 column을 데이터에 맞게 자동으로 설정해줌.
+            //저장
+            GrdInput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+
 
         private void InPutForm_Load(object sender, EventArgs e)
         {
@@ -61,10 +68,7 @@ namespace QRMiniproject
 
         private void captureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            //throw new NotImplementedException();
             Picturebox.Image = (Bitmap)eventArgs.Frame.Clone();
-
-            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -93,69 +97,84 @@ namespace QRMiniproject
         private void BtnSave_Click(object sender, EventArgs e)
         {
             Saveprocess();
-
         }
 
+
+        //고쳐야 할 것 : contents가 없을 때 없다고 표시할 것, 거래처저장으로 넘어갈때 cancle눌러도 거래처폼으로 넘어가버림
         private void Saveprocess()
         {
-            if(string.IsNullOrEmpty(mode))
+            if (string.IsNullOrEmpty(mode))
             {
                 MetroMessageBox.Show(this, "신규버튼을 누르고 데이터를 저장하세요.", "경고",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
-            using (SqlConnection conn = new SqlConnection(Commons.ConnString))
+
+
+            //try~catch문을 이용하여 DB에 저장되어있지않는 데이터를 입력시 에러가 발생하는것을 예외처리함
+            try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conn;
-                string strQuery = "";
-
-
-                if(mode == "UPDATE")
+                using (SqlConnection conn = new SqlConnection(Commons.ConnString))
                 {
-                    strQuery = @"UPDATE @dbo.@InputTbl SET Indate = @Indate, ID = @ID 
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    string strQuery = "";
+
+                    if (mode == "UPDATE")
+                    {
+                        strQuery = @"UPDATE @dbo.@InputTbl SET Indate = @Indate, ID = @ID 
                                 , Count = @Count , Storage = Storage , ClientIdx = @ClientIdx ";
-                    cmd.CommandText = strQuery;
-
-                }
-
-                else if (mode == "INSERT")               
-                {
-                    strQuery = @"INSERT INTO dbo.InputTbl
+                        cmd.CommandText = strQuery;
+                    }
+                    else if (mode == "INSERT")
+                    {
+                        strQuery = @"INSERT INTO dbo.InputTbl
                                 (Indate, ID, Count, Storage, ClientIdx)
                                 VALUES (@Indate, @ID, @Count, @Storage, @ClientIdx)";
-                    cmd.CommandText = strQuery;
+                        cmd.CommandText = strQuery;
+                    }
+
+                    //거래처번호
+                    SqlParameter parmClientIdx = new SqlParameter("@ClientIdx", SqlDbType.Int);
+                    parmClientIdx.Value = TxtClientidx.Text;
+                    cmd.Parameters.Add(parmClientIdx);
+                    //품목코드
+                    SqlParameter parmID = new SqlParameter("@ID", SqlDbType.NVarChar, 50);
+                    parmID.Value = TxtProductidx.Text;
+                    cmd.Parameters.Add(parmID);
+                    //수량
+                    SqlParameter parmCount = new SqlParameter("@Count", SqlDbType.Int);
+                    parmCount.Value = TxtProductUnit.Text;
+                    cmd.Parameters.Add(parmCount);
+                    //창고(콤보박스)
+                    SqlParameter parmContainer = new SqlParameter("@Storage", SqlDbType.NVarChar, 50);
+                    parmContainer.Value = CboContainer.SelectedItem;
+                    cmd.Parameters.Add(parmContainer);
+                    //오늘날짜
+                    SqlParameter parmIndate = new SqlParameter("@Indate", SqlDbType.Date);
+                    parmIndate.Value = DateTime.Now.ToString("yyyy-MM-dd");
+                    cmd.Parameters.Add(parmIndate);
+
+                    cmd.ExecuteNonQuery();
+                    UpdateData();
                 }
+            }
 
-                //거래처번호
-                SqlParameter parmClientIdx = new SqlParameter("@ClientIdx", SqlDbType.Int);
-                parmClientIdx.Value = TxtClientidx.Text;
-                cmd.Parameters.Add(parmClientIdx);
-                //품목코드
-                SqlParameter parmID = new SqlParameter("@ID", SqlDbType.NVarChar, 50);
-                parmID.Value = TxtProductidx.Text;
-                cmd.Parameters.Add(parmID);
-                //수량
-                SqlParameter parmCount = new SqlParameter("@Count", SqlDbType.Int);
-                parmCount.Value = TxtProductUnit.Text;
-                cmd.Parameters.Add(parmCount);
-                //창고(콤보박스)
-                SqlParameter parmContainer = new SqlParameter("@Storage", SqlDbType.NVarChar, 50);
-                parmContainer.Value = CboContainer.SelectedItem;
-                cmd.Parameters.Add(parmContainer);
-                //오늘날짜
-                SqlParameter parmIndate = new SqlParameter("@Indate", SqlDbType.Date);
-                parmIndate.Value = DateTime.Now.ToString("yyyy-MM-dd");
-                cmd.Parameters.Add(parmIndate);
+            catch (Exception)
+            {
+                //거래처번호 등록시 cancle버튼 / 취소할 때 
+                DialogResult result;
+                result = MetroMessageBox.Show(this, "저장된 거래처번호가 존재하지않습니다. 거래처번호를 등록하시겠습니까?", "오류",
+                MessageBoxButtons.OKCancel);
 
-                cmd.ExecuteNonQuery();
-                UpdateData();
-              
+                if (result == DialogResult.OK)
+                {
+                    ClientForm clientForm = new ClientForm();
+                    clientForm.Show();
+                }
             }
         }
-
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -168,7 +187,7 @@ namespace QRMiniproject
         }
 
         //출력된 값들을 없애주는 메서드
-        private void ClearTextprocess()        
+        private void ClearTextprocess()
         {
             TxtClientidx.Text = TxtProductidx.Text = TxtProductUnit.Text = "";
             CboContainer.Text = "";
@@ -177,12 +196,11 @@ namespace QRMiniproject
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            // 왜 로그인폼이 뜨나
         }
 
         private void TxtProductUnit_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == 13)
+            if (e.KeyChar == 13)
             {
                 Saveprocess();
             }
@@ -190,7 +208,8 @@ namespace QRMiniproject
 
         private void CameraOff_Click(object sender, EventArgs e)
         {
-            if (captureDevice != null && captureDevice.IsRunning) {
+            if (captureDevice != null && captureDevice.IsRunning)
+            {
                 captureDevice.Stop();
                 captureDevice = null;
             }
