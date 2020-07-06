@@ -2,8 +2,6 @@
 using MetroFramework.Forms;
 using System;
 using System.Windows.Forms;
-using QRCoder;
-using ZXing;
 
 namespace QRMiniproject
 {
@@ -39,9 +37,7 @@ namespace QRMiniproject
         {
             form.Text = strFormTitle;
             form.Dock = DockStyle.Fill;
-            // form.MdiParent = this;
             form.Show();
-            //form.WindowState = FormWindowState.Maximized;
         }
 
         private void EmployeeManaged_Click(object sender, EventArgs e)
@@ -91,8 +87,10 @@ namespace QRMiniproject
 
             if(result == DialogResult.OK)
             {
+                DialogResult resultLogout;
                 LoginForm loginForm = new LoginForm();
-                loginForm.ShowDialog();
+                resultLogout = loginForm.ShowDialog();
+                LblUserID.Text = Commons.LoginUserid;
             }
         }
     }

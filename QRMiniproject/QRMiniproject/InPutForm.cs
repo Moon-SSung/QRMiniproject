@@ -8,8 +8,6 @@ using AForge.Video.DirectShow;
 using AForge.Video;
 using System.Data.SqlClient;
 using MetroFramework;
-using System.Data.Common;
-using System.Runtime.Remoting;
 
 namespace QRMiniproject
 {
@@ -44,8 +42,8 @@ namespace QRMiniproject
         {
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
-                conn.Open();
-                string strQuery = @"SELECT I_Idx, Indate, ID, Count, Storage, C.Name As '거래처' FROM InputTbl As I
+                conn.Open(); 
+                string strQuery = @"SELECT I_Idx, Indate AS 입고날짜, ID AS 제품코드 , Count AS 수량, Storage AS 창고, C.Name As '거래처' FROM InputTbl As I
                                     INNER JOIN ClientTbl AS C ON I.ClientIdx = C.C_Idx ";           //grid에 데이터 불러오기
 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(strQuery, conn);
@@ -54,6 +52,7 @@ namespace QRMiniproject
 
                 GrdInput.DataSource = ds;
                 GrdInput.DataMember = " InputTbl ";
+                GrdInput.Columns[0].Visible = false;
             }
         }
 
@@ -212,6 +211,14 @@ namespace QRMiniproject
             {
                 captureDevice.Stop();
                 captureDevice = null;
+                if (Picturebox.Image != null) //picturebox에 값이 있을 때 초기화
+                {
+                    Picturebox.Image = null;
+                }
+
+
+
+
             }
         }
     }

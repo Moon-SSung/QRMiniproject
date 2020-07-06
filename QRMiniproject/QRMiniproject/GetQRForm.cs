@@ -2,15 +2,10 @@
 using QRCoder;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QRMiniproject
@@ -20,8 +15,6 @@ namespace QRMiniproject
         //쿼리문 실행 string
         string mode = "";
        
-        //private Bitmap bitmap;
-
         public GetQRForm()
         {
             
@@ -35,9 +28,6 @@ namespace QRMiniproject
         {
             DtpQRCode.CustomFormat = "yyyy-MM-dd";
             DtpQRCode.Format = DateTimePickerFormat.Custom;
-
-            //DtpQRCode.CustomFormat = " ";
-            //DtpQRCode.Format = DateTimePickerFormat.Custom;
         }
 
         /// <summary>
@@ -66,14 +56,11 @@ namespace QRMiniproject
         /// <param name="e"></param>
         private void BtnSave_Click(object sender, EventArgs e)
         {
-
-            //GetQRForm temp = new GetQRForm();
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Title = "다른 이름으로 저장";
             dlg.DefaultExt = ".png";
             dlg.Filter = "JPEG (*.jpg)|*.jpg |Bitmap (*.bmp)|*.bmp|GIF (*.gif)|*.gif|Png (*.png)|*.png";
             dlg.FilterIndex = 4;
-            //dlg.ShowDialog();
 
             DialogResult result = dlg.ShowDialog();
 
@@ -103,8 +90,6 @@ namespace QRMiniproject
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                //string strQuery = "";
-
 
                 if (mode == "UPDATE")
                 {

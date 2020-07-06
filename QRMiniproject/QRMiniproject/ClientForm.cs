@@ -1,6 +1,7 @@
 ﻿using MetroFramework;
 using MetroFramework.Forms;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -39,22 +40,20 @@ namespace QRMiniproject
                 dataAdapter.Fill(data, "ClientTbl");
                 GrdClientTbl.DataSource = data;
                 GrdClientTbl.DataMember = "ClientTbl";
+                GrdClientTbl.Columns[0].Visible = false;
             }
 
-            //DataGridViewColumn column = GrdClientTbl.Columns[2];
-            //column.Visible = false;
+
         }
 
         private void ClientForm_Load(object sender, EventArgs e)
         {
             // TODO: 이 코드는 데이터를 'test1DataSet.ClientTbl' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
             UpdateData();
-            //UpdateCboPersonnel();
-            //UpdateCboSituation();
-            //UpdateCboSort();
+
         }
 
-       
+
 
         private void GrdClientTbl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -65,14 +64,14 @@ namespace QRMiniproject
                 TxtClientidx.ReadOnly = true;
                 TxtClientidx.BackColor = Color.AntiqueWhite;
                 TxtClientNumber.Text = data.Cells[1].Value.ToString();
-                CboPersonnal.SelectedIndex = CboPersonnal.FindString(data.Cells[2].Value.ToString());
+                CboPersonnal.SelectedIndex = CboPersonnal.FindString(data.Cells[2].Value.ToString().Trim());
                 TxtClientName.Text = data.Cells[3].Value.ToString();
                 TxtClientOwner.Text = data.Cells[4].Value.ToString();
                 TxtClientAddress.Text = data.Cells[5].Value.ToString();
                 TxtClientphoneNum.Text = data.Cells[6].Value.ToString();
-                CboSort.SelectedIndex = CboSort.FindString(data.Cells[7].Value.ToString());
+                CboSort.SelectedIndex = CboSort.FindString(data.Cells[7].Value.ToString().Trim());
                 TxtClientpart.Text = data.Cells[8].Value.ToString();
-                CboSituation.SelectedIndex = CboSituation.FindString( data.Cells[9].Value.ToString());
+                CboSituation.SelectedIndex = CboSituation.FindString(data.Cells[9].Value.ToString().Trim());
 
 
                 mode = "UPDATE";
@@ -100,7 +99,7 @@ namespace QRMiniproject
         private void ClearTextControls()
         {
             TxtClientNumber.Text = TxtClientOwner.Text =
-            TxtClientName.Text = TxtClientAddress.Text  = TxtClientphoneNum.Text =
+            TxtClientName.Text = TxtClientAddress.Text = TxtClientphoneNum.Text =
             TxtClientpart.Text = TxtClientidx.Text = "";
             CboPersonnal.SelectedIndex = -1;
             CboSituation.SelectedIndex = -1;
@@ -117,8 +116,7 @@ namespace QRMiniproject
                 MetroMessageBox.Show(this, "신규버튼을 누르고 데이터를 저장하십시오", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            using (SqlConnection conn = new SqlConnection(Commons.ConnString))//다른 창에 STATIC 문으로 작성하여  연결하는 방법 만약 링크를 바꿔야하면 창을 모두 다 열어서 
-                                                                              //바꿔야하는데 이렇게 코딩을 하면 해당 창에만 링크 주소를 바꾸면 모두 다 적용된다. 
+            using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
@@ -155,7 +153,7 @@ namespace QRMiniproject
                 cmd.Parameters.Add(parmClientOwner);
                 ///////////////////////////////////////////////////////////////// division
                 SqlParameter parmClientpersonnal = new SqlParameter("@Personnal", SqlDbType.NVarChar, 50);                                                 //CommandText 를  파라미터
-                parmClientpersonnal.Value = CboPersonnal.SelectedValue;  // 아이템즈가 맞음 !
+                parmClientpersonnal.Value = CboPersonnal.SelectedItem;  // 아이템즈가 맞음 !
                 cmd.Parameters.Add(parmClientpersonnal);
                 //////////////////////////////////////////////////////////////////level
                 SqlParameter parmClientName = new SqlParameter("@Name", SqlDbType.NVarChar, 50);                                            //CommandText 를  파라미터
@@ -179,16 +177,12 @@ namespace QRMiniproject
                 cmd.Parameters.Add(parmClientAddress);
                 /////////////////////////////////////////////////////////////////////// price
                 SqlParameter parmClientsituation = new SqlParameter("@Situation", SqlDbType.NVarChar, 50);                                              //CommandText 를  파라미터
-                parmClientsituation.Value = CboSituation.SelectedValue;
+                parmClientsituation.Value = CboSituation.SelectedItem;
                 cmd.Parameters.Add(parmClientsituation);
                 /////////////////////////////////////////////////////////////////////// price
                 SqlParameter parmClientSort = new SqlParameter("@Sort", SqlDbType.NVarChar, 50);                                              //CommandText 를  파라미터
-                parmClientSort.Value = CboSort.SelectedValue;
+                parmClientSort.Value = CboSort.SelectedItem;
                 cmd.Parameters.Add(parmClientSort);
-                //////////////////////////////////////////////////////////////////// Idex
-                //SqlParameter parmClientidx = new SqlParameter("@C_Idx", SqlDbType.Int,2);                                                  //CommandText 를  파라미터
-                //parmClientidx.Value = TxtClientidx.Text;
-                //cmd.Parameters.Add(parmClientidx);
 
                 cmd.ExecuteNonQuery();
             }
@@ -197,134 +191,21 @@ namespace QRMiniproject
         private void BtnNew_Click(object sender, EventArgs e)
         {
             ClearTextControls();
-            mode = "INSERT"; //신규는 INSERT
+            mode = "INSERT";
         }
 
         private void TxtClientNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (char.IsLetter((char)e.KeyCode) || char.IsWhiteSpace((char)e.KeyCode))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyCode.ToString(), "[0-9]") && !char.IsControl((char)e.KeyCode) && !((int)e.KeyCode >= 37 && (int)e.KeyCode <= 40))
             {
                 MetroMessageBox.Show(this, "숫자만 입력이가능합니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TxtClientNumber.Text = TxtClientNumber.Text.Substring(0, TxtClientNumber.Text.Length - 1);
+                if (TxtClientNumber.Text.Length != 0)
+                    TxtClientNumber.Text = TxtClientNumber.Text.Substring(0, TxtClientNumber.Text.Length - 1);
                 TxtClientNumber.Focus();
                 return;
             }
         }
 
-        private void GrdClientTbl_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-
-
-
-        //private void UpdateCboPersonnel() //콤보 박스가 디비 정보 불러오게 하는 방법인데 
-        //{
-        //    using (SqlConnection conn = new SqlConnection(Commons.ConnString))
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.Connection = conn;
-        //        cmd.CommandText = "SELECT C_Idx AS 거래처번호 " +
-        //            " ,Number AS 등록번호 " +
-        //            " ,Personnal AS 사업자구분 " +
-        //            " ,Name AS 거래처명" +
-        //            " ,Owner AS 대표자 " +
-        //            " ,Address AS 주소 " +
-        //            " ,PhoneNumber AS 전화번호 " +
-        //            " ,Sort AS 업종 " +
-        //            " ,Part AS 종목 " +
-        //            " ,Situation AS 거래상태 " +
-        //                          "  FROM dbo.ClientTbl ";
-        //        SqlDataReader reader = cmd.ExecuteReader(); // 이거 먼지 확인 ?????????
-        //        Dictionary<string, string> temps = new Dictionary<string, string>(); // 제네릭!  division 키 names 는 벨류
-        //        while (reader.Read()) //할때마다 한줄 씩 읽는다.
-        //        {
-        //            temps.Add(reader[0].ToString(), reader[2].ToString());
-                    
-        //        }
-        //        CboPersonnal.DataSource = new BindingSource(temps, null);
-        //        CboPersonnal.DisplayMember = "Value";
-        //        CboPersonnal.ValueMember = "Key";
-        //        CboPersonnal.SelectedIndex = -1;
-                
-
-        //    }
-        //}
-        //private void UpdateCboSituation()
-        //{
-        //    using (SqlConnection conn = new SqlConnection(Commons.ConnString))
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.Connection = conn;
-        //        cmd.CommandText = "SELECT C_Idx AS 거래처번호 " +
-        //            " ,Number AS 등록번호 " +
-        //            " ,Personnal AS 사업자구분 " +
-        //            " ,Name AS 거래처명" +
-        //            " ,Owner AS 대표자 " +
-        //            " ,Address AS 주소 " +
-        //            " ,PhoneNumber AS 전화번호 " +
-        //            " ,Sort AS 업종 " +
-        //            " ,Part AS 종목 " +
-        //            " ,Situation AS 거래상태 " +
-        //                          "  FROM dbo.ClientTbl ";
-        //        SqlDataReader reader = cmd.ExecuteReader();
-        //        Dictionary<string, string> temps = new Dictionary<string, string>(); // 제네릭!  division 키 names 는 벨류
-        //        while (reader.Read()) //할때마다 한줄 씩 읽는다.
-        //        {
-        //            temps.Add(reader[0].ToString(), reader[9].ToString());
-
-        //        }
-        //        CboSituation.DataSource = new BindingSource(temps, null);
-        //        CboSituation.DisplayMember = "Value";
-        //        CboSituation.ValueMember = "Key";
-        //        CboSituation.SelectedIndex = -1;
-        //    }
-        //}
-
-
-        //private void UpdateCboSort()
-        //{
-        //    using (SqlConnection conn = new SqlConnection(Commons.ConnString))
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.Connection = conn;
-        //        cmd.CommandText = "SELECT C_Idx AS 거래처번호 " +
-        //            " ,Number AS 등록번호 " +
-        //            " ,Personnal AS 사업자구분 " +
-        //            " ,Name AS 거래처명" +
-        //            " ,Owner AS 대표자 " +
-        //            " ,Address AS 주소 " +
-        //            " ,PhoneNumber AS 전화번호 " +
-        //            " ,Sort AS 업종 " +
-        //            " ,Part AS 종목 " +
-        //            " ,Situation AS 거래상태 " +
-        //                          "  FROM dbo.ClientTbl ";
-        //        SqlDataReader reader = cmd.ExecuteReader();
-        //        Dictionary<string, string> temps = new Dictionary<string, string>(); // 제네릭!  division 키 names 는 벨류
-        //        while (reader.Read()) //할때마다 한줄 씩 읽는다.
-        //        {
-        //            temps.Add(reader[0].ToString(), reader[7].ToString());
-
-        //        }
-        //        CboSort.DataSource = new BindingSource(temps, null);
-        //        CboSort.DisplayMember = "Value";
-        //        CboSort.ValueMember = "Key";
-        //        CboSort.SelectedIndex = -1;
-        //    }
-        //}
-
-        private void CboSituation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClientForm_Resize(object sender, EventArgs e)
-        {
-
-        }
     }
 }

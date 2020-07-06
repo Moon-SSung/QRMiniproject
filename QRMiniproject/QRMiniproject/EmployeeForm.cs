@@ -1,6 +1,5 @@
 ﻿using MetroFramework;
 using MetroFramework.Forms;
-using OpenCvSharp.Aruco;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -44,14 +43,8 @@ namespace QRMiniproject
                 dataAdapter.Fill(ds, "EmployeeTbl");
                 GrdEmployeeTbl.DataSource = ds;
                 GrdEmployeeTbl.DataMember = "EmployeeTbl";
+                GrdEmployeeTbl.Columns[0].Visible = false;
             }
-            //DataGridViewColumn column = GrdEmployeeTbl.Columns[4]; //id컬럼
-            //column.Visible = false;
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void GrdEmployeeTbl_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -59,13 +52,12 @@ namespace QRMiniproject
             if (e.RowIndex > -1)
             {
                 DataGridViewRow data = GrdEmployeeTbl.Rows[e.RowIndex];
+                TxtEmpCode.Text = data.Cells[0].Value.ToString();
                 TxtcodeNumber.Text = data.Cells[1].Value.ToString();
                 TxtName.Text = data.Cells[2].Value.ToString();
                 TxtIdentityNumber.Text = data.Cells[3].Value.ToString();
-                CboDepart.SelectedIndex = CboDepart.FindString(data.Cells[4].Value.ToString());
-                CboRank.SelectedIndex = CboRank.FindString(data.Cells[5].Value.ToString());
-                //TxtDepart.Text = data.Cells[4].Value.ToString();
-                //TxtRank.Text = data.Cells[5].Value.ToString();
+                CboDepart.SelectedIndex = CboDepart.FindString(data.Cells[4].Value.ToString().Trim());
+                CboRank.SelectedIndex = CboRank.FindString(data.Cells[5].Value.ToString().Trim());
                 TxtPhoneNumber.Text = data.Cells[6].Value.ToString();
                 TxtUserId.Text = data.Cells[7].Value.ToString();
                 TxtPassword.Text = data.Cells[8].Value.ToString();
@@ -87,21 +79,21 @@ namespace QRMiniproject
 
         private void ClearTextControl()
         {
-            TxtcodeNumber.Text = TxtName.Text = TxtIdentityNumber.Text = CboDepart.Text = TxtPhoneNumber.Text = TxtIdentityNumber.Text = CboRank.Text =TxtPassword.Text=TxtUserId.Text= "";
+            TxtEmpCode.Text = TxtcodeNumber.Text = TxtName.Text = TxtIdentityNumber.Text = CboDepart.Text = TxtPhoneNumber.Text = TxtIdentityNumber.Text = CboRank.Text = TxtPassword.Text = TxtUserId.Text = "";
             CboDepart.SelectedIndex = -1;
             CboRank.SelectedIndex = -1;
             TxtcodeNumber.ReadOnly = false;
             TxtcodeNumber.BackColor = Color.White;
             TxtName.Focus();
         }
-      
+
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(TxtName.Text) ||
                 String.IsNullOrEmpty(TxtIdentityNumber.Text) ||
-                String.IsNullOrEmpty(CboDepart.Text) || 
-                String.IsNullOrEmpty(CboRank.Text) || 
+                String.IsNullOrEmpty(CboDepart.Text) ||
+                String.IsNullOrEmpty(CboRank.Text) ||
                 String.IsNullOrEmpty(TxtPhoneNumber.Text) ||
                 string.IsNullOrEmpty(TxtcodeNumber.Text) ||
                 string.IsNullOrEmpty(TxtID.Text) ||
@@ -143,7 +135,9 @@ namespace QRMiniproject
                                  " , Part = @Part " +
                                  " , Rank = @Rank " +
                                  " , PhoneNumber = @PhoneNumber " +
-                                 "   WHERE  UserID = @UserID , Password = @Password ";
+                                 " , UserID = @UserID " +
+                                 " , Password = @Password" +
+                                 "   WHERE  E_Idx = @E_Idx ";
 
                 }
                 else if (mode == "INSERT")
@@ -152,16 +146,23 @@ namespace QRMiniproject
                                " (CodeNumber, Name, IdentityNumber, Part, Rank, PhoneNumber, UserID, Password) " +
                                " VALUES " +
                                " (@CodeNumber, @Name, @IdentityNumber, @Part, @Rank, @PhoneNumber, @UserID, @Password) ";
-                   
+
                 }
                 cmd.CommandText = strQuery;
+
+                if (mode == "UPDATE")
+                {
+                    SqlParameter paramIdx = new SqlParameter("@E_Idx", SqlDbType.Int);                                              //CommandText 를  파라미터
+                    paramIdx.Value = TxtEmpCode.Text;
+                    cmd.Parameters.Add(paramIdx);
+                }
                 ////////////////////////////////////////////////////////////////이름
                 SqlParameter parmName = new SqlParameter("@Name", SqlDbType.NChar, 10);                                              //CommandText 를  파라미터
                 parmName.Value = TxtName.Text;
                 cmd.Parameters.Add(parmName);
                 ///////////////////////////////////////////////////////////////// 직급
                 SqlParameter parmRank = new SqlParameter("@Rank", SqlDbType.NChar, 10);                                                 //CommandText 를  파라미터
-                parmRank.Value = CboRank.Text;  // 아이템즈가 맞음 !
+                parmRank.Value = CboRank.SelectedItem;  // 아이템즈가 맞음 !
                 cmd.Parameters.Add(parmRank);
                 //////////////////////////////////////////////////////////////////휴대폰번호
                 SqlParameter parmPhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.NVarChar, 50);                                            //CommandText 를  파라미터
@@ -169,7 +170,7 @@ namespace QRMiniproject
                 cmd.Parameters.Add(parmPhoneNumber);
                 //////////////////////////////////////////////////////////////////부서
                 SqlParameter parmDepart = new SqlParameter("@Part", SqlDbType.NChar, 10);                                                //CommandText 를  파라미터
-                parmDepart.Value = CboDepart.SelectedValue;
+                parmDepart.Value = CboDepart.SelectedItem;
                 cmd.Parameters.Add(parmDepart);
                 /////////////////////////////////////////////////////////////////////// 주민번호
                 SqlParameter parmIdentityNumber = new SqlParameter("@IdentityNumber", SqlDbType.NVarChar, 50);                                              //CommandText 를  파라미터
@@ -181,31 +182,28 @@ namespace QRMiniproject
                 cmd.Parameters.Add(parmcodeNumber);
 
                 SqlParameter paramUserID = new SqlParameter("@UserID", SqlDbType.NVarChar, 50);                                                  //CommandText 를  파라미터
-                paramUserID.Value = TxtID.Text;
+                paramUserID.Value = TxtUserId.Text;
                 cmd.Parameters.Add(paramUserID);
 
                 SqlParameter paramUserPW = new SqlParameter("@Password", SqlDbType.NVarChar, 50);                                                  //CommandText 를  파라미터
-                paramUserPW.Value = TxtPW.Text;
+                paramUserPW.Value = TxtPassword.Text;
                 cmd.Parameters.Add(paramUserPW);
 
                 cmd.ExecuteNonQuery();
             }
         }
 
+        string log = "";
         private void TxtcodeNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (char.IsLetter((char)e.KeyCode) || char.IsWhiteSpace((char)e.KeyCode))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyCode.ToString(), "[0-9]") && !char.IsControl((char)e.KeyCode) && !((int)e.KeyCode >= 37 && (int)e.KeyCode <= 40))
             {
                 MetroMessageBox.Show(this, "숫자만 입력이가능합니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TxtcodeNumber.Text = TxtcodeNumber.Text.Substring(0, TxtcodeNumber.Text.Length - 1);
+                if (TxtcodeNumber.Text.Length != 0)
+                    TxtcodeNumber.Text = TxtcodeNumber.Text.Substring(0, TxtcodeNumber.Text.Length - 1);
                 TxtcodeNumber.Focus();
                 return;
             }
-        }
-
-        private void CboDepart_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
