@@ -17,7 +17,6 @@ namespace QRMiniproject
         {
             InitializeComponent();
         }
-
         /// <summary>
         /// 폼 로드
         /// </summary>
@@ -98,6 +97,8 @@ namespace QRMiniproject
                 }
             }
             mode = "UPDATE";
+            PrdGridBox.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
         /// <summary>
         /// 텍스트박스 클리어 메소드
