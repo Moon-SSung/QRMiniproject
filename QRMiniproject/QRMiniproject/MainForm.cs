@@ -3,6 +3,8 @@ using MetroFramework.Forms;
 using System;
 using System.Windows.Forms;
 using QRCoder;
+using ZXing;
+
 namespace QRMiniproject
 {
     public partial class MainForm : MetroForm
@@ -16,8 +18,6 @@ namespace QRMiniproject
         {
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
-            //InPutForm inPutForm = new InPutForm();
-            //inPutForm.Show();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -76,6 +76,24 @@ namespace QRMiniproject
         {
             InOutPutVisualForm form = new InOutPutVisualForm();
             InItChildForm(form, "입출고현황");
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            LblUserID.Text = Commons.LoginUserid;
+        }
+
+        private void BtnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+            result = MetroMessageBox.Show(this, "로그아웃 하시겠습니까?", "정보",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+            if(result == DialogResult.OK)
+            {
+                LoginForm loginForm = new LoginForm();
+                loginForm.ShowDialog();
+            }
         }
     }
 }

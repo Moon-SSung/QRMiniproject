@@ -57,16 +57,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblClienIndex = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.test1DataSet = new QRMiniproject.test1DataSet();
-            this.clientTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientTblTableAdapter = new QRMiniproject.test1DataSetTableAdapters.ClientTblTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrdClientTbl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientTblBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -392,20 +387,13 @@
             this.label1.Size = new System.Drawing.Size(82, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "거래처등록";
-            // 
-            // test1DataSet
-            // 
-            this.test1DataSet.DataSetName = "test1DataSet";
-            this.test1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // clientTblBindingSource
             // 
-            this.clientTblBindingSource.DataMember = "ClientTbl";
-            this.clientTblBindingSource.DataSource = this.test1DataSet;
             // 
             // clientTblTableAdapter
             // 
-            this.clientTblTableAdapter.ClearBeforeFill = true;
             // 
             // ClientForm
             // 
@@ -425,8 +413,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GrdClientTbl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientTblBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,9 +443,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CboPersonnal;
         private System.Windows.Forms.ComboBox CboSituation;
-        private test1DataSet test1DataSet;
-        private System.Windows.Forms.BindingSource clientTblBindingSource;
-        private test1DataSetTableAdapters.ClientTblTableAdapter clientTblTableAdapter;
         private System.Windows.Forms.ComboBox CboSort;
     }
 }

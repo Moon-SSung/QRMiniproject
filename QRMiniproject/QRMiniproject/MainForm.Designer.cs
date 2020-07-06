@@ -39,6 +39,9 @@ namespace QRMiniproject
             this.ClientManaged = new System.Windows.Forms.Button();
             this.BtnInPut = new System.Windows.Forms.Button();
             this.EmployeeManaged = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblUserID = new System.Windows.Forms.Label();
+            this.BtnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -139,11 +142,42 @@ namespace QRMiniproject
             this.EmployeeManaged.UseVisualStyleBackColor = true;
             this.EmployeeManaged.Click += new System.EventHandler(this.EmployeeManaged_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(136, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "접속아이디 :";
+            // 
+            // LblUserID
+            // 
+            this.LblUserID.AutoSize = true;
+            this.LblUserID.Location = new System.Drawing.Point(234, 32);
+            this.LblUserID.Name = "LblUserID";
+            this.LblUserID.Size = new System.Drawing.Size(67, 15);
+            this.LblUserID.TabIndex = 10;
+            this.LblUserID.Text = "에헤헤헿";
+            // 
+            // BtnLogOut
+            // 
+            this.BtnLogOut.Location = new System.Drawing.Point(193, 419);
+            this.BtnLogOut.Name = "BtnLogOut";
+            this.BtnLogOut.Size = new System.Drawing.Size(140, 70);
+            this.BtnLogOut.TabIndex = 11;
+            this.BtnLogOut.Text = "로그아웃";
+            this.BtnLogOut.UseVisualStyleBackColor = true;
+            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 584);
+            this.Controls.Add(this.BtnLogOut);
+            this.Controls.Add(this.LblUserID);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ProductManaged);
             this.Controls.Add(this.BtnInOut);
@@ -154,6 +188,7 @@ namespace QRMiniproject
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "QR";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -169,7 +204,10 @@ namespace QRMiniproject
         private System.Windows.Forms.Button BtnOutPut;
         private System.Windows.Forms.Button ClientManaged;
         private System.Windows.Forms.Button BtnInPut;
-        internal System.Windows.Forms.Button EmployeeManaged;
+        private System.Windows.Forms.Button EmployeeManaged;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblUserID;
+        private System.Windows.Forms.Button BtnLogOut;
     }
 }
 

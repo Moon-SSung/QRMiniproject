@@ -10,7 +10,7 @@ namespace QRMiniproject
 {
     public partial class InOutPutVisualForm : MetroForm
     {
-        
+
         public InOutPutVisualForm()
         {
             InitializeComponent();
@@ -18,9 +18,9 @@ namespace QRMiniproject
 
         private void InOutPutVisual_Load(object sender, EventArgs e)
         {
-           
+
             InputChart.Legends[0].Docking = Docking.Bottom;
-            InputChart.DataManipulator.Sort(PointSortOrder.Descending,InputChart.Series[0]);
+            InputChart.DataManipulator.Sort(PointSortOrder.Descending, InputChart.Series[0]);
             InputChart.Legends[0].Alignment = StringAlignment.Center;
             InputChart.Series[0]["PieLabelStyle"] = "OutSide";
             InputChart.Series[0].BorderWidth = 1;
@@ -39,6 +39,11 @@ namespace QRMiniproject
             OutChart.Series[0].Label = "#VALY ";
             OutChart.Text = "판매 총액";
 
+            OutPriceChart.DataManipulator.Sort(PointSortOrder.Descending, InputChart.Series[0]);
+            OutPriceChart.Legends[0].Alignment = StringAlignment.Center;
+            OutPriceChart.Series[0].BorderWidth = 1;
+            OutPriceChart.Series[0].BorderColor = Color.Black;
+            OutPriceChart.Text = "일별 판매액";
         }
         private void UpdateData()
         {
@@ -49,7 +54,7 @@ namespace QRMiniproject
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT sum(count) AS '수량', ID FROM InputTbl" +
-                                  " GROUP BY ID "+
+                                  " GROUP BY ID " +
                                   " ORDER BY '수량' ";
                 SqlDataReader reader = cmd.ExecuteReader();
                 InputChart.Series["Series1"].Points.Clear();
@@ -85,38 +90,28 @@ as p
                 }
                 OutChart.Series["Series1"].IsValueShownAsLabel = true;
 
+                reader.Close();
+                cmd.CommandText = @"SELECT sum(o.Count*p.Price), o.outdate from outputtbl as o
+                                     inner join ProductTbl as p
+                                        on o.ProductIdx = p.P_Idx
+                                     group by outdate ";
+                reader = cmd.ExecuteReader();
+                OutPriceChart.Series["Series1"].Points.Clear();
+                i = 0;
+                while (reader.Read())
+                {
+                    DataPoint point = new DataPoint();
+                    point.SetValueXY(reader[1], reader[0]);
+                    point.ToolTip = string.Format("{0}, {1}원", DateTime.Parse(reader[1].ToString()), reader[0]);
+                    OutPriceChart.Series["Series1"].Points.Add(point);
+                    OutPriceChart.Series["Series1"].Points[i++].LegendText = reader[1].ToString();
+
+                }
+                OutPriceChart.Series["Series1"].XValueType = ChartValueType.Date;
+                OutPriceChart.Series["Series1"].IsXValueIndexed = true;
+                OutPriceChart.Series["Series1"].IsValueShownAsLabel = true;
+
             }
-        }
-
-
-        private void BtnInput_Click(object sender, EventArgs e)
-        {
-       
-            List<int> amount = new List<int>();
-            List<string> products = new List<string>();
-       
-            InputChart.Series[0].Points.Clear();
-            InputChart.Series[0].Points.DataBindXY(products, amount);
-            InputChart.Series[0].IsValueShownAsLabel = true;
-
-          
-       
-
-         
-        }
-
-        private void BtnOutput_Click(object sender, EventArgs e)
-        {
-            List<int> amount = new List<int>();
-            List<string> products = new List<string>();
-         
-
-            InputChart.Series[0].Points.Clear();
-            InputChart.Series[0].Points.DataBindXY(products, amount);
-            InputChart.Series[0].IsValueShownAsLabel = true;
-
-       
-
         }
 
         private void InOutPutVisualForm_Activated(object sender, EventArgs e)

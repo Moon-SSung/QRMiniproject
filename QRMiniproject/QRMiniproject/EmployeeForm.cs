@@ -36,7 +36,7 @@ namespace QRMiniproject
                                   " , Rank AS 직위" +
                                   " , PhoneNumber AS 전화번호 " +
                                   " , UserID AS 아이디" +
-                                  " , Password AS 비밀번호"+
+                                  " , Password AS 비밀번호" +
                                   " FROM dbo.EmployeeTbl ";  // 퀴리문 입력해야함
                 SqlCommand cmd = new SqlCommand(strQuery, conn);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(strQuery, conn);
@@ -69,8 +69,6 @@ namespace QRMiniproject
                 TxtPhoneNumber.Text = data.Cells[6].Value.ToString();
                 TxtUserId.Text = data.Cells[7].Value.ToString();
                 TxtPassword.Text = data.Cells[8].Value.ToString();
-               
-
                 mode = "UPDATE";
             }
         }
@@ -100,14 +98,14 @@ namespace QRMiniproject
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(TxtName.Text) || 
+            if (String.IsNullOrEmpty(TxtName.Text) ||
                 String.IsNullOrEmpty(TxtIdentityNumber.Text) ||
                 String.IsNullOrEmpty(CboDepart.Text) || 
                 String.IsNullOrEmpty(CboRank.Text) || 
                 String.IsNullOrEmpty(TxtPhoneNumber.Text) ||
                 string.IsNullOrEmpty(TxtcodeNumber.Text) ||
                 string.IsNullOrEmpty(TxtID.Text) ||
-                string.IsNullOrEmpty(TxtPW.Text) 
+                string.IsNullOrEmpty(TxtPW.Text)
                 )
             {
                 MetroMessageBox.Show(this, "빈값은 저장할 수 없습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -126,7 +124,7 @@ namespace QRMiniproject
                 return;
             }
 
-            
+
 
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
@@ -150,9 +148,9 @@ namespace QRMiniproject
                 }
                 else if (mode == "INSERT")
                 {
-                    strQuery = "INSERT INTO dbo.EmployeeTbl "+
-                               " (CodeNumber, Name, IdentityNumber, Part, Rank, PhoneNumber, UserID, Password) "+
-                               " VALUES "+
+                    strQuery = "INSERT INTO dbo.EmployeeTbl " +
+                               " (CodeNumber, Name, IdentityNumber, Part, Rank, PhoneNumber, UserID, Password) " +
+                               " VALUES " +
                                " (@CodeNumber, @Name, @IdentityNumber, @Part, @Rank, @PhoneNumber, @UserID, @Password) ";
                    
                 }
@@ -182,11 +180,11 @@ namespace QRMiniproject
                 parmcodeNumber.Value = int.Parse(TxtcodeNumber.Text);
                 cmd.Parameters.Add(parmcodeNumber);
 
-                SqlParameter paramUserID = new SqlParameter("@UserID", SqlDbType.NVarChar,50);                                                  //CommandText 를  파라미터
+                SqlParameter paramUserID = new SqlParameter("@UserID", SqlDbType.NVarChar, 50);                                                  //CommandText 를  파라미터
                 paramUserID.Value = TxtID.Text;
                 cmd.Parameters.Add(paramUserID);
 
-                SqlParameter paramUserPW = new SqlParameter("@Password", SqlDbType.NVarChar,50);                                                  //CommandText 를  파라미터
+                SqlParameter paramUserPW = new SqlParameter("@Password", SqlDbType.NVarChar, 50);                                                  //CommandText 를  파라미터
                 paramUserPW.Value = TxtPW.Text;
                 cmd.Parameters.Add(paramUserPW);
 
@@ -196,7 +194,8 @@ namespace QRMiniproject
 
         private void TxtcodeNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (char.IsLetter((char)e.KeyCode) || char.IsWhiteSpace((char)e.KeyCode)) {
+            if (char.IsLetter((char)e.KeyCode) || char.IsWhiteSpace((char)e.KeyCode))
+            {
                 MetroMessageBox.Show(this, "숫자만 입력이가능합니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TxtcodeNumber.Text = TxtcodeNumber.Text.Substring(0, TxtcodeNumber.Text.Length - 1);
                 TxtcodeNumber.Focus();
