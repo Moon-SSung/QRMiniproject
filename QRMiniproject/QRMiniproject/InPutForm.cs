@@ -11,7 +11,7 @@ using MetroFramework;
 
 namespace QRMiniproject
 {
-    public partial class InPutForm : MetroForm
+    public partial class InPutForm : Form
     {
         string mode = "";
         FilterInfoCollection FilterInfoCollection;
@@ -170,6 +170,7 @@ namespace QRMiniproject
                 if (result == DialogResult.OK)
                 {
                     ClientForm clientForm = new ClientForm();
+                    clientForm.FormBorderStyle = FormBorderStyle.FixedDialog;
                     clientForm.Show();
                 }
             }
@@ -211,14 +212,10 @@ namespace QRMiniproject
             {
                 captureDevice.Stop();
                 captureDevice = null;
-                if (Picturebox.Image != null) //picturebox에 값이 있을 때 초기화
-                {
-                    Picturebox.Image = null;
-                }
-
-
-
-
+            }
+            if (Picturebox.Image != null) //picturebox에 값이 있을 때 초기화
+            {
+                Picturebox.Image = null;
             }
         }
     }

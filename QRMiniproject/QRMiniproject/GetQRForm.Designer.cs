@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblQR6 = new System.Windows.Forms.Label();
             this.LblQR5 = new System.Windows.Forms.Label();
             this.LblQR4 = new System.Windows.Forms.Label();
@@ -66,9 +66,10 @@
             // LblQR6
             // 
             this.LblQR6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblQR6.BackColor = System.Drawing.Color.White;
             this.LblQR6.Location = new System.Drawing.Point(1044, 66);
             this.LblQR6.Name = "LblQR6";
-            this.LblQR6.Size = new System.Drawing.Size(85, 15);
+            this.LblQR6.Size = new System.Drawing.Size(85, 20);
             this.LblQR6.TabIndex = 23;
             this.LblQR6.Text = "거래처번호";
             this.LblQR6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -76,9 +77,10 @@
             // LblQR5
             // 
             this.LblQR5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblQR5.BackColor = System.Drawing.Color.White;
             this.LblQR5.Location = new System.Drawing.Point(1047, 244);
             this.LblQR5.Name = "LblQR5";
-            this.LblQR5.Size = new System.Drawing.Size(82, 15);
+            this.LblQR5.Size = new System.Drawing.Size(82, 20);
             this.LblQR5.TabIndex = 24;
             this.LblQR5.Text = "창고";
             this.LblQR5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -86,9 +88,10 @@
             // LblQR4
             // 
             this.LblQR4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblQR4.BackColor = System.Drawing.Color.White;
             this.LblQR4.Location = new System.Drawing.Point(1047, 199);
             this.LblQR4.Name = "LblQR4";
-            this.LblQR4.Size = new System.Drawing.Size(82, 15);
+            this.LblQR4.Size = new System.Drawing.Size(82, 20);
             this.LblQR4.TabIndex = 25;
             this.LblQR4.Text = "수량";
             this.LblQR4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -105,9 +108,10 @@
             // LblQR3
             // 
             this.LblQR3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblQR3.BackColor = System.Drawing.Color.White;
             this.LblQR3.Location = new System.Drawing.Point(1047, 111);
             this.LblQR3.Name = "LblQR3";
-            this.LblQR3.Size = new System.Drawing.Size(82, 15);
+            this.LblQR3.Size = new System.Drawing.Size(82, 20);
             this.LblQR3.TabIndex = 18;
             this.LblQR3.Text = "품목코드";
             this.LblQR3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,9 +119,10 @@
             // LblQR2
             // 
             this.LblQR2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblQR2.BackColor = System.Drawing.Color.White;
             this.LblQR2.Location = new System.Drawing.Point(1047, 160);
             this.LblQR2.Name = "LblQR2";
-            this.LblQR2.Size = new System.Drawing.Size(82, 15);
+            this.LblQR2.Size = new System.Drawing.Size(82, 20);
             this.LblQR2.TabIndex = 19;
             this.LblQR2.Text = "출고일자";
             this.LblQR2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,9 +130,10 @@
             // LblQR1
             // 
             this.LblQR1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblQR1.BackColor = System.Drawing.Color.White;
             this.LblQR1.Location = new System.Drawing.Point(1047, 21);
             this.LblQR1.Name = "LblQR1";
-            this.LblQR1.Size = new System.Drawing.Size(82, 15);
+            this.LblQR1.Size = new System.Drawing.Size(82, 20);
             this.LblQR1.TabIndex = 20;
             this.LblQR1.Text = "출고번호";
             this.LblQR1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -149,15 +155,15 @@
             this.PbxQRCode.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.PbxQRCode.Location = new System.Drawing.Point(135, 3);
             this.PbxQRCode.Name = "PbxQRCode";
-            this.PbxQRCode.Size = new System.Drawing.Size(176, 143);
+            this.PbxQRCode.Size = new System.Drawing.Size(254, 156);
             this.PbxQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PbxQRCode.TabIndex = 16;
             this.PbxQRCode.TabStop = false;
             // 
             // BtnSave
             // 
-            this.BtnSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BtnSave.Location = new System.Drawing.Point(226, 281);
+            this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSave.Location = new System.Drawing.Point(265, 281);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(85, 60);
             this.BtnSave.TabIndex = 13;
@@ -167,8 +173,8 @@
             // 
             // BtnGenerate
             // 
-            this.BtnGenerate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BtnGenerate.Location = new System.Drawing.Point(135, 281);
+            this.BtnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGenerate.Location = new System.Drawing.Point(174, 281);
             this.BtnGenerate.Name = "BtnGenerate";
             this.BtnGenerate.Size = new System.Drawing.Size(85, 60);
             this.BtnGenerate.TabIndex = 14;
@@ -181,28 +187,29 @@
             this.MtrGetQRGrid.AllowUserToAddRows = false;
             this.MtrGetQRGrid.AllowUserToDeleteRows = false;
             this.MtrGetQRGrid.AllowUserToResizeRows = false;
+            this.MtrGetQRGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MtrGetQRGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.MtrGetQRGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MtrGetQRGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.MtrGetQRGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MtrGetQRGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MtrGetQRGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.MtrGetQRGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MtrGetQRGrid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.MtrGetQRGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MtrGetQRGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.MtrGetQRGrid.EnableHeadersVisualStyles = false;
             this.MtrGetQRGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.MtrGetQRGrid.GridColor = System.Drawing.Color.White;
@@ -210,19 +217,19 @@
             this.MtrGetQRGrid.Name = "MtrGetQRGrid";
             this.MtrGetQRGrid.ReadOnly = true;
             this.MtrGetQRGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MtrGetQRGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MtrGetQRGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.MtrGetQRGrid.RowHeadersWidth = 51;
             this.MtrGetQRGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.MtrGetQRGrid.RowTemplate.Height = 27;
             this.MtrGetQRGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MtrGetQRGrid.Size = new System.Drawing.Size(996, 553);
+            this.MtrGetQRGrid.Size = new System.Drawing.Size(919, 553);
             this.MtrGetQRGrid.TabIndex = 28;
             this.MtrGetQRGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtrGetQRGrid_CellClick);
             // 
@@ -248,9 +255,9 @@
             // 
             // BtnDataReset
             // 
-            this.BtnDataReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnDataReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnDataReset.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnDataReset.Location = new System.Drawing.Point(44, 281);
+            this.BtnDataReset.Location = new System.Drawing.Point(83, 281);
             this.BtnDataReset.Name = "BtnDataReset";
             this.BtnDataReset.Size = new System.Drawing.Size(85, 60);
             this.BtnDataReset.TabIndex = 29;
@@ -286,8 +293,8 @@
             // 
             // BtnPrint
             // 
-            this.BtnPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BtnPrint.Location = new System.Drawing.Point(317, 281);
+            this.BtnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnPrint.Location = new System.Drawing.Point(356, 281);
             this.BtnPrint.Name = "BtnPrint";
             this.BtnPrint.Size = new System.Drawing.Size(85, 60);
             this.BtnPrint.TabIndex = 29;
@@ -297,7 +304,8 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -309,17 +317,19 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1450, 553);
-            this.splitContainer1.SplitterDistance = 996;
+            this.splitContainer1.SplitterDistance = 919;
             this.splitContainer1.TabIndex = 32;
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Location = new System.Drawing.Point(3, 0);
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.Location = new System.Drawing.Point(2, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer2.Panel1.Controls.Add(this.BtnSave);
             this.splitContainer2.Panel1.Controls.Add(this.BtnGenerate);
             this.splitContainer2.Panel1.Controls.Add(this.BtnPrint);
@@ -327,8 +337,9 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer2.Panel2.Controls.Add(this.PbxQRCode);
-            this.splitContainer2.Size = new System.Drawing.Size(444, 553);
+            this.splitContainer2.Size = new System.Drawing.Size(522, 553);
             this.splitContainer2.SplitterDistance = 378;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -349,6 +360,7 @@
             this.Controls.Add(this.LblQR1);
             this.Controls.Add(this.TxtQRCode1);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GetQRForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GetQRForm";
