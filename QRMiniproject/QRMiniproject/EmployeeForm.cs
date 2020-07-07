@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace QRMiniproject
 {
-    public partial class EmployeeForm : MetroForm
+    public partial class EmployeeForm : Form
     {
         string mode = "";
         public EmployeeForm()
@@ -257,7 +257,6 @@ namespace QRMiniproject
             }
         }
 
-        string log = "";
         private void TxtcodeNumber_KeyDown(object sender, KeyEventArgs e)
         {
             if (!TxtcodeNumber.Enabled && !System.Text.RegularExpressions.Regex.IsMatch(e.KeyCode.ToString(), "[0-9]") && !char.IsControl((char)e.KeyCode) && !((int)e.KeyCode >= 37 && (int)e.KeyCode <= 40))

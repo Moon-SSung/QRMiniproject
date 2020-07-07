@@ -69,7 +69,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(20, 60);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -101,8 +101,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.lblinoutput);
-            this.splitContainer1.Size = new System.Drawing.Size(1495, 750);
-            this.splitContainer1.SplitterDistance = 881;
+            this.splitContainer1.Size = new System.Drawing.Size(1535, 830);
+            this.splitContainer1.SplitterDistance = 904;
             this.splitContainer1.TabIndex = 1;
             // 
             // GrdInput
@@ -149,7 +149,7 @@
             this.GrdInput.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GrdInput.RowTemplate.Height = 27;
             this.GrdInput.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrdInput.Size = new System.Drawing.Size(881, 750);
+            this.GrdInput.Size = new System.Drawing.Size(904, 830);
             this.GrdInput.TabIndex = 0;
             // 
             // CboContainer
@@ -160,7 +160,7 @@
             "A",
             "B",
             "C"});
-            this.CboContainer.Location = new System.Drawing.Point(185, 460);
+            this.CboContainer.Location = new System.Drawing.Point(202, 460);
             this.CboContainer.Name = "CboContainer";
             this.CboContainer.Size = new System.Drawing.Size(176, 23);
             this.CboContainer.TabIndex = 3;
@@ -170,7 +170,7 @@
             this.CboDevice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CboDevice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboDevice.FormattingEnabled = true;
-            this.CboDevice.Location = new System.Drawing.Point(86, 6);
+            this.CboDevice.Location = new System.Drawing.Point(103, 6);
             this.CboDevice.Name = "CboDevice";
             this.CboDevice.Size = new System.Drawing.Size(275, 23);
             this.CboDevice.TabIndex = 6;
@@ -180,7 +180,7 @@
             this.Picturebox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Picturebox.BackColor = System.Drawing.SystemColors.Window;
             this.Picturebox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Picturebox.Location = new System.Drawing.Point(16, 45);
+            this.Picturebox.Location = new System.Drawing.Point(33, 45);
             this.Picturebox.Name = "Picturebox";
             this.Picturebox.Size = new System.Drawing.Size(345, 293);
             this.Picturebox.TabIndex = 0;
@@ -206,7 +206,7 @@
             // CameraOff
             // 
             this.CameraOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CameraOff.Location = new System.Drawing.Point(500, 78);
+            this.CameraOff.Location = new System.Drawing.Point(517, 78);
             this.CameraOff.Name = "CameraOff";
             this.CameraOff.Size = new System.Drawing.Size(90, 40);
             this.CameraOff.TabIndex = 3;
@@ -217,7 +217,7 @@
             // BtnQRNew
             // 
             this.BtnQRNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnQRNew.Location = new System.Drawing.Point(383, 78);
+            this.BtnQRNew.Location = new System.Drawing.Point(400, 78);
             this.BtnQRNew.Name = "BtnQRNew";
             this.BtnQRNew.Size = new System.Drawing.Size(90, 40);
             this.BtnQRNew.TabIndex = 3;
@@ -228,7 +228,7 @@
             // BtnExit
             // 
             this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExit.Location = new System.Drawing.Point(286, 557);
+            this.BtnExit.Location = new System.Drawing.Point(303, 557);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(75, 40);
             this.BtnExit.TabIndex = 4;
@@ -239,7 +239,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(196, 557);
+            this.button1.Location = new System.Drawing.Point(213, 557);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 40);
             this.button1.TabIndex = 6;
@@ -250,7 +250,7 @@
             // BtnNew
             // 
             this.BtnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnNew.Location = new System.Drawing.Point(17, 557);
+            this.BtnNew.Location = new System.Drawing.Point(34, 557);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(75, 40);
             this.BtnNew.TabIndex = 4;
@@ -261,7 +261,7 @@
             // BtnSave
             // 
             this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSave.Location = new System.Drawing.Point(108, 557);
+            this.BtnSave.Location = new System.Drawing.Point(125, 557);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 40);
             this.BtnSave.TabIndex = 5;
@@ -272,7 +272,7 @@
             // TxtClientidx
             // 
             this.TxtClientidx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtClientidx.Location = new System.Drawing.Point(185, 359);
+            this.TxtClientidx.Location = new System.Drawing.Point(202, 359);
             this.TxtClientidx.Name = "TxtClientidx";
             this.TxtClientidx.ReadOnly = true;
             this.TxtClientidx.Size = new System.Drawing.Size(176, 25);
@@ -281,7 +281,7 @@
             // TxtProductUnit
             // 
             this.TxtProductUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtProductUnit.Location = new System.Drawing.Point(185, 506);
+            this.TxtProductUnit.Location = new System.Drawing.Point(202, 506);
             this.TxtProductUnit.Name = "TxtProductUnit";
             this.TxtProductUnit.ReadOnly = true;
             this.TxtProductUnit.Size = new System.Drawing.Size(176, 25);
@@ -291,7 +291,7 @@
             // TxtProductidx
             // 
             this.TxtProductidx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtProductidx.Location = new System.Drawing.Point(185, 413);
+            this.TxtProductidx.Location = new System.Drawing.Point(202, 413);
             this.TxtProductidx.Name = "TxtProductidx";
             this.TxtProductidx.ReadOnly = true;
             this.TxtProductidx.Size = new System.Drawing.Size(176, 25);
@@ -329,7 +329,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(101, 362);
+            this.label6.Location = new System.Drawing.Point(118, 362);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 15);
             this.label6.TabIndex = 0;
@@ -349,7 +349,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(142, 463);
+            this.label2.Location = new System.Drawing.Point(159, 463);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 0;
@@ -359,7 +359,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(142, 509);
+            this.label4.Location = new System.Drawing.Point(159, 509);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 0;
@@ -369,7 +369,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 416);
+            this.label1.Location = new System.Drawing.Point(129, 416);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 0;
@@ -379,7 +379,7 @@
             // 
             this.lblinoutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblinoutput.AutoSize = true;
-            this.lblinoutput.Location = new System.Drawing.Point(13, 9);
+            this.lblinoutput.Location = new System.Drawing.Point(30, 9);
             this.lblinoutput.Name = "lblinoutput";
             this.lblinoutput.Size = new System.Drawing.Size(67, 15);
             this.lblinoutput.TabIndex = 0;
@@ -396,8 +396,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1535, 830);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InPutForm";
-            this.Resizable = false;
             this.Text = "InPutForm";
             this.Load += new System.EventHandler(this.InPutForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

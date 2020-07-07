@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace QRMiniproject
 {
-    public partial class LoginForm : MetroForm
+    public partial class LoginForm : Form
     {
         public LoginForm()
         {
@@ -39,7 +39,7 @@ namespace QRMiniproject
                     conn.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "SELECT UserID FROM EmployeeTbl  " +
+                    cmd.CommandText = "SELECT UserID, Name, CodeNumber  FROM EmployeeTbl  " +
                                       "  WHERE UserID = @UserID    " +
                                       "  AND Password = @Password  ";
                     //id
@@ -59,6 +59,8 @@ namespace QRMiniproject
                     if (strUserid != "")
                     {
                         Commons.LoginUserid = strUserid;
+                        Commons.LoginUserCode = reader["CodeNumber"].ToString();
+                        Commons.LoginUserName = reader["Name"].ToString();
                         MetroMessageBox.Show(this, "접속성공", "로그인");
                         this.Close();
                     }

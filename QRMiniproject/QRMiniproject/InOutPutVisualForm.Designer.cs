@@ -31,26 +31,26 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.InputTab = new MetroFramework.Controls.MetroTabPage();
             this.InputChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.OutTab = new MetroFramework.Controls.MetroTabPage();
-            this.OutChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.OutPriceChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.OutPriceChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.OutChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroTabControl1.SuspendLayout();
             this.InputTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputChart)).BeginInit();
             this.OutTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OutChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OutPriceChart)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OutPriceChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OutChart)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -121,26 +121,22 @@
             this.OutTab.VerticalScrollbarHighlightOnWheel = false;
             this.OutTab.VerticalScrollbarSize = 10;
             // 
-            // OutChart
+            // tableLayoutPanel1
             // 
-
-            chartArea3.Name = "ChartArea1";
-            this.OutChart.ChartAreas.Add(chartArea3);
-            this.OutChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.OutChart.Legends.Add(legend3);
-            this.OutChart.Location = new System.Drawing.Point(439, 3);
-            this.OutChart.Name = "OutChart";
-            this.OutChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.IsValueShownAsLabel = true;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.OutChart.Series.Add(series3);
-            this.OutChart.Size = new System.Drawing.Size(430, 380);
-            this.OutChart.TabIndex = 2;
-            this.OutChart.Text = "chart1";
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.OutPriceChart, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.OutChart, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(872, 386);
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // OutPriceChart
             // 
@@ -161,22 +157,25 @@
             this.OutPriceChart.TabIndex = 3;
             this.OutPriceChart.Text = "chart1";
             // 
-            // tableLayoutPanel1
+            // OutChart
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.OutPriceChart, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.OutChart, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(872, 386);
-            this.tableLayoutPanel1.TabIndex = 4;
+            chartArea3.Name = "ChartArea1";
+            this.OutChart.ChartAreas.Add(chartArea3);
+            this.OutChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.OutChart.Legends.Add(legend3);
+            this.OutChart.Location = new System.Drawing.Point(439, 3);
+            this.OutChart.Name = "OutChart";
+            this.OutChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.OutChart.Series.Add(series3);
+            this.OutChart.Size = new System.Drawing.Size(430, 380);
+            this.OutChart.TabIndex = 2;
+            this.OutChart.Text = "chart1";
             // 
             // InOutPutVisualForm
             // 
@@ -184,6 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 538);
             this.Controls.Add(this.metroTabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(933, 538);
             this.Name = "InOutPutVisualForm";
             this.Text = "InOutPutVisual";
@@ -193,9 +193,9 @@
             this.InputTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.InputChart)).EndInit();
             this.OutTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.OutChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OutPriceChart)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.OutPriceChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OutChart)).EndInit();
             this.ResumeLayout(false);
 
         }

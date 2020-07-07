@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace QRMiniproject
 {
-    public partial class ClientForm : MetroForm
+    public partial class ClientForm : Form
     {
         string mode = "";
         public ClientForm()
