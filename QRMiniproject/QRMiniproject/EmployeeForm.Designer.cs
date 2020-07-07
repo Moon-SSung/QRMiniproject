@@ -73,6 +73,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.CboRank);
             this.splitContainer1.Panel2.Controls.Add(this.CboDepart);
             this.splitContainer1.Panel2.Controls.Add(this.BtnNew);

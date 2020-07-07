@@ -1,14 +1,12 @@
 ﻿namespace QRMiniproject
 {
-    partial class Form1
+    partial class MainForm2
     {
         /// <summary>
-        /// Variable del diseñador requerida.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén utilizando.
         /// </summary>
         /// <param name="disposing">true si los recursos administrados se deben eliminar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
@@ -22,13 +20,9 @@
 
         #region Código generado por el Diseñador de Windows Forms
 
-        /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido del método con el editor de código.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm2));
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.LblUserName = new System.Windows.Forms.Label();
             this.LblUserCode = new System.Windows.Forms.Label();
@@ -42,22 +36,10 @@
             this.ClientManaged = new System.Windows.Forms.Button();
             this.EmployeeManaged = new System.Windows.Forms.Button();
             this.BtnMain = new System.Windows.Forms.PictureBox();
-            this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.iconminimizar = new System.Windows.Forms.PictureBox();
-            this.iconrestaurar = new System.Windows.Forms.PictureBox();
-            this.iconmaximizar = new System.Windows.Forms.PictureBox();
-            this.iconcerrar = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMain)).BeginInit();
-            this.BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -165,7 +147,7 @@
             this.BtnInOut.Name = "BtnInOut";
             this.BtnInOut.Size = new System.Drawing.Size(333, 46);
             this.BtnInOut.TabIndex = 6;
-            this.BtnInOut.Text = "입출고현황";
+            this.BtnInOut.Text = "In && Out Status";
             this.BtnInOut.UseVisualStyleBackColor = true;
             this.BtnInOut.Click += new System.EventHandler(this.BtnInOut_Click);
             // 
@@ -183,7 +165,7 @@
             this.BtnOutPut.Name = "BtnOutPut";
             this.BtnOutPut.Size = new System.Drawing.Size(333, 46);
             this.BtnOutPut.TabIndex = 5;
-            this.BtnOutPut.Text = "Shipping Manage";
+            this.BtnOutPut.Text = "Forwarding Manage";
             this.BtnOutPut.UseVisualStyleBackColor = true;
             this.BtnOutPut.Click += new System.EventHandler(this.BtnOutPut_Click);
             // 
@@ -201,7 +183,7 @@
             this.BtnInPut.Name = "BtnInPut";
             this.BtnInPut.Size = new System.Drawing.Size(333, 46);
             this.BtnInPut.TabIndex = 4;
-            this.BtnInPut.Text = "Warehouse Manage";
+            this.BtnInPut.Text = "Receiving Manage";
             this.BtnInPut.UseVisualStyleBackColor = true;
             this.BtnInPut.Click += new System.EventHandler(this.BtnInPut_Click);
             // 
@@ -219,7 +201,7 @@
             this.ProductManaged.Name = "ProductManaged";
             this.ProductManaged.Size = new System.Drawing.Size(333, 46);
             this.ProductManaged.TabIndex = 3;
-            this.ProductManaged.Text = "Product";
+            this.ProductManaged.Text = "Product Manage";
             this.ProductManaged.UseVisualStyleBackColor = true;
             this.ProductManaged.Click += new System.EventHandler(this.ProductManaged_Click);
             // 
@@ -237,7 +219,7 @@
             this.ClientManaged.Name = "ClientManaged";
             this.ClientManaged.Size = new System.Drawing.Size(333, 46);
             this.ClientManaged.TabIndex = 2;
-            this.ClientManaged.Text = "Client";
+            this.ClientManaged.Text = "Client Manage";
             this.ClientManaged.UseVisualStyleBackColor = true;
             this.ClientManaged.Click += new System.EventHandler(this.ClientManaged_Click);
             // 
@@ -255,7 +237,7 @@
             this.EmployeeManaged.Name = "EmployeeManaged";
             this.EmployeeManaged.Size = new System.Drawing.Size(333, 46);
             this.EmployeeManaged.TabIndex = 1;
-            this.EmployeeManaged.Text = "Employee";
+            this.EmployeeManaged.Text = "Employee Manage";
             this.EmployeeManaged.UseVisualStyleBackColor = true;
             this.EmployeeManaged.Click += new System.EventHandler(this.EmployeeManaged_Click);
             // 
@@ -272,126 +254,35 @@
             this.BtnMain.TabStop = false;
             this.BtnMain.Click += new System.EventHandler(this.BtnMain_Click);
             // 
-            // BarraTitulo
+            // panelContainer
             // 
-            this.BarraTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BarraTitulo.Controls.Add(this.iconminimizar);
-            this.BarraTitulo.Controls.Add(this.iconrestaurar);
-            this.BarraTitulo.Controls.Add(this.iconmaximizar);
-            this.BarraTitulo.Controls.Add(this.iconcerrar);
-            this.BarraTitulo.Controls.Add(this.btnMenu);
-            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTitulo.Location = new System.Drawing.Point(333, 0);
-            this.BarraTitulo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1400, 52);
-            this.BarraTitulo.TabIndex = 1;
+            this.panelContainer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(333, 0);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1400, 750);
+            this.panelContainer.TabIndex = 2;
             // 
-            // iconminimizar
-            // 
-            this.iconminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
-            this.iconminimizar.Location = new System.Drawing.Point(1292, 6);
-            this.iconminimizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconminimizar.Name = "iconminimizar";
-            this.iconminimizar.Size = new System.Drawing.Size(24, 21);
-            this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconminimizar.TabIndex = 4;
-            this.iconminimizar.TabStop = false;
-            this.iconminimizar.Click += new System.EventHandler(this.iconminimizar_Click);
-            // 
-            // iconrestaurar
-            // 
-            this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconrestaurar.Image")));
-            this.iconrestaurar.Location = new System.Drawing.Point(1327, 6);
-            this.iconrestaurar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconrestaurar.Name = "iconrestaurar";
-            this.iconrestaurar.Size = new System.Drawing.Size(24, 21);
-            this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconrestaurar.TabIndex = 3;
-            this.iconrestaurar.TabStop = false;
-            this.iconrestaurar.Visible = false;
-            this.iconrestaurar.Click += new System.EventHandler(this.iconrestaurar_Click);
-            // 
-            // iconmaximizar
-            // 
-            this.iconmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("iconmaximizar.Image")));
-            this.iconmaximizar.Location = new System.Drawing.Point(1327, 6);
-            this.iconmaximizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconmaximizar.Name = "iconmaximizar";
-            this.iconmaximizar.Size = new System.Drawing.Size(24, 21);
-            this.iconmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconmaximizar.TabIndex = 2;
-            this.iconmaximizar.TabStop = false;
-            this.iconmaximizar.Click += new System.EventHandler(this.iconmaximizar_Click);
-            // 
-            // iconcerrar
-            // 
-            this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
-            this.iconcerrar.Location = new System.Drawing.Point(1361, 6);
-            this.iconcerrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconcerrar.Name = "iconcerrar";
-            this.iconcerrar.Size = new System.Drawing.Size(24, 21);
-            this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconcerrar.TabIndex = 1;
-            this.iconcerrar.TabStop = false;
-            this.iconcerrar.Click += new System.EventHandler(this.iconcerrar_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(11, 7);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(47, 40);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMenu.TabIndex = 0;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // panelContenedor
-            // 
-            this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(333, 52);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1400, 698);
-            this.panelContenedor.TabIndex = 2;
-            // 
-            // Form1
+            // MainForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1733, 750);
-            this.Controls.Add(this.panelContenedor);
-            this.Controls.Add(this.BarraTitulo);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.MenuVertical);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form1";
+            this.Name = "MainForm2";
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.Form1_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm2_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MenuVertical.ResumeLayout(false);
             this.MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMain)).EndInit();
-            this.BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,13 +291,7 @@
 
         private System.Windows.Forms.Panel MenuVertical;
         private System.Windows.Forms.PictureBox BtnMain;
-        private System.Windows.Forms.Panel BarraTitulo;
-        private System.Windows.Forms.PictureBox btnMenu;
-        private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.PictureBox iconminimizar;
-        private System.Windows.Forms.PictureBox iconrestaurar;
-        private System.Windows.Forms.PictureBox iconmaximizar;
-        private System.Windows.Forms.PictureBox iconcerrar;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Button EmployeeManaged;
         private System.Windows.Forms.Button BtnInOut;
         private System.Windows.Forms.Button BtnOutPut;

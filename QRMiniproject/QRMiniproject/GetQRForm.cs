@@ -141,6 +141,7 @@ namespace QRMiniproject
         private void GetQRForm_Load(object sender, EventArgs e)
         {
             MtrGetQRGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            MtrGetQRGrid.Width = 750;
             ClearTextControls();
             initializeDateTimePicker();            
             ViewGridData();
