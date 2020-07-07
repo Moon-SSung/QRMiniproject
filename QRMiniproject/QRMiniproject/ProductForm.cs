@@ -40,8 +40,45 @@ namespace QRMiniproject
                 MetroMessageBox.Show(this, "빈값은 저장할 수 없습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (!Check())
+                return;
             SaveProcess();
             UpdateData();
+        }
+        // 품목코드체크
+        private bool Check()
+        {
+            using (SqlConnection conn = new SqlConnection(Commons.ConnString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                SqlDataReader reader = null;
+                string strUserid = null;
+                if (mode == "INSERT")
+                {
+                    cmd.CommandText = "SELECT ID FROM ProductTbl " +
+                                      " WHERE ID = @ID ";
+                    SqlParameter paramCode = new SqlParameter("@ID", SqlDbType.NVarChar,50);
+                    paramCode.Value = TxtpdtID.Text;
+                    cmd.Parameters.Add(paramCode);
+
+                    reader = cmd.ExecuteReader();
+                    reader.Read();
+                    if (reader.HasRows)
+                    {
+                        strUserid = reader["ID"] != null ? reader["ID"].ToString() : "";
+                        if (strUserid != "")
+                        {
+                            MetroMessageBox.Show(this, "이미 존재하는 품목번호입니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            TxtpdtID.Text = "";
+                            return false;
+                        }
+                    }
+                    reader.Close();
+                }
+            }
+            return true;
         }
         private void BtnNew_Click(object sender, EventArgs e)
         {
@@ -82,6 +119,7 @@ namespace QRMiniproject
             {
                 DataGridViewRow data = PrdGridBox.Rows[e.RowIndex];
                 TxtpdtID.Text = data.Cells[1].Value.ToString();
+                TxtpdtID.Enabled = false;
                 TxtpdtName.Text = data.Cells[2].Value.ToString();
                 TxtpdtStandard.Text = data.Cells[3].Value.ToString();
                 TxtpdtUnit.Text = data.Cells[4].Value.ToString();
@@ -107,6 +145,7 @@ namespace QRMiniproject
         {
             TxtpdtID.Text = TxtpdtName.Text = TxtpdtPrice.Text = TxtpdtStandard.Text = TxtpdtUnit.Text = "";
             PrdpictureBox.Image = null;
+            TxtpdtID.Enabled = true;
         }
         /// <summary>
         /// UPDATE 프로세스
@@ -189,6 +228,18 @@ namespace QRMiniproject
 
                 MetroMessageBox.Show(this, "저장되었습니다.");
 
+            }
+        }
+
+        private void TxtpdtPrice_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyCode.ToString(), "[0-9]") && !char.IsControl((char)e.KeyCode) && !((int)e.KeyCode >= 37 && (int)e.KeyCode <= 40))
+            {
+                MetroMessageBox.Show(this, "숫자만 입력이가능합니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (TxtpdtPrice.Text.Length != 0)
+                    TxtpdtPrice.Text = TxtpdtPrice.Text.Substring(0, TxtpdtPrice.Text.Length - 1);
+                TxtpdtPrice.Focus();
+                return;
             }
         }
     }

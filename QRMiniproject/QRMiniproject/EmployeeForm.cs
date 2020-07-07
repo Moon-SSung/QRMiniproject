@@ -54,6 +54,7 @@ namespace QRMiniproject
                 DataGridViewRow data = GrdEmployeeTbl.Rows[e.RowIndex];
                 TxtEmpCode.Text = data.Cells[0].Value.ToString();
                 TxtcodeNumber.Text = data.Cells[1].Value.ToString();
+                TxtcodeNumber.ReadOnly = true;
                 TxtName.Text = data.Cells[2].Value.ToString();
                 TxtIdentityNumber.Text = data.Cells[3].Value.ToString();
                 CboDepart.SelectedIndex = CboDepart.FindString(data.Cells[4].Value.ToString().Trim());
@@ -84,6 +85,7 @@ namespace QRMiniproject
             CboRank.SelectedIndex = -1;
             TxtcodeNumber.ReadOnly = false;
             TxtcodeNumber.BackColor = Color.White;
+
             TxtName.Focus();
         }
 
@@ -103,9 +105,70 @@ namespace QRMiniproject
                 MetroMessageBox.Show(this, "빈값은 저장할 수 없습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (!Check())
+                return;
             SaveProcess();
             UpdateData();
             ClearTextControl();
+        }
+        // 사원번호 아이디 중복체크
+        private bool Check()
+        {
+            using (SqlConnection conn = new SqlConnection(Commons.ConnString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                SqlDataReader reader = null;
+                string strUserid = null;
+                if (mode == "INSERT")
+                {
+                    cmd.CommandText = "SELECT UserID FROM EmployeeTbl " +
+                                      " WHERE CodeNumber = @UserCode ";
+                    SqlParameter paramCode = new SqlParameter("@UserCode", SqlDbType.Int);
+                    paramCode.Value = TxtcodeNumber.Text;
+                    cmd.Parameters.Add(paramCode);
+
+                    reader = cmd.ExecuteReader();
+                    reader.Read();
+                    if (reader.HasRows)
+                    {
+                        strUserid = reader["UserID"] != null ? reader["UserID"].ToString() : "";
+                        if (strUserid != "")
+                        {
+                            MetroMessageBox.Show(this, "이미 존재하는 사원번호입니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            TxtcodeNumber.Text = "";
+                            return false;
+                        }
+                    }
+
+                    reader.Close();
+
+                }
+
+                cmd.CommandText = "SELECT UserID FROM EmployeeTbl " +
+                                  " WHERE UserID = @UserID ";
+
+                SqlParameter paramID = new SqlParameter("@UserID", SqlDbType.VarChar, 10);
+                paramID.Value = TxtUserId.Text;
+                cmd.Parameters.Add(paramID);
+
+                reader = cmd.ExecuteReader();
+                reader.Read();
+
+                if (reader.HasRows)
+                {
+                    strUserid = reader["UserID"] != null ? reader["UserID"].ToString() : "";
+                    if (strUserid != "")
+                    {
+                        MetroMessageBox.Show(this, "이미 존재하는 아이디입니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TxtUserId.Text = "";
+                        return false;
+                    }
+                }
+
+            }
+            return true;
         }
 
         private void SaveProcess()
@@ -149,6 +212,7 @@ namespace QRMiniproject
 
                 }
                 cmd.CommandText = strQuery;
+
 
                 if (mode == "UPDATE")
                 {
@@ -196,7 +260,7 @@ namespace QRMiniproject
         string log = "";
         private void TxtcodeNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyCode.ToString(), "[0-9]") && !char.IsControl((char)e.KeyCode) && !((int)e.KeyCode >= 37 && (int)e.KeyCode <= 40))
+            if (!TxtcodeNumber.Enabled && !System.Text.RegularExpressions.Regex.IsMatch(e.KeyCode.ToString(), "[0-9]") && !char.IsControl((char)e.KeyCode) && !((int)e.KeyCode >= 37 && (int)e.KeyCode <= 40))
             {
                 MetroMessageBox.Show(this, "숫자만 입력이가능합니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (TxtcodeNumber.Text.Length != 0)

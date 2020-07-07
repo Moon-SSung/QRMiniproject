@@ -64,6 +64,7 @@ namespace QRMiniproject
                 TxtClientidx.ReadOnly = true;
                 TxtClientidx.BackColor = Color.AntiqueWhite;
                 TxtClientNumber.Text = data.Cells[1].Value.ToString();
+                TxtClientNumber.ReadOnly = true;
                 CboPersonnal.SelectedIndex = CboPersonnal.FindString(data.Cells[2].Value.ToString().Trim());
                 TxtClientName.Text = data.Cells[3].Value.ToString();
                 TxtClientOwner.Text = data.Cells[4].Value.ToString();
@@ -90,10 +91,47 @@ namespace QRMiniproject
                 MetroMessageBox.Show(this, "빈값은 저장할 수 없습니다.", "에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (!Check())
+                return;
 
             SaveProcess(); //DB저장프로세스
             UpdateData();
             ClearTextControls();
+        }
+        // 거래처 번호 중복 체크
+        private bool Check()
+        {
+            using (SqlConnection conn = new SqlConnection(Commons.ConnString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                SqlDataReader reader = null;
+                string strUserid = null;
+                if (mode == "INSERT")
+                {
+                    cmd.CommandText = "SELECT Number FROM ClientTbl " +
+                                      " WHERE Number = @Number ";
+                    SqlParameter paramCode = new SqlParameter("@Number", SqlDbType.Int);
+                    paramCode.Value = TxtClientNumber.Text;
+                    cmd.Parameters.Add(paramCode);
+
+                    reader = cmd.ExecuteReader();
+                    reader.Read();
+                    if (reader.HasRows)
+                    {
+                        strUserid = reader["Number"] != null ? reader["Number"].ToString() : "";
+                        if (strUserid != "")
+                        {
+                            MetroMessageBox.Show(this, "이미 존재하는 거래처번호입니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            TxtClientNumber.Text = "";
+                            return false;
+                        }
+                    }
+                    reader.Close();
+                }
+            }
+            return true;
         }
 
         private void ClearTextControls()
@@ -107,6 +145,8 @@ namespace QRMiniproject
             TxtClientidx.ReadOnly = true;
             TxtClientidx.BackColor = Color.White;
             TxtClientidx.Focus();
+
+            TxtClientNumber.ReadOnly = false;
         }
 
         private void SaveProcess()
@@ -196,7 +236,7 @@ namespace QRMiniproject
 
         private void TxtClientNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyCode.ToString(), "[0-9]") && !char.IsControl((char)e.KeyCode) && !((int)e.KeyCode >= 37 && (int)e.KeyCode <= 40))
+            if (!TxtClientNumber.Enabled && !System.Text.RegularExpressions.Regex.IsMatch(e.KeyCode.ToString(), "[0-9]") && !char.IsControl((char)e.KeyCode) && !((int)e.KeyCode >= 37 && (int)e.KeyCode <= 40))
             {
                 MetroMessageBox.Show(this, "숫자만 입력이가능합니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (TxtClientNumber.Text.Length != 0)
