@@ -1,12 +1,12 @@
-﻿using MetroFramework.Forms;
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QRMiniproject
 {
-    public partial class InOutPutVisualForm : MetroForm
+    public partial class InOutPutVisualForm : Form
     {
 
         public InOutPutVisualForm()
@@ -42,6 +42,7 @@ namespace QRMiniproject
             OutPriceChart.Series[0].BorderWidth = 1;
             OutPriceChart.Series[0].BorderColor = Color.Black;
             OutPriceChart.Text = "일별 판매액";
+            UpdateData();
         }
         private void UpdateData()
         {

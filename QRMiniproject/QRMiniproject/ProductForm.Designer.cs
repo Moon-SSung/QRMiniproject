@@ -76,7 +76,7 @@
             // ProductSprtContainer1
             // 
             this.ProductSprtContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductSprtContainer1.Location = new System.Drawing.Point(20, 60);
+            this.ProductSprtContainer1.Location = new System.Drawing.Point(0, 0);
             this.ProductSprtContainer1.Name = "ProductSprtContainer1";
             // 
             // ProductSprtContainer1.Panel1
@@ -87,8 +87,8 @@
             // ProductSprtContainer1.Panel2
             // 
             this.ProductSprtContainer1.Panel2.Controls.Add(this.ProductSprtContainer2);
-            this.ProductSprtContainer1.Size = new System.Drawing.Size(1031, 546);
-            this.ProductSprtContainer1.SplitterDistance = 708;
+            this.ProductSprtContainer1.Size = new System.Drawing.Size(1071, 626);
+            this.ProductSprtContainer1.SplitterDistance = 735;
             this.ProductSprtContainer1.TabIndex = 0;
             // 
             // PrdGridBox
@@ -148,7 +148,7 @@
             this.PrdGridBox.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.PrdGridBox.RowTemplate.Height = 27;
             this.PrdGridBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PrdGridBox.Size = new System.Drawing.Size(708, 546);
+            this.PrdGridBox.Size = new System.Drawing.Size(735, 626);
             this.PrdGridBox.TabIndex = 0;
             this.PrdGridBox.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrdGridBox_CellClick);
             // 
@@ -253,8 +253,8 @@
             this.ProductSprtContainer2.Panel2.Controls.Add(this.TxtpdtID);
             this.ProductSprtContainer2.Panel2.Controls.Add(this.BtnSave);
             this.ProductSprtContainer2.Panel2.Controls.Add(this.BtnNew);
-            this.ProductSprtContainer2.Size = new System.Drawing.Size(319, 546);
-            this.ProductSprtContainer2.SplitterDistance = 242;
+            this.ProductSprtContainer2.Size = new System.Drawing.Size(332, 626);
+            this.ProductSprtContainer2.SplitterDistance = 277;
             this.ProductSprtContainer2.TabIndex = 0;
             // 
             // PrdpictureBox
@@ -263,7 +263,7 @@
             this.PrdpictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrdpictureBox.Location = new System.Drawing.Point(0, 0);
             this.PrdpictureBox.Name = "PrdpictureBox";
-            this.PrdpictureBox.Size = new System.Drawing.Size(319, 242);
+            this.PrdpictureBox.Size = new System.Drawing.Size(332, 277);
             this.PrdpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PrdpictureBox.TabIndex = 0;
             this.PrdpictureBox.TabStop = false;
@@ -505,6 +505,7 @@
             this.ClientSize = new System.Drawing.Size(1071, 626);
             this.Controls.Add(this.MlblPicture);
             this.Controls.Add(this.ProductSprtContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProductForm";
             this.Text = "ProductForm";
             this.Load += new System.EventHandler(this.ProductForm_Load);

@@ -43,7 +43,6 @@ namespace QRMiniproject
         private void EmployeeManaged_Click(object sender, EventArgs e)
         {
             EmployeeForm form = new EmployeeForm();
-            InItChildForm(form, "사원관리");
         }
 
         private void ClientManaged_Click(object sender, EventArgs e)
@@ -91,6 +90,7 @@ namespace QRMiniproject
                 LoginForm loginForm = new LoginForm();
                 resultLogout = loginForm.ShowDialog();
                 LblUserID.Text = Commons.LoginUserid;
+                
             }
         }
     }

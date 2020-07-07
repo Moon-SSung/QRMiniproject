@@ -48,3 +48,4 @@ C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csproj.
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.exe
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.pdb
 C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.csprojAssemblyReference.cache
+C:\SRC\QRMiniproject\QRMiniproject\QRMiniproject\obj\Debug\QRMiniproject.Form1.resources
