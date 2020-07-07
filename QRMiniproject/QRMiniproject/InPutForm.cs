@@ -8,25 +8,32 @@ using AForge.Video.DirectShow;
 using AForge.Video;
 using System.Data.SqlClient;
 using MetroFramework;
-
+/// <summary>
+/// 사용한 Nuget패키지 : Zxing(qrcode 인식) , aforge(웹캠실행)
+/// </summary>
 namespace QRMiniproject
 {
     public partial class InPutForm : MetroForm
     {
         string mode = "";
+        //FilterInfoCollection 객체생성
         FilterInfoCollection FilterInfoCollection;
+        //VideoCaptureDeveice 객체생성
         VideoCaptureDevice captureDevice = null;
 
         public InPutForm()
         {
             InitializeComponent();
             //그리드 column을 데이터에 맞게 자동으로 설정해줌.
-            //저장
             GrdInput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         
-        
+        /// <summary>
+        /// Combobox의 DropDownstyle을 list로 변경하고 노트북에 연결된 웹캠의 정보를 나타낸다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InPutForm_Load(object sender, EventArgs e)
         {
             FilterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -37,7 +44,10 @@ namespace QRMiniproject
                 UpdateData();
             }
         }
-
+        /// <summary>
+        /// InputTbl의 I_Idx, Indate, ID(제품코드), count(수량), storage(창고)를 불러오고 ClientTbl과
+        /// innerjoin시켜 C_Idx에 맞는 C.Name(거래처를 불러온다. 불러온 데이터를 grid에 나타낸다.
+        /// </summary>
         private void UpdateData()
         {
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
@@ -55,7 +65,11 @@ namespace QRMiniproject
                 GrdInput.Columns[0].Visible = false;
             }
         }
-
+        /// <summary>
+        /// 노트북에 내장된 웹캠을 실행시키는 Code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnQRNew_Click(object sender, EventArgs e)
         {
             captureDevice = new VideoCaptureDevice(FilterInfoCollection[CboDevice.SelectedIndex].MonikerString);
@@ -64,42 +78,49 @@ namespace QRMiniproject
             Picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
             timer1.Start();
         }
-
+        //eventArgs.Frame : 웹캠에 떠있는 화면을 clone(복제)해서 Bitmap화 시킨다음 picturebox의 image에 대입한다.
         private void captureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Picturebox.Image = (Bitmap)eventArgs.Frame.Clone();
         }
-
+        /// <summary>
+        /// tiemer interval을 1000으로 설정(1초룰 나타냄) QRcode를 인식하는 code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {       //picturebox에서 출력되는 image를 1초단위로 인식하고 Bitmap화(이미지를 메모리형태로 저장?) 한다? (점 방식)
             if (Picturebox.Image != null)
-            {
+            {   //barcodeReader 객체생성
                 BarcodeReader barcodeReader = new BarcodeReader();
+                //픽쳐박스의 이미지를 비트맵화시키고 decode한 값을 barcoderReader에 넣은 것을 result?
                 Result result = barcodeReader.Decode((Bitmap)Picturebox.Image);
-
+                //split : '/'을 기준으로 끊어준다. qr코드의 데이터의 원본은 123/456/789 이렇기 때문에 '/'단위로 끊어준다.
                 if (result != null)
-                {
+                {   //space라는 객체를 만듬 > '/' 단위로 끊어서 tostring화 한 다음 배열에 집어넣는다?
                     string[] space = result.ToString().Split(new char[] { '/' }, StringSplitOptions.None);
-
-
+                    //txtbox순서대로 qrcode의 데이터를 끊어준다.
                     TxtClientidx.Text = space[1];    // 거래처번호
-                    TxtProductidx.Text = space[2];   // 품목코드     //qr코드 데이터를 한줄씩 띄어주기
+                    TxtProductidx.Text = space[2];   // 품목코드     
                     TxtProductUnit.Text = space[4];  // 수량
-
+                    //타이머 stop
                     timer1.Stop();
+                    //capturedevice가 계속 진행되면 연결을 끊어준다.
                     if (captureDevice.IsRunning)
                         captureDevice.Stop();
                 }
             }
         }
-
+        //save버튼 클릭시 발생하는 이벤트 : saveprocess메서드 발동
         private void BtnSave_Click(object sender, EventArgs e)
         {
             Saveprocess();
         }
 
-
-        //고쳐야 할 것 : contents가 없을 때 없다고 표시할 것, 거래처저장으로 넘어갈때 cancle눌러도 거래처폼으로 넘어가버림
+        /// <summary>
+        /// 우선 신규버튼을 누르고 데이터를 저장해야한다는 문구가 뜬다. 
+        /// DB를 연결하고 쿼리문을 열어 UPDATE할 데이터들을 정한다.
+        /// </summary>
         private void Saveprocess()
         {
             if (string.IsNullOrEmpty(mode))
@@ -119,13 +140,14 @@ namespace QRMiniproject
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     string strQuery = "";
-
+                    //업데이트 할 데이터들
                     if (mode == "UPDATE")
                     {
                         strQuery = @"UPDATE @dbo.@InputTbl SET Indate = @Indate, ID = @ID 
                                 , Count = @Count , Storage = Storage , ClientIdx = @ClientIdx ";
                         cmd.CommandText = strQuery;
                     }
+                    //신규로 삽입할 데이터들
                     else if (mode == "INSERT")
                     {
                         strQuery = @"INSERT INTO dbo.InputTbl
@@ -159,10 +181,10 @@ namespace QRMiniproject
                     UpdateData();
                 }
             }
-
+            //에러 발생시 뜨는 문구를 정한다. 저장되어있지않는 거래처번호를 삽입하면 에러가 뜨게된다.
+            //그러면 거래처번호를 저장할 수 있는 form으로 넘어갈 수 있다.
             catch (Exception)
             {
-                //거래처번호 등록시 cancle버튼 / 취소할 때 
                 DialogResult result;
                 result = MetroMessageBox.Show(this, "저장된 거래처번호가 존재하지않습니다. 거래처번호를 등록하시겠습니까?", "오류",
                 MessageBoxButtons.OKCancel);
@@ -174,11 +196,12 @@ namespace QRMiniproject
                 }
             }
         }
+        //BtnExit 클릭 시 프로그램 종료
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
         }
-
+        //BtnNew 클릭 시 쿼리문에 삽입되는 INSERT 모드가 되고 ClearTextprocess 메서드가 발동
         private void BtnNew_Click(object sender, EventArgs e)
         {
             mode = "INSERT";
@@ -191,12 +214,12 @@ namespace QRMiniproject
             TxtClientidx.Text = TxtProductidx.Text = TxtProductUnit.Text = "";
             CboContainer.Text = "";
         }
-
+        //button1 클릭 시 form이 종료된다
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //수량 text에서 엔터(keychar : 13)을 누르면 saveprocess 메서드가 발동된다.
         private void TxtProductUnit_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar == 13)
@@ -204,21 +227,23 @@ namespace QRMiniproject
                 Saveprocess();
             }
         }
-
+        /// <summary>
+        /// 웹캠 출력을 정지하는 기능
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CameraOff_Click(object sender, EventArgs e)
-        {
-            if (captureDevice != null && captureDevice.IsRunning) 
-            {
+        {//captureDeive의 출력값이 null이 아니고(출력이 될 때) and captureDevice가 실행되고 있을 때
+            if (captureDevice != null && captureDevice.IsRunning)
+            {//captureDevoce를 stop시키고 출력값을 null로 만들어라
                 captureDevice.Stop();
                 captureDevice = null;
-                if (Picturebox.Image != null) //picturebox에 값이 있을 때 초기화
-                {
-                    Picturebox.Image = null;
-                }
+            }
 
-
-
-
+            //픽쳐박스의 이미지가 null이 아닐 때(이미지가 있을 때 > 웹캠이 동작하고 있을 때 ) 픽쳐박스의 이미지를 null로 만들어라
+            if (Picturebox.Image != null) //picturebox에 값이 있을 때 초기화
+            {
+                Picturebox.Image = null;
             }
         }
     }
