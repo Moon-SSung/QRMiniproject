@@ -55,16 +55,14 @@
             // 
             // metroTabControl1
             // 
-            this.metroTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroTabControl1.Controls.Add(this.InputTab);
             this.metroTabControl1.Controls.Add(this.OutTab);
+            this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Tall;
-            this.metroTabControl1.Location = new System.Drawing.Point(24, 64);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(886, 451);
+            this.metroTabControl1.Size = new System.Drawing.Size(933, 538);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
             this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
@@ -77,7 +75,7 @@
             this.InputTab.HorizontalScrollbarSize = 10;
             this.InputTab.Location = new System.Drawing.Point(4, 44);
             this.InputTab.Name = "InputTab";
-            this.InputTab.Size = new System.Drawing.Size(878, 403);
+            this.InputTab.Size = new System.Drawing.Size(925, 490);
             this.InputTab.TabIndex = 0;
             this.InputTab.Text = "입고";
             this.InputTab.VerticalScrollbarBarColor = true;
@@ -114,7 +112,7 @@
             this.OutTab.HorizontalScrollbarSize = 10;
             this.OutTab.Location = new System.Drawing.Point(4, 44);
             this.OutTab.Name = "OutTab";
-            this.OutTab.Size = new System.Drawing.Size(878, 403);
+            this.OutTab.Size = new System.Drawing.Size(925, 490);
             this.OutTab.TabIndex = 1;
             this.OutTab.Text = "출고";
             this.OutTab.VerticalScrollbarBarColor = true;
@@ -135,7 +133,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(872, 386);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(919, 473);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // OutPriceChart
@@ -153,7 +151,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.OutPriceChart.Series.Add(series2);
-            this.OutPriceChart.Size = new System.Drawing.Size(430, 380);
+            this.OutPriceChart.Size = new System.Drawing.Size(453, 467);
             this.OutPriceChart.TabIndex = 3;
             this.OutPriceChart.Text = "chart1";
             // 
@@ -164,7 +162,7 @@
             this.OutChart.Dock = System.Windows.Forms.DockStyle.Fill;
             legend3.Name = "Legend1";
             this.OutChart.Legends.Add(legend3);
-            this.OutChart.Location = new System.Drawing.Point(439, 3);
+            this.OutChart.Location = new System.Drawing.Point(462, 3);
             this.OutChart.Name = "OutChart";
             this.OutChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
             series3.ChartArea = "ChartArea1";
@@ -173,7 +171,7 @@
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.OutChart.Series.Add(series3);
-            this.OutChart.Size = new System.Drawing.Size(430, 380);
+            this.OutChart.Size = new System.Drawing.Size(454, 467);
             this.OutChart.TabIndex = 2;
             this.OutChart.Text = "chart1";
             // 

@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrdInput = new MetroFramework.Controls.MetroGrid();
             this.CboContainer = new System.Windows.Forms.ComboBox();
             this.CboDevice = new System.Windows.Forms.ComboBox();
             this.Picturebox = new OpenCvSharp.UserInterface.PictureBoxIpl();
-            this.CbowhereHouse = new System.Windows.Forms.ComboBox();
-            this.DtpReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.CameraOff = new System.Windows.Forms.Button();
             this.BtnQRNew = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
@@ -48,62 +45,19 @@
             this.TxtClientidx = new System.Windows.Forms.TextBox();
             this.TxtProductUnit = new System.Windows.Forms.TextBox();
             this.TxtProductidx = new System.Windows.Forms.TextBox();
-            this.Txtidx = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblinoutidx = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblinoutput = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.GrdInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.GrdInput);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.CboContainer);
-            this.splitContainer1.Panel2.Controls.Add(this.CboDevice);
-            this.splitContainer1.Panel2.Controls.Add(this.Picturebox);
-            this.splitContainer1.Panel2.Controls.Add(this.CbowhereHouse);
-            this.splitContainer1.Panel2.Controls.Add(this.DtpReleaseDate);
-            this.splitContainer1.Panel2.Controls.Add(this.CameraOff);
-            this.splitContainer1.Panel2.Controls.Add(this.BtnQRNew);
-            this.splitContainer1.Panel2.Controls.Add(this.BtnExit);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Panel2.Controls.Add(this.BtnNew);
-            this.splitContainer1.Panel2.Controls.Add(this.BtnSave);
-            this.splitContainer1.Panel2.Controls.Add(this.TxtClientidx);
-            this.splitContainer1.Panel2.Controls.Add(this.TxtProductUnit);
-            this.splitContainer1.Panel2.Controls.Add(this.TxtProductidx);
-            this.splitContainer1.Panel2.Controls.Add(this.Txtidx);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.lblinoutidx);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.lblinoutput);
-            this.splitContainer1.Size = new System.Drawing.Size(1535, 830);
-            this.splitContainer1.SplitterDistance = 904;
-            this.splitContainer1.TabIndex = 1;
             // 
             // GrdInput
             // 
@@ -112,44 +66,44 @@
             this.GrdInput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.GrdInput.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GrdInput.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GrdInput.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrdInput.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GrdInput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GrdInput.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GrdInput.DefaultCellStyle = dataGridViewCellStyle5;
             this.GrdInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GrdInput.EnableHeadersVisualStyles = false;
             this.GrdInput.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GrdInput.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GrdInput.Location = new System.Drawing.Point(0, 0);
+            this.GrdInput.Location = new System.Drawing.Point(3, 3);
             this.GrdInput.Name = "GrdInput";
             this.GrdInput.ReadOnly = true;
             this.GrdInput.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GrdInput.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrdInput.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GrdInput.RowHeadersWidth = 51;
             this.GrdInput.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GrdInput.RowTemplate.Height = 27;
             this.GrdInput.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrdInput.Size = new System.Drawing.Size(904, 830);
+            this.GrdInput.Size = new System.Drawing.Size(804, 692);
             this.GrdInput.TabIndex = 0;
             // 
             // CboContainer
@@ -160,7 +114,7 @@
             "A",
             "B",
             "C"});
-            this.CboContainer.Location = new System.Drawing.Point(202, 460);
+            this.CboContainer.Location = new System.Drawing.Point(248, 460);
             this.CboContainer.Name = "CboContainer";
             this.CboContainer.Size = new System.Drawing.Size(176, 23);
             this.CboContainer.TabIndex = 3;
@@ -170,7 +124,7 @@
             this.CboDevice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CboDevice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboDevice.FormattingEnabled = true;
-            this.CboDevice.Location = new System.Drawing.Point(103, 6);
+            this.CboDevice.Location = new System.Drawing.Point(149, 6);
             this.CboDevice.Name = "CboDevice";
             this.CboDevice.Size = new System.Drawing.Size(275, 23);
             this.CboDevice.TabIndex = 6;
@@ -178,35 +132,18 @@
             // Picturebox
             // 
             this.Picturebox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Picturebox.BackColor = System.Drawing.SystemColors.Window;
+            this.Picturebox.BackColor = System.Drawing.Color.LightGray;
             this.Picturebox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Picturebox.Location = new System.Drawing.Point(33, 45);
+            this.Picturebox.Location = new System.Drawing.Point(79, 45);
             this.Picturebox.Name = "Picturebox";
             this.Picturebox.Size = new System.Drawing.Size(345, 293);
             this.Picturebox.TabIndex = 0;
             this.Picturebox.TabStop = false;
             // 
-            // CbowhereHouse
-            // 
-            this.CbowhereHouse.FormattingEnabled = true;
-            this.CbowhereHouse.Location = new System.Drawing.Point(282, 715);
-            this.CbowhereHouse.Name = "CbowhereHouse";
-            this.CbowhereHouse.Size = new System.Drawing.Size(176, 23);
-            this.CbowhereHouse.TabIndex = 5;
-            this.CbowhereHouse.Visible = false;
-            // 
-            // DtpReleaseDate
-            // 
-            this.DtpReleaseDate.Location = new System.Drawing.Point(65, 677);
-            this.DtpReleaseDate.Name = "DtpReleaseDate";
-            this.DtpReleaseDate.Size = new System.Drawing.Size(176, 25);
-            this.DtpReleaseDate.TabIndex = 4;
-            this.DtpReleaseDate.Visible = false;
-            // 
             // CameraOff
             // 
             this.CameraOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CameraOff.Location = new System.Drawing.Point(517, 78);
+            this.CameraOff.Location = new System.Drawing.Point(435, 128);
             this.CameraOff.Name = "CameraOff";
             this.CameraOff.Size = new System.Drawing.Size(90, 40);
             this.CameraOff.TabIndex = 3;
@@ -217,7 +154,7 @@
             // BtnQRNew
             // 
             this.BtnQRNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnQRNew.Location = new System.Drawing.Point(400, 78);
+            this.BtnQRNew.Location = new System.Drawing.Point(435, 73);
             this.BtnQRNew.Name = "BtnQRNew";
             this.BtnQRNew.Size = new System.Drawing.Size(90, 40);
             this.BtnQRNew.TabIndex = 3;
@@ -228,7 +165,7 @@
             // BtnExit
             // 
             this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExit.Location = new System.Drawing.Point(303, 557);
+            this.BtnExit.Location = new System.Drawing.Point(349, 557);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(75, 40);
             this.BtnExit.TabIndex = 4;
@@ -239,7 +176,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(213, 557);
+            this.button1.Location = new System.Drawing.Point(259, 557);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 40);
             this.button1.TabIndex = 6;
@@ -250,7 +187,7 @@
             // BtnNew
             // 
             this.BtnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnNew.Location = new System.Drawing.Point(34, 557);
+            this.BtnNew.Location = new System.Drawing.Point(80, 557);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(75, 40);
             this.BtnNew.TabIndex = 4;
@@ -261,7 +198,7 @@
             // BtnSave
             // 
             this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSave.Location = new System.Drawing.Point(125, 557);
+            this.BtnSave.Location = new System.Drawing.Point(171, 557);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 40);
             this.BtnSave.TabIndex = 5;
@@ -272,7 +209,7 @@
             // TxtClientidx
             // 
             this.TxtClientidx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtClientidx.Location = new System.Drawing.Point(202, 359);
+            this.TxtClientidx.Location = new System.Drawing.Point(248, 359);
             this.TxtClientidx.Name = "TxtClientidx";
             this.TxtClientidx.ReadOnly = true;
             this.TxtClientidx.Size = new System.Drawing.Size(176, 25);
@@ -281,7 +218,7 @@
             // TxtProductUnit
             // 
             this.TxtProductUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtProductUnit.Location = new System.Drawing.Point(202, 506);
+            this.TxtProductUnit.Location = new System.Drawing.Point(248, 506);
             this.TxtProductUnit.Name = "TxtProductUnit";
             this.TxtProductUnit.ReadOnly = true;
             this.TxtProductUnit.Size = new System.Drawing.Size(176, 25);
@@ -291,65 +228,27 @@
             // TxtProductidx
             // 
             this.TxtProductidx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtProductidx.Location = new System.Drawing.Point(202, 413);
+            this.TxtProductidx.Location = new System.Drawing.Point(248, 413);
             this.TxtProductidx.Name = "TxtProductidx";
             this.TxtProductidx.ReadOnly = true;
             this.TxtProductidx.Size = new System.Drawing.Size(176, 25);
             this.TxtProductidx.TabIndex = 1;
             // 
-            // Txtidx
-            // 
-            this.Txtidx.Location = new System.Drawing.Point(95, 708);
-            this.Txtidx.Name = "Txtidx";
-            this.Txtidx.Size = new System.Drawing.Size(176, 25);
-            this.Txtidx.TabIndex = 1;
-            this.Txtidx.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 683);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "일자";
-            this.label3.Visible = false;
-            // 
-            // lblinoutidx
-            // 
-            this.lblinoutidx.AutoSize = true;
-            this.lblinoutidx.Location = new System.Drawing.Point(49, 713);
-            this.lblinoutidx.Name = "lblinoutidx";
-            this.lblinoutidx.Size = new System.Drawing.Size(37, 15);
-            this.lblinoutidx.TabIndex = 0;
-            this.lblinoutidx.Text = "번호";
-            this.lblinoutidx.Visible = false;
-            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(118, 362);
+            this.label6.Location = new System.Drawing.Point(164, 362);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "거래처번호";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(236, 718);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "창고";
-            this.label5.Visible = false;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 463);
+            this.label2.Location = new System.Drawing.Point(205, 463);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 0;
@@ -359,7 +258,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(159, 509);
+            this.label4.Location = new System.Drawing.Point(205, 509);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 0;
@@ -369,7 +268,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 416);
+            this.label1.Location = new System.Drawing.Point(175, 416);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 0;
@@ -379,7 +278,7 @@
             // 
             this.lblinoutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblinoutput.AutoSize = true;
-            this.lblinoutput.Location = new System.Drawing.Point(30, 9);
+            this.lblinoutput.Location = new System.Drawing.Point(76, 9);
             this.lblinoutput.Name = "lblinoutput";
             this.lblinoutput.Size = new System.Drawing.Size(67, 15);
             this.lblinoutput.TabIndex = 0;
@@ -390,41 +289,75 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.Controls.Add(this.GrdInput, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 698);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.CboContainer);
+            this.panel1.Controls.Add(this.CboDevice);
+            this.panel1.Controls.Add(this.Picturebox);
+            this.panel1.Controls.Add(this.CameraOff);
+            this.panel1.Controls.Add(this.BtnQRNew);
+            this.panel1.Controls.Add(this.BtnExit);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.BtnNew);
+            this.panel1.Controls.Add(this.BtnSave);
+            this.panel1.Controls.Add(this.TxtClientidx);
+            this.panel1.Controls.Add(this.TxtProductUnit);
+            this.panel1.Controls.Add(this.TxtProductidx);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblinoutput);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(813, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(534, 692);
+            this.panel1.TabIndex = 1;
+            // 
             // InPutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1535, 830);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(1350, 698);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InPutForm";
             this.Text = "InPutForm";
             this.Load += new System.EventHandler(this.InPutForm_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GrdInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox CbowhereHouse;
-        private System.Windows.Forms.DateTimePicker DtpReleaseDate;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.TextBox TxtClientidx;
         private System.Windows.Forms.TextBox TxtProductUnit;
         private System.Windows.Forms.TextBox TxtProductidx;
-        private System.Windows.Forms.TextBox Txtidx;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblinoutidx;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblinoutput;
@@ -439,5 +372,7 @@
         private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.Button CameraOff;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -57,10 +57,12 @@ namespace QRMiniproject
                 TxtcodeNumber.ReadOnly = true;
                 TxtName.Text = data.Cells[2].Value.ToString();
                 TxtIdentityNumber.Text = data.Cells[3].Value.ToString();
+                TxtIdentityNumber.ReadOnly = true;
                 CboDepart.SelectedIndex = CboDepart.FindString(data.Cells[4].Value.ToString().Trim());
                 CboRank.SelectedIndex = CboRank.FindString(data.Cells[5].Value.ToString().Trim());
                 TxtPhoneNumber.Text = data.Cells[6].Value.ToString();
                 TxtUserId.Text = data.Cells[7].Value.ToString();
+                TxtUserId.ReadOnly = true;
                 TxtPassword.Text = data.Cells[8].Value.ToString();
                 mode = "UPDATE";
             }
@@ -85,6 +87,8 @@ namespace QRMiniproject
             CboRank.SelectedIndex = -1;
             TxtcodeNumber.ReadOnly = false;
             TxtcodeNumber.BackColor = Color.White;
+            TxtIdentityNumber.ReadOnly = false;
+            TxtUserId.ReadOnly = false;
 
             TxtName.Focus();
         }
@@ -98,21 +102,21 @@ namespace QRMiniproject
                 String.IsNullOrEmpty(CboRank.Text) ||
                 String.IsNullOrEmpty(TxtPhoneNumber.Text) ||
                 string.IsNullOrEmpty(TxtcodeNumber.Text) ||
-                string.IsNullOrEmpty(TxtID.Text) ||
-                string.IsNullOrEmpty(TxtPW.Text)
+                string.IsNullOrEmpty(TxtUserId.Text) ||
+                string.IsNullOrEmpty(TxtPassword.Text)
                 )
             {
                 MetroMessageBox.Show(this, "빈값은 저장할 수 없습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!Check())
+            if (!Check(TxtUserId.Text))
                 return;
             SaveProcess();
             UpdateData();
             ClearTextControl();
         }
         // 사원번호 아이디 중복체크
-        private bool Check()
+        private bool Check(string userId)
         {
             using (SqlConnection conn = new SqlConnection(Commons.ConnString))
             {
@@ -156,7 +160,7 @@ namespace QRMiniproject
                 reader = cmd.ExecuteReader();
                 reader.Read();
 
-                if (reader.HasRows)
+                if (reader.HasRows && mode=="INSERT")
                 {
                     strUserid = reader["UserID"] != null ? reader["UserID"].ToString() : "";
                     if (strUserid != "")
