@@ -18,6 +18,7 @@ namespace QRMiniproject
             InitializeComponent();
         }
 
+
         /// <summary>
         /// 폼 로드
         /// </summary>
@@ -28,6 +29,8 @@ namespace QRMiniproject
             // TODO: 이 코드는 데이터를 'qR_ProjectDBDataSet.ProductTbl' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
             this.productTblTableAdapter.Fill(this.qR_ProjectDBDataSet.ProductTbl);
         }
+
+
         /// <summary>
         /// 버튼클릭 이벤트
         /// </summary>
@@ -192,8 +195,8 @@ namespace QRMiniproject
                 }
                 else if (mode == "INSERT")
                 {
-                    sqlQuery = " INSERT INTO dbo.ProductTbl(ID, Name, Standard, Unit, Price) " +
-                               " VALUES(@ID, @Name, @Standard, @Unit, @Price) ";
+                    sqlQuery = " INSERT INTO dbo.ProductTbl(ID, Name, Standard, Unit, Price, PICTURE) " +
+                               " VALUES(@ID, @Name, @Standard, @Unit, @Price, @PICTURE) ";
                 }
 
                 cmd.CommandText = sqlQuery;

@@ -58,7 +58,6 @@
             this.BtnSave = new MetroFramework.Controls.MetroButton();
             this.BtnNew = new MetroFramework.Controls.MetroButton();
             this.productTblTableAdapter = new QRMiniproject.QR_ProjectDBDataSetTableAdapters.ProductTblTableAdapter();
-            this.MlblPicture = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductSprtContainer1)).BeginInit();
             this.ProductSprtContainer1.Panel1.SuspendLayout();
             this.ProductSprtContainer1.Panel2.SuspendLayout();
@@ -241,6 +240,7 @@
             // 
             // ProductSprtContainer2.Panel2
             // 
+            this.ProductSprtContainer2.Panel2.BackColor = System.Drawing.Color.White;
             this.ProductSprtContainer2.Panel2.Controls.Add(this.lblPrice);
             this.ProductSprtContainer2.Panel2.Controls.Add(this.lblUnit);
             this.ProductSprtContainer2.Panel2.Controls.Add(this.lblStandard);
@@ -259,6 +259,7 @@
             // 
             // PrdpictureBox
             // 
+            this.PrdpictureBox.AccessibleName = "";
             this.PrdpictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PrdpictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrdpictureBox.Location = new System.Drawing.Point(0, 0);
@@ -267,6 +268,7 @@
             this.PrdpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PrdpictureBox.TabIndex = 0;
             this.PrdpictureBox.TabStop = false;
+            this.PrdpictureBox.Tag = "";
             this.PrdpictureBox.Click += new System.EventHandler(this.PrdpictureBox_Click);
             // 
             // lblPrice
@@ -307,6 +309,7 @@
             // 
             // lblID
             // 
+            this.lblID.BackColor = System.Drawing.Color.Gainsboro;
             this.lblID.Location = new System.Drawing.Point(11, 22);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(81, 26);
@@ -489,21 +492,11 @@
             // 
             this.productTblTableAdapter.ClearBeforeFill = true;
             // 
-            // MlblPicture
-            // 
-            this.MlblPicture.AutoSize = true;
-            this.MlblPicture.Location = new System.Drawing.Point(758, 37);
-            this.MlblPicture.Name = "MlblPicture";
-            this.MlblPicture.Size = new System.Drawing.Size(39, 20);
-            this.MlblPicture.TabIndex = 1;
-            this.MlblPicture.Text = "사진";
-            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 626);
-            this.Controls.Add(this.MlblPicture);
             this.Controls.Add(this.ProductSprtContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProductForm";
@@ -522,7 +515,6 @@
             this.ProductSprtContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PrdpictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -537,7 +529,6 @@
         private System.Windows.Forms.PictureBox PrdpictureBox;
         private MetroFramework.Controls.MetroButton BtnSave;
         private MetroFramework.Controls.MetroButton BtnNew;
-        private MetroFramework.Controls.MetroLabel MlblPicture;
         private MetroFramework.Controls.MetroTextBox TxtpdtID;
         private MetroFramework.Controls.MetroTextBox TxtpdtPrice;
         private MetroFramework.Controls.MetroTextBox TxtpdtUnit;

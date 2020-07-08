@@ -75,7 +75,7 @@
             this.InputTab.HorizontalScrollbarSize = 10;
             this.InputTab.Location = new System.Drawing.Point(4, 44);
             this.InputTab.Name = "InputTab";
-            this.InputTab.Size = new System.Drawing.Size(878, 403);
+            this.InputTab.Size = new System.Drawing.Size(925, 490);
             this.InputTab.TabIndex = 0;
             this.InputTab.Text = "입고";
             this.InputTab.VerticalScrollbarBarColor = true;

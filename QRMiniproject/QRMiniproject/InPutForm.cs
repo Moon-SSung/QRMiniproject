@@ -82,7 +82,7 @@ namespace QRMiniproject
                     string[] space = result.ToString().Split(new char[] { '/' }, StringSplitOptions.None);
 
 
-                    TxtClientidx.Text = space[1];    // 거래처번호
+                    TxtClientidx.Text = space[0];    // 거래처번호
                     TxtProductidx.Text = space[2];   // 품목코드     //qr코드 데이터를 한줄씩 띄어주기
                     TxtProductUnit.Text = space[4];  // 수량
 

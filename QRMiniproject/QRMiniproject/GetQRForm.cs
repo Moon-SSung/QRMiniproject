@@ -46,7 +46,7 @@ namespace QRMiniproject
                                               CboQRCode3.Text + "/" ,
                                               QRCodeGenerator.ECCLevel.Q); //ECCLevel 오류복원 등급
             QRCode code = new QRCode(data);
-            PbxQRCode.Image = code.GetGraphic(3);         
+            PbxQRCode.Image = code.GetGraphic(7);         
         }
 
         /// <summary>
@@ -141,6 +141,7 @@ namespace QRMiniproject
         private void GetQRForm_Load(object sender, EventArgs e)
         {
             MtrGetQRGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            MtrGetQRGrid.Width = 750;
             ClearTextControls();
             initializeDateTimePicker();            
             ViewGridData();

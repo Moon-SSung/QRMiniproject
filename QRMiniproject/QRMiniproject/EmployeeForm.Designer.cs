@@ -73,6 +73,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.CboRank);
             this.splitContainer1.Panel2.Controls.Add(this.CboDepart);
             this.splitContainer1.Panel2.Controls.Add(this.BtnNew);
@@ -94,7 +95,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.lblName);
             this.splitContainer1.Panel2.Controls.Add(this.lblmemberNumber);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.splitContainer1.Size = new System.Drawing.Size(1260, 597);
             this.splitContainer1.SplitterDistance = 844;
             this.splitContainer1.TabIndex = 1;
@@ -253,10 +254,10 @@
             // 
             this.TxtPW.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPW.AutoSize = true;
-            this.TxtPW.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TxtPW.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TxtPW.Location = new System.Drawing.Point(58, 363);
             this.TxtPW.Name = "TxtPW";
-            this.TxtPW.Size = new System.Drawing.Size(71, 15);
+            this.TxtPW.Size = new System.Drawing.Size(67, 15);
             this.TxtPW.TabIndex = 0;
             this.TxtPW.Text = "패스워드";
             // 
@@ -284,10 +285,10 @@
             // 
             this.TxtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtID.AutoSize = true;
-            this.TxtID.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TxtID.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TxtID.Location = new System.Drawing.Point(74, 324);
             this.TxtID.Name = "TxtID";
-            this.TxtID.Size = new System.Drawing.Size(55, 15);
+            this.TxtID.Size = new System.Drawing.Size(52, 15);
             this.TxtID.TabIndex = 0;
             this.TxtID.Text = "아이디";
             // 
@@ -295,10 +296,10 @@
             // 
             this.lblphoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblphoneNumber.AutoSize = true;
-            this.lblphoneNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblphoneNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblphoneNumber.Location = new System.Drawing.Point(74, 283);
             this.lblphoneNumber.Name = "lblphoneNumber";
-            this.lblphoneNumber.Size = new System.Drawing.Size(55, 15);
+            this.lblphoneNumber.Size = new System.Drawing.Size(52, 15);
             this.lblphoneNumber.TabIndex = 0;
             this.lblphoneNumber.Text = "연락처";
             // 
@@ -306,10 +307,10 @@
             // 
             this.lbllevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbllevel.AutoSize = true;
-            this.lbllevel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbllevel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbllevel.Location = new System.Drawing.Point(90, 244);
             this.lbllevel.Name = "lbllevel";
-            this.lbllevel.Size = new System.Drawing.Size(39, 15);
+            this.lbllevel.Size = new System.Drawing.Size(37, 15);
             this.lbllevel.TabIndex = 0;
             this.lbllevel.Text = "직급";
             // 
@@ -317,10 +318,10 @@
             // 
             this.lblcodeNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblcodeNumber.AutoSize = true;
-            this.lblcodeNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblcodeNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblcodeNumber.Location = new System.Drawing.Point(58, 166);
             this.lblcodeNumber.Name = "lblcodeNumber";
-            this.lblcodeNumber.Size = new System.Drawing.Size(71, 15);
+            this.lblcodeNumber.Size = new System.Drawing.Size(67, 15);
             this.lblcodeNumber.TabIndex = 0;
             this.lblcodeNumber.Text = "주민번호";
             // 
@@ -328,10 +329,10 @@
             // 
             this.lblPart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPart.AutoSize = true;
-            this.lblPart.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPart.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPart.Location = new System.Drawing.Point(90, 205);
             this.lblPart.Name = "lblPart";
-            this.lblPart.Size = new System.Drawing.Size(39, 15);
+            this.lblPart.Size = new System.Drawing.Size(37, 15);
             this.lblPart.TabIndex = 0;
             this.lblPart.Text = "부서";
             // 
@@ -339,10 +340,10 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(58, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 15);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "사원번호";
             this.label2.Visible = false;
@@ -351,10 +352,10 @@
             // 
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblName.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblName.Location = new System.Drawing.Point(90, 125);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(39, 15);
+            this.lblName.Size = new System.Drawing.Size(37, 15);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "성명";
             // 
@@ -362,10 +363,10 @@
             // 
             this.lblmemberNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblmemberNumber.AutoSize = true;
-            this.lblmemberNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblmemberNumber.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblmemberNumber.Location = new System.Drawing.Point(58, 89);
             this.lblmemberNumber.Name = "lblmemberNumber";
-            this.lblmemberNumber.Size = new System.Drawing.Size(71, 15);
+            this.lblmemberNumber.Size = new System.Drawing.Size(67, 15);
             this.lblmemberNumber.TabIndex = 0;
             this.lblmemberNumber.Text = "사원번호";
             // 
@@ -373,10 +374,10 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(37, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 28);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "사원등록";
             // 
