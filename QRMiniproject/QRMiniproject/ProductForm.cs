@@ -192,8 +192,8 @@ namespace QRMiniproject
                 }
                 else if (mode == "INSERT")
                 {
-                    sqlQuery = " INSERT INTO dbo.ProductTbl(ID, Name, Standard, Unit, Price) " +
-                               " VALUES(@ID, @Name, @Standard, @Unit, @Price) ";
+                    sqlQuery = " INSERT INTO dbo.ProductTbl(ID, Name, Standard, Unit, Price, PICTURE) " +
+                               " VALUES(@ID, @Name, @Standard, @Unit, @Price, @PICTURE) ";
                 }
 
                 cmd.CommandText = sqlQuery;
