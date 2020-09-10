@@ -303,5 +303,10 @@ namespace QRMiniproject
                 PbxQRCode.Image = null;
             }
         }
+
+        private void MtrGetQRGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

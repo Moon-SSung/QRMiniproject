@@ -323,6 +323,7 @@
             this.MtrGetQRGrid.Size = new System.Drawing.Size(864, 547);
             this.MtrGetQRGrid.TabIndex = 28;
             this.MtrGetQRGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtrGetQRGrid_CellClick);
+            this.MtrGetQRGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtrGetQRGrid_CellContentClick);
             // 
             // panel2
             // 

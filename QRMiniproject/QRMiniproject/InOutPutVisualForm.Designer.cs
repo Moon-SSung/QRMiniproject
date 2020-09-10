@@ -154,6 +154,7 @@
             this.OutPriceChart.Size = new System.Drawing.Size(453, 467);
             this.OutPriceChart.TabIndex = 3;
             this.OutPriceChart.Text = "chart1";
+            this.OutPriceChart.Click += new System.EventHandler(this.OutPriceChart_Click);
             // 
             // OutChart
             // 

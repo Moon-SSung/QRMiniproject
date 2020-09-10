@@ -242,5 +242,10 @@ namespace QRMiniproject
                 return;
             }
         }
+
+        private void PrdGridBox_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

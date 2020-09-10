@@ -218,5 +218,15 @@ namespace QRMiniproject
                 Picturebox.Image = null;
             }
         }
+
+        private void GrdInput_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Picturebox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

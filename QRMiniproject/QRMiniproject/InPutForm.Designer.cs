@@ -38,8 +38,6 @@
             this.Picturebox = new OpenCvSharp.UserInterface.PictureBoxIpl();
             this.CameraOff = new System.Windows.Forms.Button();
             this.BtnQRNew = new System.Windows.Forms.Button();
-            this.BtnExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.BtnNew = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.TxtClientidx = new System.Windows.Forms.TextBox();
@@ -105,6 +103,7 @@
             this.GrdInput.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GrdInput.Size = new System.Drawing.Size(804, 692);
             this.GrdInput.TabIndex = 0;
+            this.GrdInput.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdInput_CellContentClick);
             // 
             // CboContainer
             // 
@@ -139,6 +138,7 @@
             this.Picturebox.Size = new System.Drawing.Size(345, 293);
             this.Picturebox.TabIndex = 0;
             this.Picturebox.TabStop = false;
+            this.Picturebox.Click += new System.EventHandler(this.Picturebox_Click);
             // 
             // CameraOff
             // 
@@ -162,34 +162,12 @@
             this.BtnQRNew.UseVisualStyleBackColor = true;
             this.BtnQRNew.Click += new System.EventHandler(this.BtnQRNew_Click);
             // 
-            // BtnExit
-            // 
-            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExit.Location = new System.Drawing.Point(349, 557);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(75, 40);
-            this.BtnExit.TabIndex = 4;
-            this.BtnExit.Text = "종료";
-            this.BtnExit.UseVisualStyleBackColor = true;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(259, 557);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "뒤로";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // BtnNew
             // 
             this.BtnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnNew.Location = new System.Drawing.Point(80, 557);
+            this.BtnNew.Location = new System.Drawing.Point(194, 564);
             this.BtnNew.Name = "BtnNew";
-            this.BtnNew.Size = new System.Drawing.Size(75, 40);
+            this.BtnNew.Size = new System.Drawing.Size(89, 58);
             this.BtnNew.TabIndex = 4;
             this.BtnNew.Text = "신규";
             this.BtnNew.UseVisualStyleBackColor = true;
@@ -198,9 +176,9 @@
             // BtnSave
             // 
             this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSave.Location = new System.Drawing.Point(171, 557);
+            this.BtnSave.Location = new System.Drawing.Point(340, 564);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(75, 40);
+            this.BtnSave.Size = new System.Drawing.Size(84, 58);
             this.BtnSave.TabIndex = 5;
             this.BtnSave.Text = "입고등록";
             this.BtnSave.UseVisualStyleBackColor = true;
@@ -313,8 +291,6 @@
             this.panel1.Controls.Add(this.Picturebox);
             this.panel1.Controls.Add(this.CameraOff);
             this.panel1.Controls.Add(this.BtnQRNew);
-            this.panel1.Controls.Add(this.BtnExit);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.BtnNew);
             this.panel1.Controls.Add(this.BtnSave);
             this.panel1.Controls.Add(this.TxtClientidx);
@@ -364,12 +340,10 @@
         private System.Windows.Forms.Timer timer1;
         private OpenCvSharp.UserInterface.PictureBoxIpl Picturebox;
         private System.Windows.Forms.Button BtnQRNew;
-        private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroGrid GrdInput;
         private System.Windows.Forms.ComboBox CboDevice;
         private System.Windows.Forms.ComboBox CboContainer;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.Button CameraOff;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

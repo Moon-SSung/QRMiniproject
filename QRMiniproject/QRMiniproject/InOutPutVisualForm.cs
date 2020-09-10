@@ -122,5 +122,10 @@ as p
         {
             UpdateData();
         }
+
+        private void OutPriceChart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
